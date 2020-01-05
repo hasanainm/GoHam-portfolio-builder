@@ -1,0 +1,33 @@
+.header {
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.8), 
+        rgba($color-primary-dark, 0.8)), 
+        url(../../img/plush-design-studio-l3N9Q27zULw-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+     
+    /* clip-path is a property can be used to create a shape of an image */
+    // clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 3.5rem;
+    }
+    
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        /* -50% says that it will be shifted 50% of the elements height to the top  */
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}

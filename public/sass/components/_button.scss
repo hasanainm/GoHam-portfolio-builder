@@ -1,0 +1,87 @@
+.btn {
+    // this translates to button element
+    &,
+    /* link is a psuedo class is a special state of a selector  */
+    /* visited state is when the user has already clicked on the button before and sees it again */
+    &:link, 
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        /* top padding and bottom padding */
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        // border-radius: 10rem;
+        transition: all .2s;   
+        position: relative;
+        font-size: 1.6rem;
+        background-color: $color-white;
+        // Change for the <button> element
+        border: none;
+        cursor: pointer;
+    }
+    
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($color-black, .50);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+    
+    /* when you click an element */
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+    
+    }
+
+    /* after pseudo element is bascially the child of the original element */
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        // border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* z-index defines the position of the element if they are one on top of another */
+        z-index: -1;
+        transition: all .4s;
+    }
+    
+    &--animated {
+        animation: moveInButton .5s ease-out .75s;
+        /* 0% styles on @keyframes moveInButton will be applied before the animation starts */
+        animation-fill-mode: backwards;
+    }
+}
+
+.btn-text {
+    &:link,
+    &:visited {
+        font-size: $default-font-size;
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary;
+        padding: 3px;
+        transition: all .2s;
+    }
+
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform: translateY(0);
+    }
+}

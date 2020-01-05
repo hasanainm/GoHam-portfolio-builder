@@ -2,6 +2,7 @@ require("dotenv").config();
 
 var express = require("express");
 var exphbs = require("express-handlebars");
+var sassMiddleware = require('node-sass-middleware');
 var db = require("./models");
 
 
@@ -16,6 +17,15 @@ app.use(express.static("public"));
 // handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+// SASS middleware
+app.use (
+  sassMiddleware({
+    src: __dirname + '/sass',
+    dest: __dirname + '/public',
+    debug: true,
+  })
+);
 
 // routes
 require("./routes/apiRoutes")(app);
