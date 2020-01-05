@@ -1,3 +1,39 @@
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInLeftButton {
+  0% {
+    opacity: 0;
+    transform: translateX(-3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRightButton {
+  0% {
+    opacity: 0;
+    transform: translateX(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
 *,
 *::after,
 *::before {
@@ -63,35 +99,40 @@ body {
 .u-margin-top-huge {
   margin-top: 10rem !important; }
 
-.btn {
-  /* when you click an element */ }
-  .btn, .btn:link, .btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    /* top padding and bottom padding */
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: .5rem;
-    transition: all .3s;
-    position: relative;
-    font-size: 1.6rem;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-    background-color: #fff;
-    border: none;
-    cursor: pointer; }
-  .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5); }
-  .btn:active, .btn:focus {
-    outline: none;
-    transform: translateY(-1px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-  .btn--white {
-    background-color: #fff;
-    color: #777; }
-    .btn--white::after {
-      background-color: #fff;
-      z-index: 2; }
+.nbbtn:link, .nbbtn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: .5em;
+  transition: all .2s;
+  position: relative;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #777; }
+
+.nbbtn:hover {
+  transform: translateY(-3px);
+  text-decoration: none;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.nbbtn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 1rem 0.5rem rgba(0, 0, 0, 0.2); }
+
+.nbbtn--white {
+  background-color: #fff;
+  color: #777; }
+
+.nbbtn--animated-left {
+  animation: moveInLeftButton .5s ease-out .75s;
+  /* 0% styles on @keyframes moveInButton will be applied before the animation starts */
+  animation-fill-mode: backwards; }
+
+.nbbtn--animated-right {
+  animation: moveInRightButton .5s ease-out .75s;
+  /* 0% styles on @keyframes moveInButton will be applied before the animation starts */
+  animation-fill-mode: backwards; }
 
 .header {
   height: 95vh;

@@ -1,53 +1,44 @@
-.btn {
-    // this translates to button element
-    &,
-    /* link is a psuedo class is a special state of a selector  */
-    /* visited state is when the user has already clicked on the button before and sees it again */
-    &:link, 
+.nbbtn{
+    &:link,
     &:visited {
         text-transform: uppercase;
         text-decoration: none;
-        /* top padding and bottom padding */
-        padding: 1.5rem 4rem;
+        padding:1.5rem 4rem ;
         display: inline-block;
-        border-radius: .5rem;
-        transition: all .3s;   
+        border-radius: .5em;
+        transition: all .2s;
         position: relative;
-        font-size: 1.6rem;
-        box-shadow: 0 1rem 2rem rgba($color-black, .20);
-        background-color: $color-white;
-        // Change for the <button> element
-        border: none;
+        font-size: $default-font-size;
         cursor: pointer;
-    }
-    
-    &:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 1rem 2rem rgba($color-black, .50);
-
-        // &::after {
-        //     transform: scaleX(1.4) scaleY(1.6);
-        //     opacity: 0;
-        // }
-    }
-    
-    /* when you click an element */
-    &:active,
-    &:focus {
-        outline: none;
-        transform: translateY(-1px);
-        box-shadow: 0 .5rem 1rem rgba($color-black, .2);
-    }
-
-    &--white {
-        background-color: $color-white;
-        color: $color-grey-dark;
-
-        &::after {
-            background-color: $color-white;
-            z-index: 2;
+        color:$color-grey-dark;
         }
-    }
+        
+        &:hover {
+          transform: translateY(-3px);
+          text-decoration: none;
+          box-shadow: 0 1rem 2rem rgba($color-black,.2);
+        }
+        
+        &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 1rem .5rem rgba($color-black,.2);
+        }
 
+        &--white{
+            background-color:$color-white;
+            color:$color-grey-dark;
+
+        }
+    
+   &--animated-left {
+        animation: moveInLeftButton .5s ease-out .75s;
+        /* 0% styles on @keyframes moveInButton will be applied before the animation starts */
+        animation-fill-mode: backwards;
+    }
+    &--animated-right {
+        animation: moveInRightButton .5s ease-out .75s;
+        /* 0% styles on @keyframes moveInButton will be applied before the animation starts */
+        animation-fill-mode: backwards;
+    }
 
 }
