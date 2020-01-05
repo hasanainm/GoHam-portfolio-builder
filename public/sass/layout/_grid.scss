@@ -1,0 +1,53 @@
+.row {
+    // if there's enough available space, then it will have the width that's specified and if there's not enough width, then it'll simply fill 100% of the available space that it has 
+    max-width: $grid-width;
+    // background-color: #eee;
+    // trick to center block elements inside of another block element
+    margin: 0 auto;
+    
+    // don't want any margins on the bottom for the last row
+    &:not(:last-child) {
+        margin-bottom: $gutter-vertical;
+    }
+
+    @include clearfix;
+    
+    // ^ allows to select only the ones that start with "col-"
+    // * allows to select ANY classes that contain "col-" 
+    // $ allows to select ANY classes that end with "col-"
+    [class^="col-"] {
+        // background-color: orangered;
+        float: left;
+        
+        // not specifies everything but the last row
+        &:not(:last-child) {
+            margin-right: $gutter-horizontal;
+        }
+    }
+
+    .col-1-of-2 {
+        width: calc((100% - #{$gutter-horizontal}) / 2);
+    }
+
+    .col-1-of-3 {
+        width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+    }
+
+    .col-2-of-3 {
+        width: calc(2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal});
+    }
+
+    .col-1-of-4 {
+        width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+    }
+
+    .col-2-of-4 {
+        width: calc(2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal});
+    }
+
+    .col-3-of-4 {
+        width: calc(3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal});
+    }
+}
+
+//.row:last-child()
