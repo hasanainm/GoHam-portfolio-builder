@@ -13,7 +13,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 
-
 // handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
@@ -26,8 +25,8 @@ require("./routes/htmlRoutes")(app);
 var syncOptions = { force: true };
 
 // starting the server
-db.sequelize.sync(syncOptions).then(function() {
-  app.listen(PORT, function() {
+db.sequelize.sync(syncOptions).then(function () {
+  app.listen(PORT, function () {
     console.log("Server is listening on: http://localhost:" + PORT);
   });
 });
