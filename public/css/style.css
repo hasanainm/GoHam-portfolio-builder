@@ -19,7 +19,7 @@ body {
   /* font-size: 16px; */
   line-height: 1.7;
   color: #777;
-  padding: 3rem; }
+  padding: 3rem 3rem 0 3rem; }
 
 .heading-primary {
   color: #fff;
@@ -47,12 +47,27 @@ body {
 
 .heading-secondary {
   font-family: "Lato", sans-serif;
-  color: #333;
+  color: #999;
   display: block;
   font-size: 4rem;
   font-weight: 400;
   letter-spacing: .5rem;
   text-transform: uppercase; }
+
+.heading-tertiary {
+  font-family: "Lato", sans-serif;
+  color: #999;
+  display: block;
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: .5rem;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-size: 1.8rem;
+  color: #999; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
 
 .u-center-text {
   text-align: center !important; }
@@ -65,6 +80,9 @@ body {
 
 .u-margin-bottom-big {
   margin-bottom: 8rem !important; }
+
+.u-margin-top-medium {
+  margin-top: 4rem !important; }
 
 .u-margin-top-big {
   margin-top: 8rem !important; }
@@ -117,6 +135,33 @@ body {
       background-color: #fff;
       z-index: 2; }
 
+.composition {
+  position: relative; }
+  .composition__photo {
+    width: 55%;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all .2s;
+    outline-offset: 2rem; }
+    .composition__photo--p1 {
+      left: 0;
+      top: -2rem; }
+    .composition__photo--p2 {
+      right: 0;
+      top: 2rem; }
+    .composition__photo--p3 {
+      left: 20%;
+      top: 10rem; }
+    .composition__photo:hover {
+      outline: 1.5rem solid #f0c2a3;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 20; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }
+
 .steps-card {
   background-color: rgba(255, 255, 255, 0.6);
   font-size: 1.5rem;
@@ -134,6 +179,13 @@ body {
     color: transparent; }
   .steps-card:hover {
     transform: translateY(-1.5rem) scale(1.03); }
+
+.footer {
+  background-image: linear-gradient(to right, #f0dfc8, #ebbda3);
+  font-size: 1.6rem;
+  color: #fff;
+  font-family: 'Courgette', cursive;
+  padding: 2rem; }
 
 .row {
   max-width: 114rem;
@@ -294,9 +346,14 @@ body {
 
 .section-about {
   background-color: #f7f7f7;
-  padding: 25rem 0; }
+  padding: 10rem;
+  height: 95vh; }
 
 .section-steps {
   background-image: linear-gradient(to right bottom, rgba(240, 223, 200, 0.6), rgba(235, 189, 163, 0.6)), url("https://media.giphy.com/media/xTka05eaWBCJqg9Tig/source.gif");
-  padding: 15rem 0 20rem 5.5rem;
-  margin-top: -20vh; }
+  padding: 10rem; }
+
+.section-contact {
+  background-color: #f7f7f7;
+  padding: 10rem;
+  height: 65vh; }

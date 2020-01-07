@@ -4,7 +4,7 @@ body {
     /* font-size: 16px; */
     line-height: 1.7;
     color: $color-grey-dark;
-    padding: 3rem; 
+    padding: 3rem 3rem 0 3rem; 
 }
 
 .heading-primary {
@@ -41,10 +41,29 @@ body {
 
 .heading-secondary {
     font-family: "Lato", sans-serif;
-    color: $color-grey-dark-3;
+    color: $color-grey-dark-2;
     display: block;
     font-size: 4rem;
     font-weight: 400;
     letter-spacing: .5rem;
     text-transform: uppercase;
+}
+
+.heading-tertiary {
+    font-family: "Lato", sans-serif;
+    color: $color-grey-dark-2;
+    display: block;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: .5rem;
+    text-transform: uppercase;
+}
+
+.paragraph {
+    font-size: 1.8rem;
+    color: $color-grey-dark-2;
+
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
 }

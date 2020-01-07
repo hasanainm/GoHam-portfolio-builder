@@ -1,0 +1,10 @@
+.connect__icon {
+    color: $color-grey-light-2;
+    font-size: 7rem;
+    cursor: pointer;
+    transition: transform .3s;
+
+    &:hover {
+        transform: translateY(-1.5rem) scale(1.03);
+    }
+}
