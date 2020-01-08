@@ -1,0 +1,20 @@
+.section-about {
+    background-color: $color-grey-light-1;
+    padding: 10rem;
+    height: 95vh;
+}
+
+.section-steps {
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.6), 
+        rgba($color-primary-dark, 0.6));
+    padding: 10rem;
+    position: relative;
+}
+
+.section-contact {
+    background-color: $color-grey-light-1;
+    padding: 10rem;
+    height: 90vh;
+}
