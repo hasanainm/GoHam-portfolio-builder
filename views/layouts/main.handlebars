@@ -35,15 +35,36 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 
-    {{!-- jQuery --}}
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
     
     {{{ body }}}
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCxiWn0qTRtc5d7mXBATkNJklwWj0wKJFU",
+            authDomain: "portfolio-auth-96e4e.firebaseapp.com",
+            databaseURL: "https://portfolio-auth-96e4e.firebaseio.com",
+            projectId: "portfolio-auth-96e4e",
+            storageBucket: "portfolio-auth-96e4e.appspot.com",
+            messagingSenderId: "202975338502",
+            appId: "1:202975338502:web:2a8fb55dd9701f0d4de387",
+            measurementId: "G-NEK9E62R72"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+    </script>
+    <script src="/js/modal.js"></script>
+    <script src="/js/userAuth.js"></script>
 
     <script src="/js/navigation.js" type="text/javascript"></script>
 

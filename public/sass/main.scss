@@ -1,13 +1,14 @@
 @import "./abstracts/mixins";
 @import "./abstracts/variables";
 
-// @import "./base/animations";
+@import "./base/animations";
 @import "./base/base";
 @import "./base/typography";
 @import "./base/utilities";
 
 @import "./components/bg-video";
 @import "./components/button";
+@import "./components/modal";
 @import "./components/composition";
 @import "./components/contact";
 @import "./components/steps";

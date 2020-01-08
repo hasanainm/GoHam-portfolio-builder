@@ -10,11 +10,55 @@
             <span class="heading-primary--sub">where your work can stand out</span>
         </h1>
 
-        <a href="#" class="btn btn--white btn--animated-left">Login</a>
-        &nbsp;
-        <a href="#" class="btn btn--white btn--animated-right">Sign Up</a>
+        <a href="#" class="nbbtn nbbtn--white nbbtn--animated-bottom" data-toggle="modal"
+            data-target="#exampleModal">Get Started</a>
     </div>
 </header>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="non-BS-Modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="nonBS-container" id="container">
+                    <div class="form-container sign-up-container">
+                        <form id="sign-up" action="#">
+                            <h1>Create Account</h1>
+                            <span>or use your email for registration</span>
+                            <input type="text" id="user-name" placeholder="Name" />
+                            <input type="email" id="user-email" placeholder="Email" />
+                            <input type="password" id="user-pass" placeholder="Password" />
+                            <button>Sign Up</button>
+                        </form>
+                    </div>
+                    <div class="form-container sign-in-container">
+                        <form id="sign-in" action="#">
+                            <h1>Sign in</h1>
+                            <span>or use your account</span>
+                            <input type="email" id="sign-email" placeholder="Email" />
+                            <input type="password" id="sign-pass" placeholder="Password" />
+                            <button>Sign In</button>
+                        </form>
+                    </div>
+                    <div class="overlay-container">
+                        <div class="overlay">
+                            <div class="overlay-panel overlay-left">
+                                <h1>Welcome Back!</h1>
+                                <p>To keep connected with us please login with your personal info</p>
+                                <button class="ghost signbutton" id="signIn">Sign In</button>
+                            </div>
+                            <div class="overlay-panel overlay-right">
+                                <h1>Hello, Friend!</h1>
+                                <p>Enter your personal details and start journey with us</p>
+                                <button class="ghost signbutton" id="signUp">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 {{!-- about section --}}
 <section class="section-about" id="section-about">
@@ -118,16 +162,22 @@
     <div class="row">
         <div class="col-1-of-2">
             <div class="connect u-center-text">
-                <a href="mailto:hasanain0603@gmail.com"><i class="fas fa-envelope-square connect--icon u-padding-left" aria-hidden="true"></i></a>
-                <a href="https://www.linkedin.com/in/hasanainmohammed/"target="_blank"><i class="fab fa-linkedin connect--icon u-padding-left" aria-hidden="true"></i></a>
-                <a href="https://github.com/hasanainm" target="_blank"><i class="fab fa-github-square connect--icon u-padding-left" aria-hidden="true"></i></a>
+                <a href="mailto:hasanain0603@gmail.com"><i class="fas fa-envelope-square connect--icon u-padding-left"
+                        aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/hasanainmohammed/" target="_blank"><i
+                        class="fab fa-linkedin connect--icon u-padding-left" aria-hidden="true"></i></a>
+                <a href="https://github.com/hasanainm" target="_blank"><i
+                        class="fab fa-github-square connect--icon u-padding-left" aria-hidden="true"></i></a>
             </div>
         </div>
         <div class="col-1-of-2">
             <div class="connect u-center-text">
-                <a href="mailto:m.anam0603@gmail.com"><i class="fas fa-envelope-square connect--icon u-padding-left" aria-hidden="true"></i></a>
-                <a href="https://www.linkedin.com/in/anam-mohammad/" target="_blank"><i class="fab fa-linkedin connect--icon u-padding-left" aria-hidden="true"></i></a>
-                <a href="https://github.com/AnamAM" target="_blank"><i class="fab fa-github-square connect--icon u-padding-left" aria-hidden="true"></i></a>
+                <a href="mailto:m.anam0603@gmail.com"><i class="fas fa-envelope-square connect--icon u-padding-left"
+                        aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/anam-mohammad/" target="_blank"><i
+                        class="fab fa-linkedin connect--icon u-padding-left" aria-hidden="true"></i></a>
+                <a href="https://github.com/AnamAM" target="_blank"><i
+                        class="fab fa-github-square connect--icon u-padding-left" aria-hidden="true"></i></a>
             </div>
         </div>
     </div>

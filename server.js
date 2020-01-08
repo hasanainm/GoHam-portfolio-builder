@@ -19,7 +19,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // SASS middleware
-app.use (
+app.use(
   sassMiddleware({
     src: __dirname + '/sass',
     dest: __dirname + '/public',
