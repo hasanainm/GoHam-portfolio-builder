@@ -34,6 +34,7 @@
     /* when you click an element */
     &:active,
     &:focus {
+        border: none;
         outline: none;
         transform: translateY(-1px);
         box-shadow: 0 .5rem 1rem rgba($color-black, .2);
@@ -48,6 +49,5 @@
             z-index: 2;
         }
     }
-
 
 }

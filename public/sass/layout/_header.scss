@@ -2,15 +2,12 @@
     height: 95vh;
     background-image: linear-gradient(
         to right bottom, 
-        rgba($color-primary-light, 0.8), 
-        rgba($color-primary-dark, 0.8)), 
+        rgba($color-primary-light, 0.6), 
+        rgba($color-primary-dark, 0.6)), 
         url(../../img/plush-design-studio-l3N9Q27zULw-unsplash.jpg);
     background-size: cover;
     background-position: center;
     position: relative;
-     
-    /* clip-path is a property can be used to create a shape of an image */
-    // clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
     &__logo-box {
         position: absolute;
