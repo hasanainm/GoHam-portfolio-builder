@@ -8,13 +8,13 @@
     background-image: linear-gradient(
         to right bottom, 
         rgba($color-primary-light, 0.6), 
-        rgba($color-primary-dark, 0.6)), 
-        url("https://media.giphy.com/media/xTka05eaWBCJqg9Tig/source.gif");
+        rgba($color-primary-dark, 0.6));
     padding: 10rem;
+    position: relative;
 }
 
 .section-contact {
     background-color: $color-grey-light-1;
     padding: 10rem;
-    height: 65vh;
+    height: 90vh;
 }
