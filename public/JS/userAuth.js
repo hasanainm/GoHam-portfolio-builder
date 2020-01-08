@@ -3,7 +3,7 @@ $(function () {
   // Get the currently signed-in user. Only works when the auth state is changed.
   auth.onAuthStateChanged(function (user) {
     if (user) {
-      console.log(user)
+      console.log("User logged in")
     } else {
       console.log(user)
     }
@@ -17,10 +17,10 @@ $(function () {
     var name = $("#user-name").val().trim();
     var email = $("#user-email").val().trim();
     var password = $("#user-pass").val().trim();
-
+    // firebase authentication method for signup
     auth.createUserWithEmailAndPassword(email,name).then(function (cred) {
       console.log(cred.user)
-      // sending over the post data object to the back end. Once processed, the account will be created and the firebase uid will be inserted in the userid attribute in the User model.
+      // sending over the post data object to the back end. Once processed, the account will be created and the firebase uid will be inserted in the userid attribute in the User model along with the other attributes values.
       $.ajax("/api/useraccount", {
         type: "POST",
         data: {
@@ -44,7 +44,13 @@ $(function () {
 
   $("#sign-in").on("submit", function (event) {
     event.preventDefault();
-    
-
+    console.log("clicked")
+    // user information
+    var password = $("#sign-pass").val().trim();
+    var email = $("#sign-email").val().trim();
+    // firebase authentication method for signing in
+    auth.signInWithEmailAndPassword(email, password).then(function (cred) {
+      console.log(cred)
+  });
   })
 })
