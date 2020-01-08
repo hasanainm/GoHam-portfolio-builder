@@ -30,13 +30,9 @@
 
         }
     
-   &--animated-left {
-        animation: moveInLeftButton .5s ease-out .75s;
-        /* 0% styles on @keyframes moveInButton will be applied before the animation starts */
-        animation-fill-mode: backwards;
-    }
-    &--animated-right {
-        animation: moveInRightButton .5s ease-out .75s;
+   &--animated-bottom {
+       
+        animation: moveInBottom .5s ease-out .75s;
         /* 0% styles on @keyframes moveInButton will be applied before the animation starts */
         animation-fill-mode: backwards;
     }

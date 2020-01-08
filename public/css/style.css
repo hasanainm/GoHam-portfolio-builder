@@ -18,18 +18,10 @@
     opacity: 1;
     transform: translate(0); } }
 
-@keyframes moveInLeftButton {
+@keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateX(-3rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-@keyframes moveInRightButton {
-  0% {
-    opacity: 0;
-    transform: translateX(3rem); }
+    transform: translateY(3rem); }
   100% {
     opacity: 1;
     transform: translate(0); } }
@@ -124,13 +116,8 @@ body {
   background-color: #fff;
   color: #777; }
 
-.nbbtn--animated-left {
-  animation: moveInLeftButton .5s ease-out .75s;
-  /* 0% styles on @keyframes moveInButton will be applied before the animation starts */
-  animation-fill-mode: backwards; }
-
-.nbbtn--animated-right {
-  animation: moveInRightButton .5s ease-out .75s;
+.nbbtn--animated-bottom {
+  animation: moveInBottom .5s ease-out .75s;
   /* 0% styles on @keyframes moveInButton will be applied before the animation starts */
   animation-fill-mode: backwards; }
 

@@ -11,13 +11,13 @@ app.get("/api/useraccount", function(req,res){
 
 //POST route for user account creation
 app.post("/api/useraccount", function(req,res){
-
 //create takes an argument of an object descriving the item we want to insert into our table. In this case we must pass in an object with user name, email and pass
 db.User.create({
   name: req.body.name,
   email:req.body.email,
   password:req.body.password,
-  userID:req.body.userID
+  userid:req.body.userid
+  // userID:req.body.userID
 }).then(function(results){
   //we have access to the new User as an arguement inside of the callback function
   res.json(results)
