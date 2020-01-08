@@ -14,11 +14,11 @@ $(function () {
   $("#sign-up").on("submit", function (event) {
     event.preventDefault();
     console.log("clicked")
-    var name = $("#user-name").val().trim();
+    // var name = $("#user-name").val().trim();
     var email = $("#user-email").val().trim();
     var password = $("#user-pass").val().trim();
     // firebase authentication method for signup
-    auth.createUserWithEmailAndPassword(email,name).then(function (cred) {
+    auth.createUserWithEmailAndPassword(email, password).then(function (cred) {
       console.log(cred.user)
       // sending over the post data object to the back end. Once processed, the account will be created and the firebase uid will be inserted in the userid attribute in the User model along with the other attributes values.
       $.ajax("/api/useraccount", {
