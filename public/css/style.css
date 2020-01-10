@@ -75,7 +75,7 @@ body {
 
 .heading-secondary {
   font-family: "Lato", sans-serif;
-  color: #999;
+  color: #777;
   display: block;
   font-size: 4rem;
   font-weight: 400;
@@ -84,7 +84,7 @@ body {
 
 .heading-tertiary {
   font-family: "Lato", sans-serif;
-  color: #999;
+  color: #777;
   display: block;
   font-size: 3rem;
   font-weight: 400;
@@ -361,7 +361,7 @@ button.ghost {
     transform: scale(0.95); }
 
 .connect--icon {
-  color: #777;
+  color: #999;
   font-size: 4rem;
   cursor: pointer;
   transition: transform .3s;
@@ -382,8 +382,16 @@ button.ghost {
     clip-path: circle(50% at 50% 50%);
     transform: skewX(12deg);
     position: relative; }
-  .profile__img {
+  .profile__img-anu {
+    width: 150%;
+    left: -9rem;
+    zoom: 1.1;
+    position: relative;
+    backface-visibility: hidden; }
+  .profile__img-ashu {
     width: 100%;
+    top: -7rem;
+    position: relative;
     backface-visibility: hidden; }
   .profile__caption {
     position: absolute;
@@ -400,7 +408,9 @@ button.ghost {
   .profile:hover .profile__caption {
     opacity: 1;
     transform: translate(-50%, 50%); }
-  .profile:hover .profile__img {
+  .profile:hover .profile__img-anu {
+    filter: blur(2px) brightness(80%); }
+  .profile:hover .profile__img-ashu {
     filter: blur(2px) brightness(80%); }
 
 .steps-card {
@@ -410,6 +420,7 @@ button.ghost {
   text-align: center;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  color: #999;
   transition: transform .3s; }
   .steps-card__icon {
     font-size: 6rem;
@@ -556,7 +567,7 @@ button.ghost {
   .navigation__icon, .navigation__icon::before, .navigation__icon::after {
     width: 3rem;
     height: 2px;
-    background-color: #333;
+    background-color: #777;
     display: inline-block; }
   .navigation__icon::before, .navigation__icon::after {
     content: "";

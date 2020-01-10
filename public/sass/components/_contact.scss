@@ -1,7 +1,7 @@
 .connect {
 
     &--icon {
-        color: $color-grey-dark;
+        color: $color-grey-dark-2;
         font-size: 4rem;
         cursor: pointer;
         transition: transform .3s;
@@ -29,9 +29,19 @@
         transform: skewX(12deg);
         position: relative;
     }
+    
+    &__img-anu {
+        width: 150%;
+        left: -9rem;
+        zoom: 1.1;
+        position: relative;
+        backface-visibility: hidden;
+    }
 
-    &__img {
+    &__img-ashu {
         width: 100%;
+        top: -7rem;
+        position: relative;
         backface-visibility: hidden;
     }
 
@@ -54,7 +64,11 @@
         transform: translate(-50%, 50%);
     }
  
-    &:hover &__img {
+    &:hover &__img-anu {
+        filter: blur(2px) brightness(80%);
+    }
+
+    &:hover &__img-ashu {
         filter: blur(2px) brightness(80%);
     }
 }
