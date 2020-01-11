@@ -1,48 +1,66 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
-$(function () {
+$(document).ready(function () {
   // Get the currently signed-in user. Only works when the auth state is changed.
   auth.onAuthStateChanged(function (user) {
     if (user) {
-      console.log("User logged in")
+      //creating a logout button dynamically only when user is logged in
+      console.log("user signed in as " + user.email)
+      var navbutton = $("<li>");
+      navbutton.addClass("navigation__item");
+      var link = $("<a>Logout</a>").attr("href", " ").addClass("navigation__link").attr("id", "logout");
+      link.appendTo(navbutton);
+      $(".navigation__list").append(navbutton)
+
+      document.getElementById("buttongetstarted").style.display = "none";
+
     } else {
-      console.log(user)
+      console.log("user logged out")
+
     }
+    $("#logout").on("click", function (event) {
+      auth.signOut().then(function (action) {
+      }).catch(function (error) {
+        console.log(error)
+      });
+    })
   });
 
 
 
-  $("#sign-up").on("submit", function (event) {
+  $("#sign-up").on("click", function (event) {
     event.preventDefault();
     console.log("clicked")
-    // var name = $("#user-name").val().trim();
+    var name = $("#user-name").val().trim();
     var email = $("#user-email").val().trim();
     var password = $("#user-pass").val().trim();
     // firebase authentication method for signup
     auth.createUserWithEmailAndPassword(email, password).then(function (cred) {
-      console.log(cred.user)
-      // sending over the post data object to the back end. Once processed, the account will be created and the firebase uid will be inserted in the userid attribute in the User model along with the other attributes values.
       $.ajax("/api/useraccount", {
         type: "POST",
         data: {
-          name:name,
-          email:email,
-          password:password,
-          userid:cred.user.uid
+          name: name,
+          email: email,
+          password: password,
+          userid: cred.user.uid
         }
-      }).then(
-        function (data) {
-          console.log("created new user")
-          $("#user-name").val("")
-          $("#user-email").val("")
-          $("#user-pass").val("")
-        }
-      );
+      }).then(function (data) {
+       window.alert("Thanks for signing up " + name + " please sign in and navigate as you wish!")
+        $("#user-name").val("")
+        $("#user-email").val("")
+        $("#user-pass").val("")
+      })
     });
   });
 
+  $("#logout").on("click", function (event) {
+    auth.signOut().then(function (action) {
+    }).catch(function (error) {
+      console.log(error)
+    });
+  })
 
 
-  $("#sign-in").on("submit", function (event) {
+  $("#sign-in").on("click", function (event) {
     event.preventDefault();
     console.log("clicked")
     // user information
@@ -50,7 +68,10 @@ $(function () {
     var email = $("#sign-email").val().trim();
     // firebase authentication method for signing in
     auth.signInWithEmailAndPassword(email, password).then(function (cred) {
+      window.location = "/";
       console.log(cred)
-  });
+    });
   })
+
+
 })
