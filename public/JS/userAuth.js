@@ -14,7 +14,7 @@ $(function () {
   $("#sign-up").on("submit", function (event) {
     event.preventDefault();
     console.log("clicked")
-    // var name = $("#user-name").val().trim();
+    var name = $("#user-name").val().trim();
     var email = $("#user-email").val().trim();
     var password = $("#user-pass").val().trim();
     // firebase authentication method for signup
