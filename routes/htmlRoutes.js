@@ -6,5 +6,9 @@ module.exports = function (app) {
     res.render("index");
   });
 
+  app.get("/profilePage", function (req, res) {
+    res.render("profilePage");
+  });
+
 }
 
