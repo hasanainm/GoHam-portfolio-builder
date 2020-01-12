@@ -1,7 +1,6 @@
 body { 
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    /* font-size: 16px; */
     line-height: 1.7;
     color: $color-grey-dark;
     padding: 3rem 3rem 0 3rem; 
@@ -66,4 +65,32 @@ body {
     &:not(:last-child) {
         margin-bottom: 3rem;
     }
+}
+
+// profile page 
+.profile {
+
+    &__heading{
+        // position: relative;
+        // top: 50%;  
+        font-size: 3rem;
+        width: 18rem;
+        height: 4rem;
+        margin: 0 auto;
+        border-right: 2px solid $color-grey-dark;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        // transform: translateY(-50%);    
+    }
+}
+
+.heading-quad {
+    font-family: "Lato", sans-serif;
+    color: $color-grey-dark;
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: .5rem;
+    text-transform: uppercase;
 }

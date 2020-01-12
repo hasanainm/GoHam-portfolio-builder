@@ -26,6 +26,18 @@
     opacity: 1;
     transform: translate(0); } }
 
+@keyframes typewriter {
+  from {
+    width: 0; }
+  to {
+    width: 50rem; } }
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: #777; }
+  to {
+    border-right-color: transparent; } }
+
 *,
 *::after,
 *::before {
@@ -44,7 +56,6 @@ body {
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  /* font-size: 16px; */
   line-height: 1.7;
   color: #777;
   padding: 3rem 3rem 0 3rem; }
@@ -96,6 +107,25 @@ body {
   color: #999; }
   .paragraph:not(:last-child) {
     margin-bottom: 3rem; }
+
+.profile__heading {
+  font-size: 3rem;
+  width: 18rem;
+  height: 4rem;
+  margin: 0 auto;
+  border-right: 2px solid #777;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden; }
+
+.heading-quad {
+  font-family: "Lato", sans-serif;
+  color: #777;
+  display: block;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: .5rem;
+  text-transform: uppercase; }
 
 .u-center-text {
   text-align: center !important; }
@@ -164,6 +194,86 @@ body {
   animation: moveInBottom .5s ease-out .75s;
   /* 0% styles on @keyframes moveInButton will be applied before the animation starts */
   animation-fill-mode: backwards; }
+
+.composition {
+  position: relative; }
+  .composition__photo {
+    width: 55%;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all .2s;
+    outline-offset: 2rem; }
+    .composition__photo--p1 {
+      left: 0;
+      top: -2rem; }
+    .composition__photo--p2 {
+      right: 0;
+      top: 2rem; }
+    .composition__photo--p3 {
+      left: 20%;
+      top: 10rem; }
+    .composition__photo:hover {
+      outline: 1.5rem solid #f0c2a3;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 20; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }
+
+.connect--icon {
+  color: #999;
+  font-size: 4rem;
+  cursor: pointer;
+  transition: transform .3s;
+  margin-top: -5rem; }
+  .connect--icon:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
+
+.profile {
+  margin-left: 35%;
+  transform: skewX(-12deg); }
+  .profile__shape {
+    width: 20rem;
+    height: 20rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: skewX(12deg);
+    position: relative; }
+  .profile__img-anu {
+    width: 150%;
+    left: -9rem;
+    zoom: 1.1;
+    position: relative;
+    backface-visibility: hidden; }
+  .profile__img-ashu {
+    width: 100%;
+    top: -7rem;
+    position: relative;
+    backface-visibility: hidden; }
+  .profile__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden; }
+  .profile:hover .profile__caption {
+    opacity: 1;
+    transform: translate(-50%, 50%); }
+  .profile:hover .profile__img-anu {
+    filter: blur(2px) brightness(80%); }
+  .profile:hover .profile__img-ashu {
+    filter: blur(2px) brightness(80%); }
 
 * {
   /* setting it to border box so the padding stays within the box model and doesnt make the width bigger */
@@ -333,85 +443,17 @@ button.ghost {
 .nonBS-container.nonBS-container.right-panel-active .overlay-right {
   transform: translateX(20%); }
 
-.composition {
-  position: relative; }
-  .composition__photo {
-    width: 55%;
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4);
-    border-radius: 2px;
-    position: absolute;
-    z-index: 10;
-    transition: all .2s;
-    outline-offset: 2rem; }
-    .composition__photo--p1 {
-      left: 0;
-      top: -2rem; }
-    .composition__photo--p2 {
-      right: 0;
-      top: 2rem; }
-    .composition__photo--p3 {
-      left: 20%;
-      top: 10rem; }
-    .composition__photo:hover {
-      outline: 1.5rem solid #f0c2a3;
-      transform: scale(1.05) translateY(-0.5rem);
-      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
-      z-index: 20; }
-  .composition:hover .composition__photo:not(:hover) {
-    transform: scale(0.95); }
+.profile__animation-typewriter {
+  animation: typewriter 4s steps(44) 1s 1 normal both, blinkTextCursor 1s steps(44) infinite normal; }
 
-.connect--icon {
-  color: #999;
-  font-size: 4rem;
-  cursor: pointer;
-  transition: transform .3s;
-  margin-top: -5rem; }
-  .connect--icon:hover {
-    transform: translateY(-1.5rem) scale(1.03); }
+.box1 {
+  background-image: linear-gradient(to right, #f0dfc8, #ebbda3); }
 
-.profile {
-  margin-left: 35%;
-  transform: skewX(-12deg); }
-  .profile__shape {
-    width: 20rem;
-    height: 20rem;
-    float: left;
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    shape-outside: circle(50% at 50% 50%);
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
-    transform: skewX(12deg);
-    position: relative; }
-  .profile__img-anu {
-    width: 150%;
-    left: -9rem;
-    zoom: 1.1;
-    position: relative;
-    backface-visibility: hidden; }
-  .profile__img-ashu {
-    width: 100%;
-    top: -7rem;
-    position: relative;
-    backface-visibility: hidden; }
-  .profile__caption {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 20%);
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 2rem;
-    text-align: center;
-    opacity: 0;
-    transition: all .5s;
-    backface-visibility: hidden; }
-  .profile:hover .profile__caption {
-    opacity: 1;
-    transform: translate(-50%, 50%); }
-  .profile:hover .profile__img-anu {
-    filter: blur(2px) brightness(80%); }
-  .profile:hover .profile__img-ashu {
-    filter: blur(2px) brightness(80%); }
+.box2 {
+  background-image: linear-gradient(to right, #f0dfc8, #ebbda3); }
+
+.box3 {
+  background-image: linear-gradient(to right, #f0dfc8, #ebbda3); }
 
 .steps-card {
   background-color: rgba(255, 255, 255, 0.6);
@@ -610,3 +652,10 @@ button.ghost {
   background-color: #f7f7f7;
   padding: 10rem;
   height: 90vh; }
+
+.section-profile {
+  font-family: "Lato", sans-serif;
+  color: #777;
+  padding: 3rem 3rem 0 3rem;
+  height: 95vh;
+  background-color: #eee; }
