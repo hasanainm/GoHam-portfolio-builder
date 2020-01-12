@@ -44,6 +44,7 @@ $(document).ready(function () {
           userid: cred.user.uid
         }
       }).then(function (data) {
+        console.log(data)
         window.alert("Thanks for signing up " + name + " please sign in and navigate as you wish!")
         $("#user-name").val("")
         $("#user-email").val("")
@@ -51,13 +52,6 @@ $(document).ready(function () {
       })
     });
   });
-
-  $("#logout").on("click", function (event) {
-    auth.signOut().then(function (action) {
-    }).catch(function (error) {
-      console.log(error)
-    });
-  })
 
 
   $("#sign-in").on("click", function (event) {
@@ -68,10 +62,21 @@ $(document).ready(function () {
     var email = $("#sign-email").val().trim();
     // firebase authentication method for signing in
     auth.signInWithEmailAndPassword(email, password).then(function (cred) {
-      window.location = "/";
-      console.log(cred)
-    });
+      $.ajax("/api/useraccount", {
+        type: "GET"
+      }).then(function (data) {
+        for (var i = 0; i < data.length; i++) {
+          if (data[i].userid == cred.user.uid) {
+            window.location = "/profilePage/" + data[i].id
+          }
+        }
+      });
+    }).catch(function (error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      window.alert(errorMessage);
+      $("#sign-pass").val("")
+      $("#sign-email").val("")
+    })
   })
-
-
 })
