@@ -11,7 +11,22 @@ $(document).ready(function () {
       link.appendTo(navbutton);
       $(".navigation__list").append(navbutton)
 
+      //hiding get started button after user has signed in.
       document.getElementById("buttongetstarted").style.display = "none";
+      // click function on navigation "portfolio profile" link. Making it easier for the user to navigate. If the user wants to return to the home screen and decides to go back to the portfolio profile page they can do so.
+      document.getElementById("profileLink").addEventListener("click", function (event) {
+        console.log("clicked");
+        event.preventDefault();
+        $.ajax("/api/useraccount", {
+          type: "GET"
+        }).then(function (data) {
+          for (var i = 0; i < data.length; i++) {
+            if (data[i].userid == user.uid) {
+              window.location = "/profilePage/" + data[i].id
+            }
+          }
+        });
+      })
 
     } else {
       console.log("user logged out")
@@ -52,6 +67,7 @@ $(document).ready(function () {
       })
     });
   });
+  
 
 
   $("#sign-in").on("click", function (event) {
