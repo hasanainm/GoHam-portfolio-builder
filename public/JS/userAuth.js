@@ -44,7 +44,7 @@ $(document).ready(function () {
           userid: cred.user.uid
         }
       }).then(function (data) {
-       window.alert("Thanks for signing up " + name + " please sign in and navigate as you wish!")
+        window.alert("Thanks for signing up " + name + " please sign in and navigate as you wish!")
         $("#user-name").val("")
         $("#user-email").val("")
         $("#user-pass").val("")

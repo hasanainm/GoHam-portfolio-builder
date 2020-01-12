@@ -24,7 +24,7 @@
       transform: translate(0);
   }
 }
-@keyframes moveInBottom{
+@keyframes moveInBottom {
     0% {
       opacity: 0;
       transform: translateY(3rem);
@@ -33,4 +33,16 @@
       opacity: 1;
       transform: translate(0);
     }
+  }
+
+
+  // profile page
+  @keyframes typewriter {
+    from{width: 0;}
+    to{width: 50rem;}
+  }
+
+  @keyframes blinkTextCursor {
+    from{border-right-color: $color-grey-dark;}
+    to{border-right-color: transparent;}
   }
