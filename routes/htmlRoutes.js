@@ -12,7 +12,7 @@ module.exports = function (app) {
   });
 
   // 
-  app.get("/account/:id", function (req, res) {
+  app.get("/profilePage/:id", function (req, res) {
     db.User.findOne({
       include: [
         db.BackEndSkills,
@@ -29,3 +29,4 @@ module.exports = function (app) {
     });
   });
 }
+

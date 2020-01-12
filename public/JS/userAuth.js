@@ -53,13 +53,6 @@ $(document).ready(function () {
     });
   });
 
-  $("#logout").on("click", function (event) {
-    auth.signOut().then(function (action) {
-    }).catch(function (error) {
-      console.log(error)
-    });
-  })
-
 
   $("#sign-in").on("click", function (event) {
     event.preventDefault();
@@ -74,7 +67,7 @@ $(document).ready(function () {
       }).then(function (data) {
         for (var i = 0; i < data.length; i++) {
           if (data[i].userid == cred.user.uid) {
-            window.location = "/account/" + data[i].id
+            window.location = "/profilePage/" + data[i].id
           }
         }
       });
