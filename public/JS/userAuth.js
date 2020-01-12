@@ -44,7 +44,8 @@ $(document).ready(function () {
           userid: cred.user.uid
         }
       }).then(function (data) {
-       window.alert("Thanks for signing up " + name + " please sign in and navigate as you wish!")
+        console.log(data)
+        window.alert("Thanks for signing up " + name + " please sign in and navigate as you wish!")
         $("#user-name").val("")
         $("#user-email").val("")
         $("#user-pass").val("")
@@ -68,10 +69,21 @@ $(document).ready(function () {
     var email = $("#sign-email").val().trim();
     // firebase authentication method for signing in
     auth.signInWithEmailAndPassword(email, password).then(function (cred) {
-      window.location = "/";
-      console.log(cred)
-    });
+      $.ajax("/api/useraccount", {
+        type: "GET"
+      }).then(function (data) {
+        for (var i = 0; i < data.length; i++) {
+          if (data[i].userid == cred.user.uid) {
+            window.location = "/account/" + data[i].id
+          }
+        }
+      });
+    }).catch(function (error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      window.alert(errorMessage);
+      $("#sign-pass").val("")
+      $("#sign-email").val("")
+    })
   })
-
-
 })

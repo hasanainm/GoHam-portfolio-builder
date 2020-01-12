@@ -4,8 +4,8 @@ module.exports = function(app) {
 // Get route for getting all of our users
 app.get("/api/useraccount", function(req,res){
   // findAll will give us all the records for the user
-  db.User.findAll({}).then(function(users){
-    res.json(users)
+  db.User.findAll({}).then(function(data){
+    res.json(data)
   })
 })
 
