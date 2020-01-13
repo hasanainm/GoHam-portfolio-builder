@@ -3,11 +3,11 @@ var db = require("../models");
 module.exports = function (app) {
 
   app.get("/", function (req, res) {
-      // findAll will give us all the records for the user
-  db.User.findAll({}).then(function(results){
-    res.render("index",{ data: results })
-    // console.log(results[0].dataValues.id)
-  })
+    // findAll will give us all the records for the user
+    db.User.findAll({}).then(function (results) {
+      res.render("index", { data: results })
+      // console.log(results[0].dataValues.id)
+    })
   });
 
 
@@ -24,12 +24,13 @@ module.exports = function (app) {
         db.FrontEndSkills,
         db.OtherSkills,
         db.ProfileName,
-        db.Project
+        db.Project,
+        db.Resume
       ],
       where: { id: req.params.id }
     }).then(function (results) {
       res.render("profilePage", { data: results });
-      // console.log(results)
+      console.log(results);
     });
   });
 }

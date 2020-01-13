@@ -2,6 +2,7 @@
 $(document).ready(function () {
   // Get the currently signed-in user. Only works when the auth state is changed.
   auth.onAuthStateChanged(function (user) {
+
     if (user) {
       //creating a logout button dynamically only when user is logged in
       console.log("user signed in as " + user.email)
@@ -27,11 +28,12 @@ $(document).ready(function () {
           }
         });
       })
-
-    } else {
-      console.log("user logged out")
-
     }
+    
+    else {
+      console.log("user logged out")
+    }
+
     $("#logout").on("click", function (event) {
       auth.signOut().then(function (action) {
       }).catch(function (error) {
@@ -67,7 +69,7 @@ $(document).ready(function () {
       })
     });
   });
-  
+
 
 
   $("#sign-in").on("click", function (event) {
