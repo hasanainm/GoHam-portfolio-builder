@@ -73,15 +73,15 @@ body {
     &__heading{
         // position: relative;
         // top: 50%;  
-        font-size: 3rem;
-        width: 18rem;
-        height: 4rem;
         margin: 0 auto;
-        border-right: 2px solid $color-grey-dark;
-        text-align: center;
-        white-space: nowrap;
-        overflow: hidden;
-        // transform: translateY(-50%);    
+        text-align: center;  
+        font-family: "Lato", sans-serif;
+        color: $color-grey-dark;
+        display: block;
+        font-size: 3rem;
+        font-weight: 400;
+        letter-spacing: .5rem;
+        text-transform: uppercase;
     }
 }
 

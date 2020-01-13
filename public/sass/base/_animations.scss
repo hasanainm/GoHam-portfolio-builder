@@ -36,13 +36,3 @@
   }
 
 
-  // profile page
-  @keyframes typewriter {
-    from{width: 0;}
-    to{width: 50rem;}
-  }
-
-  @keyframes blinkTextCursor {
-    from{border-right-color: $color-grey-dark;}
-    to{border-right-color: transparent;}
-  }
