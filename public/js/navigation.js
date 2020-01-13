@@ -11,17 +11,3 @@
 //     }
 // });
 
-document.getElementById("profileLink").addEventListener("click", function (event) {
-    console.log("clicked");
-
-    event.preventDefault();
-    $.ajax("/api/useraccount", {
-        type: "GET"
-    }).then(function (data) {
-        for (var i = 0; i < data.length; i++) {
-            if (data[i].userid == Credential.user.uid) {
-                window.location = "/profilePage" + data[i].id
-            }
-        }
-    })
-})
