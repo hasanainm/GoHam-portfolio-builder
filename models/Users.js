@@ -37,6 +37,9 @@ module.exports = function (sequelize, DataTypes) {
     User.hasOne(models.Framework, {
       onDelete: "cascade"
     });
+    User.hasOne(models.Resume, {
+      onDelete: "cascade"
+    });
   }
   return User;
 };

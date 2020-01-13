@@ -11,9 +11,6 @@ module.exports = function (sequelize, DataTypes) {
     },
     twitter: {
       type: DataTypes.STRING
-    },
-    PDF: {
-      type: DataTypes.STRING
     }
   });
   
