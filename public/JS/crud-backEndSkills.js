@@ -1,8 +1,10 @@
 //DOM must load completely
 $(document).ready(function () {
-  var userid = $("#data").attr("data-id");
-  console.log(userid)
-
+  var id = $("#data").attr("data-id");
+  console.log(id)
+  var userid = parseInt(id)
+  console.log(typeof userid);
+  //sending post request 
   $("#back-end").on("click", function (event) {
     console.log("hi")
     event.preventDefault();
@@ -19,4 +21,24 @@ $(document).ready(function () {
       location.reload();
     });
   });
+
+  //sending the update request
+  $("#update-back-end-skill").on("submit", function (event) {
+    event.preventDefault();
+    var id = $("[name=id]").val().trim();
+
+    var updateSkills = {
+      nameOfSkill: $("#update-back-end-skill [name=skill]").val().trim()
+    };
+    $.ajax("/api/updatebackendskills/" + id, {
+      type: "PUT",
+      data: updateSkills
+    }).then(
+      function () {
+        console.log("updated id " + id);
+        location.reload();
+      }
+    )
+  })
+
 })

@@ -17,7 +17,6 @@ module.exports = function (app) {
       email: req.body.email,
       password: req.body.password,
       userid: req.body.userid
-      // userID:req.body.userID
     }).then(function (results) {
       //we have access to the new User as an arguement inside of the callback function
       res.json(results)
@@ -34,11 +33,23 @@ module.exports = function (app) {
 
     db.BackEndSkills.create({
       nameOfSkill: nameOfSkill,
-      userid: req.params.userid
+      UserId: req.params.userid
     }).then(function (result) {
       res.json(result);
     });
   });
 
+  app.put("/api/updatebackendskills/:userid", function (req, res) {
+    db.BackEndSkills.update({
+      nameOfSkill: req.body.nameOfSkill,
+      UserId: req.params.UserId
+    }, {
+      where: {
+        id: req.params.userid
+      }
+    }).then(function (result) {
+      res.json(result);
+    });
+  });
 
 };

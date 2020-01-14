@@ -24,12 +24,14 @@ module.exports = function (app) {
         db.FrontEndSkills,
         db.OtherSkills,
         db.ProfileName,
-        db.Project
+        db.Project,
+        db.Resume,
+        db.Links
       ],
       where: { id: req.params.id }
     }).then(function (results) {
       res.render("profilePage", { data: results });
-      // console.log(results)
+      console.log(req.params.id)
     });
   });
 }

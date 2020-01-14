@@ -14,7 +14,7 @@
             <div class="form__group u-center-text u-margin-top-small">
                 <input type="text" class="form__input" placeholder="First Name" required>
                 <input type="text" class="form__input" placeholder="Last Name" required>
-                
+
             </div>
         </h3>
     </div>
@@ -38,10 +38,20 @@
     <div class="box4 u-center-text u-margin-top-big">
         <h3 class="heading-quad">
             Back-End Skills
-            <div class="form__group u-center-text u-margin-top-small" id="data" data-id={{data.id}} >
+            <div class="form__group u-center-text u-margin-top-small" id="data" data-id={{data.id}}>
                 <input type="text" class="form__input" placeholder="Back-End Skills" id="back-end-value" required>
                 <button type="button" id="back-end" class="btn btn-dark">Submit</button>
             </div>
+            <h2>Update a Plan</h2>
+            <form id="update-back-end-skill" class="button-size">
+                <select name="id">
+                    {{#each data.dataValues.BackEndSkills}}
+                    <option value="{{dataValues.id}}">{{dataValues.nameOfSkill}}</option>
+                    {{/each}}
+                </select>
+                <textarea type="text" name="skill" placeholder="plan"></textarea>
+                <button type="submit">Update Plan!</button>
+            </form>
         </h3>
     </div>
     <div class="box5 u-center-text u-margin-top-big">
