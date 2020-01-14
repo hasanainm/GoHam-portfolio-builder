@@ -32,12 +32,25 @@ module.exports = function (app) {
 
 
   // CRUD - OtherSkills 
-  app.post("/api/otherskills/:UserId", function (req, res) {
+  app.post("/api/otherskills/:userid", function (req, res) {
     var nameOfSkill = req.body.nameOfSkill;
 
     db.OtherSkills.create({
       nameOfSkill: nameOfSkill,
-      UserId: req.param.UserId
+      UserId: req.params.userid
+    }).then(function (result) {
+      res.json(result);
+    });
+  });
+
+  app.put("/api/updateotherskills/:userid", function (req, res) {
+    db.OtherSkills.update({
+      nameOfSkill: req.body.nameOfSkill,
+      UserId: req.params.UserId
+    }, {
+      where: {
+        id: req.params.userid
+      }
     }).then(function (result) {
       res.json(result);
     });

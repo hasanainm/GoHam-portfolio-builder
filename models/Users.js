@@ -22,19 +22,19 @@ module.exports = function (sequelize, DataTypes) {
     User.hasOne(models.ProfileName, {
       onDelete: "cascade"
     });
-    User.hasOne(models.Project, {
+    User.hasMany(models.Project, {
       onDelete: "cascade"
     });
-    User.hasOne(models.OtherSkills, {
+    User.hasMany(models.OtherSkills, {
       onDelete: "cascade"
     });
-    User.hasOne(models.BackEndSkills, {
+    User.hasMany(models.BackEndSkills, {
       onDelete: "cascade"
     });
-    User.hasOne(models.FrontEndSkills, {
+    User.hasMany(models.FrontEndSkills, {
       onDelete: "cascade"
     });
-    User.hasOne(models.Framework, {
+    User.hasMany(models.Framework, {
       onDelete: "cascade"
     });
     User.hasOne(models.Resume, {

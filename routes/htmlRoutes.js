@@ -25,12 +25,13 @@ module.exports = function (app) {
         db.OtherSkills,
         db.ProfileName,
         db.Project,
+        db.Links,
         db.Resume
       ],
       where: { id: req.params.id }
     }).then(function (results) {
       res.render("profilePage", { data: results });
-      console.log(results);
+      console.log(req.params.id);
     });
   });
 }
