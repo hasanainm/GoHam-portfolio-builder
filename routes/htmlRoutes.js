@@ -31,7 +31,7 @@ module.exports = function (app) {
       where: { id: req.params.id }
     }).then(function (results) {
       res.render("profilePage", { data: results });
-      console.log(req.params.id)
+      console.log(results)
     });
   });
 }

@@ -27,7 +27,7 @@ module.exports = function (app) {
         res.json(err)
       })
   })
-
+  //POST route for storing the skill text in the database
   app.post("/api/backendskills/:userid", function (req, res) {
     var nameOfSkill = req.body.nameOfSkill;
 
@@ -38,13 +38,24 @@ module.exports = function (app) {
       res.json(result);
     });
   });
-
+  // PUT route for updating the skill 
   app.put("/api/updatebackendskills/:userid", function (req, res) {
     db.BackEndSkills.update({
-      nameOfSkill: req.body.nameOfSkill,
-      UserId: req.params.UserId
+      nameOfSkill: req.body.nameOfSkill
     }, {
       where: {
+        id: req.params.userid
+      }
+    }).then(function (result) {
+      res.json(result);
+    });
+  });
+
+
+  app.delete("/api/deletebackendskills/:userid", function (req, res) {
+    db.BackEndSkills.destroy({
+
+      where:{
         id: req.params.userid
       }
     }).then(function (result) {

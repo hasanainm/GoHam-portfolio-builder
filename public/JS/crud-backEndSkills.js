@@ -41,4 +41,21 @@ $(document).ready(function () {
     )
   })
 
-})
+  $(".delete-back-end-skill").on("click", function (event) {
+    event.preventDefault();
+
+    var id = $(".delete-back-end-skill").data("deleteid");
+    console.log(id);
+    console.log("clicked");
+
+    $.ajax("/api/deletebackendskills/" + id, {
+      type: "DELETE"
+    }).then(
+      function () {
+        console.log("deleted id", id);
+        location.reload();
+      }
+    );
+  });
+
+});
