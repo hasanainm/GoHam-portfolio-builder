@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
   var id = $("#data").attr("data-id");
   console.log(id)
   var userid = parseInt(id)
@@ -21,4 +21,23 @@ $(document).ready(function(){
     });
   });
 })
-  
+
+//sending the update request
+$("#update-framework-skill").on("submit", function (event) {
+  event.preventDefault();
+  var id = $("[name=idframework]").val().trim();
+  console.log(id)
+  var updateSkills = {
+    nameOfSkill: $("#update-framework-skill [name=frameworkskill]").val().trim()
+  };
+  console.log(updateSkills)
+  $.ajax("/api/framework/" + id, {
+    type: "PUT",
+    data: updateSkills
+  }).then(
+    function () {
+      console.log("updated id " + id);
+      location.reload();
+    }
+  )
+})

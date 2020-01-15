@@ -75,15 +75,25 @@
             </div>
                 <h2>Update a skill</h2>
             <form id="update-framework-skill" class="button-size">
-                <select name="id">
+                <select name="idframework">
                     {{#each data.dataValues.Frameworks}}
                     <option value="{{dataValues.id}}">{{dataValues.nameOfSkill}}</option>
                     {{/each}}
                 </select>
-                <textarea type="text" name="skill" placeholder="Update"></textarea>
+                <textarea type="text" name="frameworkskill" placeholder="Update"></textarea>
                 <button type="submit">Update Skill!</button>
             </form>
         </h3>
+            <ul>
+            {{#each data.dataValues.Frameworks}}
+            <li>
+                <p>
+                    {{dataValues.id}} {{dataValues.nameOfSkill}}
+                    <button data-deleteid="{{dataValues.id}}" class="delete-framework-skill">Delete Plan!</button>
+                </p>
+            </li>
+            {{/each}}
+        </ul>
     </div>
 
     <div class="box6 u-center-text u-margin-top-big">

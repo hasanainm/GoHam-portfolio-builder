@@ -65,7 +65,8 @@ module.exports = function (app) {
 
   // routes for BackEndSkills model ends here
   //routes for framework begins here
-  //route for adding skill to the database
+
+  //route for adding skill for framework DB
   app.post("/api/framework/:userid", function (req, res) {
     var nameOfSkill = req.body.nameOfSkill;
   
@@ -76,4 +77,18 @@ module.exports = function (app) {
       res.json(result);
     });
   });
+  
+  // PUT route for updating the skill for framework DB
+  app.put("/api/framework/:userid", function (req, res) {
+    db.Framework.update({
+      nameOfSkill: req.body.nameOfSkill
+    }, {
+      where: {
+        id: req.params.userid
+      }
+    }).then(function (result) {
+      res.json(result);
+    });
+  });
 };
+
