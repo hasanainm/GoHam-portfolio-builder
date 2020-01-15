@@ -74,6 +74,18 @@
                 <button type="submit">Update Plan!</button>
             </form>
         </h3>
+
+        <ul>
+            {{#each data.dataValues.OtherSkills}}
+            <li>
+                <p>
+                    {{dataValues.id}} {{dataValues.nameOfSkill}}
+
+                    <button data-deleteid="{{dataValues.id}}" class="delete-other-skills">Delete Plan!</button>
+                </p>
+            </li>
+            {{/each}}
+        </ul>
     </div>
 
     <div class="box7 u-center-text u-margin-top-big">

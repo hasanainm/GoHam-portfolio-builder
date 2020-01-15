@@ -45,8 +45,8 @@ module.exports = function (app) {
 
   app.put("/api/updateotherskills/:userid", function (req, res) {
     db.OtherSkills.update({
-      nameOfSkill: req.body.nameOfSkill,
-      UserId: req.params.UserId
+      nameOfSkill: req.body.nameOfSkill
+
     }, {
       where: {
         id: req.params.userid
@@ -55,6 +55,18 @@ module.exports = function (app) {
       res.json(result);
     });
   });
+
+  app.delete("/api/deleteotherskills/:userid", function (req, res) {
+    db.OtherSkills.destroy({
+
+      where: {
+        id: req.params.userid
+      }
+    }).then(function (result) {
+      res.json(result);
+    });
+  });
+
 
 
   // CRUD - ProfileName 

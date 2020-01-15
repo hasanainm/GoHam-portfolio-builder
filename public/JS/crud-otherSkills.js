@@ -21,7 +21,7 @@ $(document).ready(function () {
     $("#update-other-skills").on("submit", function (event) {
         event.preventDefault();
         var id = $("[name=id]").val().trim();
-        
+
         var updateSkills = {
             nameOfSkill: $("#update-other-skills [name=skill]").val().trim()
         };
@@ -35,4 +35,27 @@ $(document).ready(function () {
             }
         )
     })
+
+    $(".delete-other-skills").on("click", function (event) {
+        event.preventDefault();
+
+        var id = $(".delete-other-skills").data("deleteid");
+        console.log(id);
+        console.log("clicked");
+
+        // Send the DELETE request.
+        $.ajax("/api/deleteotherskills/" + id, {
+            type: "DELETE"
+        }).then(
+            function () {
+                console.log("deleted id ", id);
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
+
+
+
+
 });
