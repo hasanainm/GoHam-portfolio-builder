@@ -63,7 +63,7 @@
                 <input type="text" class="form__input" placeholder="Other Skills" id="other-skills-value" required>
                 <button type="button" id="other-skills" class="btn btn-dark">Submit</button>
             </div>
-            <h2>Update a Plan</h2>
+            <h2>Update Other Skills</h2>
             <form id="update-other-skills" class="button-size">
                 <select name="id">
                     {{#each data.dataValues.OtherSkills}}
@@ -71,7 +71,7 @@
                     {{/each}}
                 </select>
                 <textarea type="text" name="skill" placeholder="Update"></textarea>
-                <button type="submit">Update Plan!</button>
+                <button type="submit">update other skill</button>
             </form>
         </h3>
 
@@ -81,24 +81,41 @@
                 <p>
                     {{dataValues.id}} {{dataValues.nameOfSkill}}
 
-                    <button data-deleteid="{{dataValues.id}}" class="delete-other-skills">Delete Plan!</button>
+                    <button data-deleteid="{{dataValues.id}}" class="delete-other-skills">delete other skill</button>
                 </p>
             </li>
             {{/each}}
         </ul>
     </div>
 
+
+
     <div class="box7 u-center-text u-margin-top-big">
         <h3 class="heading-quad">
             Projects
-            <div class="form__group u-center-text u-margin-top-small">
+            <div class="form__group u-center-text u-margin-top-small" id="data" data-id={{data.id}}>
                 <input type="text" class="form__input" placeholder="Project Screenshot" required>
-                <input type="text" class="form__input" placeholder="Project Title" required>
+
+                <input type="text" class="form__input" placeholder="Project Title" id="project-title-value" required>
+
                 <input type="text" class="form__input" placeholder="Project Github Link" required>
+
                 <input type="text" class="form__input" placeholder="Project Demo Link" required>
-                <button type="button" class="btn btn-light">Edit</button>
-                <button type="button" class="btn btn-light">Delete</button>
+                
+                <button type="button" id="submit-project" class="btn btn-dark">Submit</button>
+                {{!-- <button type="button" class="btn btn-light">Edit</button>
+                <button type="button" class="btn btn-light">Delete</button> --}}
             </div>
+            <h2>Update a Project</h2>
+            <form id="update-project-title" class="button-size">
+                <select name="id">
+                    {{#each data.dataValues.Project}}
+                    <option value="{{dataValues.id}}">{{dataValues.title}}</option>
+                    {{/each}}
+                </select>
+                <textarea type="text" name="project title" placeholder="Update"></textarea>
+                <button type="submit">update project title!</button>
+            </form>
         </h3>
     </div>
     <div class="box8 u-center-text u-margin-top-big">
@@ -132,6 +149,8 @@
 </section>
 
 <script src="/js/crud-otherSkills.js"></script>
+<script src="/js/crud-project.js"></script>
+
 <script src="/js/profilePageAuth.js"></script>
 
 {{!-- Scroll Reveal --}}

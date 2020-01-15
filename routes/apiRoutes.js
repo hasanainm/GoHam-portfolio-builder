@@ -32,6 +32,7 @@ module.exports = function (app) {
 
 
   // CRUD - OtherSkills 
+  // create route for user's other skills
   app.post("/api/otherskills/:userid", function (req, res) {
     var nameOfSkill = req.body.nameOfSkill;
 
@@ -43,6 +44,7 @@ module.exports = function (app) {
     });
   });
 
+  // update route for user's other skills
   app.put("/api/updateotherskills/:userid", function (req, res) {
     db.OtherSkills.update({
       nameOfSkill: req.body.nameOfSkill
@@ -56,6 +58,7 @@ module.exports = function (app) {
     });
   });
 
+  // delete route for user's other skills
   app.delete("/api/deleteotherskills/:userid", function (req, res) {
     db.OtherSkills.destroy({
 
@@ -68,9 +71,32 @@ module.exports = function (app) {
   });
 
 
-
   // CRUD - ProfileName 
+  // create route for user's project title
+  app.post("/api/project/:userid", function (req, res) {
+    var title = req.body.title;
 
+    db.Project.create({
+      title: title,
+      UserId: req.params.userid
+    }).then(function (result) {
+      res.json(result);
+    });
+  });
+
+  // update route for user's project title
+  app.put("/api/updateprojectitle/:userid", function (req, res) {
+    db.OtherSkills.update({
+      title: req.body.title
+
+    }, {
+      where: {
+        id: req.params.userid
+      }
+    }).then(function (result) {
+      res.json(result);
+    });
+  });
 
   // CRUD - Project 
 
