@@ -77,7 +77,7 @@ module.exports = function (app) {
       res.json(result);
     });
   });
-  
+
   // PUT route for updating the skill for framework DB
   app.put("/api/framework/:userid", function (req, res) {
     db.Framework.update({
@@ -87,6 +87,18 @@ module.exports = function (app) {
         id: req.params.userid
       }
     }).then(function (result) {
+      res.json(result);
+    });
+  });
+
+  //Deleting record
+  app.delete("/api/framework/:userid", function(req, res) {
+    db.Framework.destroy({
+      where: {
+        id: req.params.userid
+      }
+    })
+    .then(function(result) {
       res.json(result);
     });
   });

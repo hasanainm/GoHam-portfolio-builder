@@ -20,24 +20,41 @@ $(document).ready(function () {
       location.reload();
     });
   });
-})
+  
+  //sending the update request
+  $("#update-framework-skill").on("submit", function (event) {
+    event.preventDefault();
+    var id = $("[name=idframework]").val().trim();
+    console.log(id)
+    var updateSkills = {
+      nameOfSkill: $("#update-framework-skill [name=frameworkskill]").val().trim()
+    };
+    console.log(updateSkills)
+    $.ajax("/api/framework/" + id, {
+      type: "PUT",
+      data: updateSkills
+    }).then(
+      function () {
+        console.log("updated id " + id);
+        location.reload();
+      }
+      )
+    })
 
-//sending the update request
-$("#update-framework-skill").on("submit", function (event) {
-  event.preventDefault();
-  var id = $("[name=idframework]").val().trim();
-  console.log(id)
-  var updateSkills = {
-    nameOfSkill: $("#update-framework-skill [name=frameworkskill]").val().trim()
-  };
-  console.log(updateSkills)
-  $.ajax("/api/framework/" + id, {
-    type: "PUT",
-    data: updateSkills
-  }).then(
-    function () {
-      console.log("updated id " + id);
-      location.reload();
-    }
-  )
-})
+    $(".delete-framework-skill").on("click", function (event) {
+      event.preventDefault();
+  
+      var id = $(this).data("deleteid");
+      console.log(id);
+      console.log("clicked");
+  
+      $.ajax("/api/framework/" + id, {
+        type: "DELETE"
+      }).then(
+        function () {
+          console.log("deleted id", id);
+          location.reload();
+        }
+      );
+    });
+  })
