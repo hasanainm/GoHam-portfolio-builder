@@ -26,7 +26,7 @@ $(document).ready(function () {
   $("#update-back-end-skill").on("submit", function (event) {
     event.preventDefault();
     var id = $("[name=id]").val().trim();
-
+    console.log(id)
     var updateSkills = {
       nameOfSkill: $("#update-back-end-skill [name=skill]").val().trim()
     };
@@ -44,7 +44,7 @@ $(document).ready(function () {
   $(".delete-back-end-skill").on("click", function (event) {
     event.preventDefault();
 
-    var id = $(".delete-back-end-skill").data("deleteid");
+    var id = $(this).data("deleteid");
     console.log(id);
     console.log("clicked");
 

@@ -43,7 +43,7 @@
                 <input type="text" class="form__input" placeholder="Back-End Skills" id="back-end-value" required>
                 <button type="button" id="back-end" class="btn btn-dark">Submit</button>
             </div>
-            <h2>Update a Plan</h2>
+            <h2>Update a skill</h2>
             <form id="update-back-end-skill" class="button-size">
                 <select name="id">
                     {{#each data.dataValues.BackEndSkills}}
@@ -69,9 +69,20 @@
     <div class="box5 u-center-text u-margin-top-big">
         <h3 class="heading-quad">
             Frameworks
-            <div class="form__group u-center-text u-margin-top-small">
-                <input type="text" class="form__input" placeholder="Frameworks" required>
+            <div class="form__group u-center-text u-margin-top-small" id="data" data-id={{data.id}}>
+                <input type="text" class="form__input" placeholder="Frameworks" id="framework-skill" required>
+                    <button type="button" id="framework" class="btn btn-dark">Submit</button>
             </div>
+                <h2>Update a skill</h2>
+            <form id="update-framework-skill" class="button-size">
+                <select name="id">
+                    {{#each data.dataValues.Frameworks}}
+                    <option value="{{dataValues.id}}">{{dataValues.nameOfSkill}}</option>
+                    {{/each}}
+                </select>
+                <textarea type="text" name="skill" placeholder="Update"></textarea>
+                <button type="submit">Update Skill!</button>
+            </form>
         </h3>
     </div>
 
@@ -123,6 +134,7 @@
 </section>
 
 <script src="/js/crud-backEndSkills.js"></script>
+<script src="/js/crud-framework.js"></script>
 <script src="/js/profilePageAuth.js"></script>
 
 {{!-- Scroll Reveal --}}

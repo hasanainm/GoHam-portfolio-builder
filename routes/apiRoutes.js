@@ -51,7 +51,7 @@ module.exports = function (app) {
     });
   });
 
-
+  //Delete route for deleting the "skill"
   app.delete("/api/deletebackendskills/:userid", function (req, res) {
     db.BackEndSkills.destroy({
 
@@ -63,4 +63,17 @@ module.exports = function (app) {
     });
   });
 
+  // routes for BackEndSkills model ends here
+  //routes for framework begins here
+  //route for adding skill to the database
+  app.post("/api/framework/:userid", function (req, res) {
+    var nameOfSkill = req.body.nameOfSkill;
+  
+    db.Framework.create({
+      nameOfSkill: nameOfSkill,
+      UserId: req.params.userid
+    }).then(function (result) {
+      res.json(result);
+    });
+  });
 };
