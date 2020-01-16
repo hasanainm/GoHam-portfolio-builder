@@ -16,13 +16,27 @@ module.exports = function (app) {
       });
   });
 
-
-  app.get("/profilePage", function (req, res) {
-    res.render("profilePage");
+  app.get("/cmsPage", function (req, res) {
+    res.render("sideNav");
+  });
+  
+  app.get("/userName", function (req, res) {
+    res.render("sideNav");
+  });
+  app.get("/userSkills", function (req, res) {
+    res.render("sideNav");
+  });
+  app.get("/userProjects", function (req, res) {
+    res.render("sideNav");
+  });
+  app.get("/userLinks", function (req, res) {
+    res.render("sideNav");
+  });
+  app.get("/userResume", function (req, res) {
+    res.render("sideNav");
   });
 
-  // 
-  app.get("/profilePage/:id", function (req, res) {
+  app.get("/cmsPage/:id", function (req, res) {
     db.User.findOne({
       include: [
         db.BackEndSkills,
@@ -36,7 +50,7 @@ module.exports = function (app) {
       ],
       where: { id: req.params.id }
     }).then(function (results) {
-      res.render("profilePage", { data: results });
+      res.render("sideNav", { data: results });
       console.log(req.params.id);
     });
   });

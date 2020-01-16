@@ -1,7 +1,8 @@
+
 .sidebar {
   position: fixed;
   width: 25%;
-  height: 100vh;
+  height: 95vh;
   background: $color-primary-dark;
   font-size: 0.65em;
 }
@@ -52,10 +53,8 @@
       background: black;
       left: 0;
       bottom: 0;
-      background-image: linear-gradient(
-        to right bottom, 
-        rgba($color-primary-light, 0.6), 
-        rgba($color-primary-dark, 0.6));
+      background-image: linear-gradient(to right, #5e42a6, #b74e91)
     }
   }
 }
+
