@@ -21,9 +21,10 @@ $(document).ready(function () {
     $("#update-project-title").on("submit", function (event) {
         event.preventDefault();
         var id = $("[name=id]").val().trim();
+        console.log(id);
 
         var updateProjectTitle = {
-            title: $("#update-project-title [name=skill]").val().trim()
+            title: $("#update-project-title [name=project-title]").val().trim()
         };
         $.ajax("/api/updateprojecttitle/" + id, {
             type: "PUT",

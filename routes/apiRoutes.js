@@ -85,8 +85,8 @@ module.exports = function (app) {
   });
 
   // update route for user's project title
-  app.put("/api/updateprojectitle/:userid", function (req, res) {
-    db.OtherSkills.update({
+  app.put("/api/updateprojecttitle/:userid", function (req, res) {
+    db.Project.update({
       title: req.body.title
 
     }, {
@@ -102,7 +102,17 @@ module.exports = function (app) {
 
 
   // CRUD - Resume 
+  // create route for user's resume
+  app.post("/api/resume/:userid", function (req, res) {
+    var PDF = req.body.PDF;
 
+    db.Resume.create({
+      PDF: PDF,
+      UserId: req.params.userid
+    }).then(function (result) {
+      res.json(result);
+    });
+  });
 
 };
 
