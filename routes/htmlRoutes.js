@@ -10,6 +10,12 @@ module.exports = function (app) {
     })
   });
 
+  app.get("/deep", function (req, res) {
+      res.render("deepdarkgalaxy", {
+        layout: "templates"
+      });
+  });
+
 
   app.get("/profilePage", function (req, res) {
     res.render("profilePage");
