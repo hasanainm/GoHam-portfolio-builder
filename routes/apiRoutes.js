@@ -68,10 +68,8 @@ module.exports = function (app) {
 
   //route for adding skill for framework DB
   app.post("/api/framework/:userid", function (req, res) {
-    var nameOfSkill = req.body.nameOfSkill;
-  
     db.Framework.create({
-      nameOfSkill: nameOfSkill,
+      nameOfSkill: req.body.nameOfSkill,
       UserId: req.params.userid
     }).then(function (result) {
       res.json(result);
@@ -79,7 +77,7 @@ module.exports = function (app) {
   });
 
   // PUT route for updating the skill for framework DB
-  app.put("/api/framework/:userid", function (req, res) {
+  app.put("/api/updateframework/:userid", function (req, res) {
     db.Framework.update({
       nameOfSkill: req.body.nameOfSkill
     }, {
@@ -92,7 +90,7 @@ module.exports = function (app) {
   });
 
   //Deleting record
-  app.delete("/api/framework/:userid", function(req, res) {
+  app.delete("/api/deleteframework/:userid", function(req, res) {
     db.Framework.destroy({
       where: {
         id: req.params.userid
@@ -102,5 +100,18 @@ module.exports = function (app) {
       res.json(result);
     });
   });
+  //routes for Framework model ends here
+  
+  //routes for links model begins here
+  app.post("/api/links/:userid", function (req, res) {
+    db.Links.create({
+      linkedin: req.body.linkedin,
+      github:req.body.github,
+      facebook: req.body.facebook,
+      twitter: req.body.twitter,
+      UserId: req.params.userid
+    }).then(function (result) {
+      res.json(result);
+    });
+  });
 };
-

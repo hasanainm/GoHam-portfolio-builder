@@ -3,11 +3,16 @@ var db = require("../models");
 module.exports = function (app) {
 
   app.get("/", function (req, res) {
-      // findAll will give us all the records for the user
-  db.User.findAll({}).then(function(results){
-    res.render("index",{ data: results })
-    // console.log(results[0].dataValues.id)
-  })
+    // findAll will give us all the records for the user
+    db.User.findAll({}).then(function (results) {
+      res.render("index", { data: results })
+      // console.log(results[0].dataValues.id)
+    })
+  });
+  app.get("/minty", function (req, res) {
+    res.render("mintyblues", {
+      layout: "templates"
+    });
   });
 
 

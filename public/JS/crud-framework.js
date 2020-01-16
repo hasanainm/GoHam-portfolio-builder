@@ -30,7 +30,7 @@ $(document).ready(function () {
       nameOfSkill: $("#update-framework-skill [name=frameworkskill]").val().trim()
     };
     console.log(updateSkills)
-    $.ajax("/api/framework/" + id, {
+    $.ajax("/api/updateframework/" + id, {
       type: "PUT",
       data: updateSkills
     }).then(
@@ -48,7 +48,7 @@ $(document).ready(function () {
       console.log(id);
       console.log("clicked");
   
-      $.ajax("/api/framework/" + id, {
+      $.ajax("/api/deleteframework/" + id, {
         type: "DELETE"
       }).then(
         function () {
