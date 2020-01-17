@@ -9,11 +9,16 @@ module.exports = function (app) {
       // console.log(results[0].dataValues.id)
     })
   });
+  app.get("/minty", function (req, res) {
+    res.render("mintyblues", {
+      layout: "templateMinty"
+    });
+  });
 
   // deepDarkGalaxy template
-  app.get("/deep", function (req, res) {
+  app.get("/dark", function (req, res) {
     res.render("deepdarkgalaxy", {
-      layout: "templates"
+      layout: "templateDark"
     });
   });
 

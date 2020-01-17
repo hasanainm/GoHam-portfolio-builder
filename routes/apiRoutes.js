@@ -1,7 +1,6 @@
 var db = require("../models");
 
 module.exports = function (app) {
-
   // Get route for getting all of our users
   app.get("/api/useraccount", function (req, res) {
     // findAll will give us all the records for the user
@@ -18,7 +17,6 @@ module.exports = function (app) {
       email: req.body.email,
       password: req.body.password,
       userid: req.body.userid
-      // userID:req.body.userID
     }).then(function (results) {
       //we have access to the new User as an arguement inside of the callback function
       res.json(results)
@@ -29,26 +27,21 @@ module.exports = function (app) {
         res.json(err)
       })
   })
-
-
-  // CRUD - OtherSkills 
-  // create route for user's other skills
-  app.post("/api/otherskills/:userid", function (req, res) {
+  //POST route for storing the skill text in the database
+  app.post("/api/backendskills/:userid", function (req, res) {
     var nameOfSkill = req.body.nameOfSkill;
 
-    db.OtherSkills.create({
+    db.BackEndSkills.create({
       nameOfSkill: nameOfSkill,
       UserId: req.params.userid
     }).then(function (result) {
       res.json(result);
     });
   });
-
-  // update route for user's other skills
-  app.put("/api/updateotherskills/:userid", function (req, res) {
-    db.OtherSkills.update({
+  // PUT route for updating the skill 
+  app.put("/api/updatebackendskills/:userid", function (req, res) {
+    db.BackEndSkills.update({
       nameOfSkill: req.body.nameOfSkill
-
     }, {
       where: {
         id: req.params.userid
@@ -58,11 +51,11 @@ module.exports = function (app) {
     });
   });
 
-  // delete route for user's other skills
-  app.delete("/api/deleteotherskills/:userid", function (req, res) {
-    db.OtherSkills.destroy({
+  //Delete route for deleting the "skill"
+  app.delete("/api/deletebackendskills/:userid", function (req, res) {
+    db.BackEndSkills.destroy({
 
-      where: {
+      where:{
         id: req.params.userid
       }
     }).then(function (result) {
@@ -70,25 +63,23 @@ module.exports = function (app) {
     });
   });
 
+  // routes for BackEndSkills model ends here
+  //routes for framework begins here
 
-  // CRUD - ProfileName 
-  // create route for user's project title
-  app.post("/api/project/:userid", function (req, res) {
-    var title = req.body.title;
-
-    db.Project.create({
-      title: title,
+  //route for adding skill for framework DB
+  app.post("/api/framework/:userid", function (req, res) {
+    db.Framework.create({
+      nameOfSkill: req.body.nameOfSkill,
       UserId: req.params.userid
     }).then(function (result) {
       res.json(result);
     });
   });
 
-  // update route for user's project title
-  app.put("/api/updateprojecttitle/:userid", function (req, res) {
-    db.Project.update({
-      title: req.body.title
-
+  // PUT route for updating the skill for framework DB
+  app.put("/api/updateframework/:userid", function (req, res) {
+    db.Framework.update({
+      nameOfSkill: req.body.nameOfSkill
     }, {
       where: {
         id: req.params.userid
@@ -98,22 +89,29 @@ module.exports = function (app) {
     });
   });
 
-  // CRUD - Project 
-
-
-  // CRUD - Resume 
-  // create route for user's resume
-  app.post("/api/resume/:userid", function (req, res) {
-    var PDF = req.body.PDF;
-
-    db.Resume.create({
-      PDF: PDF,
+  //Deleting record
+  app.delete("/api/deleteframework/:userid", function(req, res) {
+    db.Framework.destroy({
+      where: {
+        id: req.params.userid
+      }
+    })
+    .then(function(result) {
+      res.json(result);
+    });
+  });
+  //routes for Framework model ends here
+  
+  //routes for links model begins here
+  app.post("/api/links/:userid", function (req, res) {
+    db.Links.create({
+      linkedin: req.body.linkedin,
+      github:req.body.github,
+      facebook: req.body.facebook,
+      twitter: req.body.twitter,
       UserId: req.params.userid
     }).then(function (result) {
       res.json(result);
     });
   });
-
 };
-
-
