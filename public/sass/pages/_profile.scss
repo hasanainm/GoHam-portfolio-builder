@@ -1,7 +1,34 @@
-.section-profile {
-    font-family: "Lato", sans-serif;
-    color: $color-grey-dark;
-    padding: 3rem 3rem 0 3rem; 
-    height: 100%;
+#section-name-title {
+    height: 95vh;
+    width: 75vw;
+    float: right;
     background-color: $color-primary-light-2;
+}
+
+#section-skills {
+    height: 95vh;
+    width: 75vw;
+    float: right;
+    background-color: $color-primary-light-2;
+}
+
+#section-projects {
+    height: 95vh;
+    width: 75vw;
+    float: right;
+    background-color: $color-primary-light-2;
+}
+
+#section-links {
+    height: 95vh;
+    width: 75vw;
+    float: right;
+    background-color: $color-primary-light-2;
+}
+
+#section-resume {
+    height: 95vh;
+    width: 75vw;
+    float: right;
+    background-color: $color-primary-light-2;   
 }

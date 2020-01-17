@@ -1,3 +1,6 @@
 [submodule "Templates-SASS-"]
 	path = Templates-SASS-
 	url = https://github.com/hasanainm/Templates-SASS-
+[submodule "portfolio-templates-SASS"]
+	path = portfolio-templates-SASS
+	url = https://github.com/AnamAM/portfolio-templates-SASS
