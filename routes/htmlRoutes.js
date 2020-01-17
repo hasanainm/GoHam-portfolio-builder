@@ -57,5 +57,68 @@ module.exports = function (app) {
     });
   });
 
+
+  // user's projects
+  app.get("/profileProjects/:id", function (req, res) {
+    db.User.findOne({
+      include: [
+        db.BackEndSkills,
+        db.Framework,
+        db.FrontEndSkills,
+        db.OtherSkills,
+        db.ProfileName,
+        db.Project,
+        db.Links,
+        db.Resume
+      ],
+      where: { id: req.params.id }
+    }).then(function (results) {
+      res.render("profileProjects", { data: results });
+      console.log(req.params.id);
+    });
+  });
+
+
+  // user's links
+  app.get("/profileLinks/:id", function (req, res) {
+    db.User.findOne({
+      include: [
+        db.BackEndSkills,
+        db.Framework,
+        db.FrontEndSkills,
+        db.OtherSkills,
+        db.ProfileName,
+        db.Project,
+        db.Links,
+        db.Resume
+      ],
+      where: { id: req.params.id }
+    }).then(function (results) {
+      res.render("profileLinks", { data: results });
+      console.log(req.params.id);
+    });
+  });
+
+
+  // user's resume
+  app.get("/profileResume/:id", function (req, res) {
+    db.User.findOne({
+      include: [
+        db.BackEndSkills,
+        db.Framework,
+        db.FrontEndSkills,
+        db.OtherSkills,
+        db.ProfileName,
+        db.Project,
+        db.Links,
+        db.Resume
+      ],
+      where: { id: req.params.id }
+    }).then(function (results) {
+      res.render("profileResume", { data: results });
+      console.log(req.params.id);
+    });
+  });
+
 }
 
