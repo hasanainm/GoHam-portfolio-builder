@@ -207,7 +207,7 @@ body {
       left: 20%;
       top: 10rem; }
     .composition__photo:hover {
-      outline: 1.5rem solid #f0c2a3;
+      outline: 1.5rem solid #f1c9af;
       transform: scale(1.05) translateY(-0.5rem);
       box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
       z-index: 20; }
@@ -267,6 +267,26 @@ body {
   .profile:hover .profile__img-ashu {
     filter: blur(2px) brightness(80%); }
 
+#custom-button {
+  padding: 1rem;
+  color: #999;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 1.5rem;
+  letter-spacing: .5rem;
+  text-transform: uppercase;
+  border-radius: .5rem;
+  border: none;
+  cursor: pointer; }
+
+#custom-button:hover {
+  background-color: #999;
+  color: #fff; }
+
+#custom-text {
+  margin-left: 10px;
+  color: #999;
+  letter-spacing: .5rem; }
+
 .form {
   text-align: center; }
   .form__group:not(:last-child) {
@@ -290,7 +310,7 @@ body {
     .form__input:focus {
       outline: none;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
-      border-bottom: 3px solid #f0c2a3; }
+      border-bottom: 3px solid #f1c9af; }
     .form__input:focus:invalid {
       border-bottom: 3px solid #999; }
     .form__input::-webkit-input-placeholder {
@@ -476,7 +496,7 @@ button.ghost {
   position: fixed;
   width: 25vw;
   height: 95vh;
-  background: #ebbda3;
+  background: #f1c9af;
   font-size: 0.65em; }
 
 .nav {
@@ -488,7 +508,9 @@ button.ghost {
   font-weight: bold; }
 
 .nav .side-nav-title {
-  list-style: none; }
+  list-style: none;
+  padding-left: 5rem;
+  padding-bottom: 1rem; }
   .nav .side-nav-title li {
     position: relative;
     margin: 3.2em 0; }
@@ -497,22 +519,23 @@ button.ghost {
       text-transform: uppercase;
       text-decoration: none;
       letter-spacing: 0.4em;
-      color: rgba(255, 255, 255, 0.35);
+      color: #fff;
       display: block;
       transition: all ease-out 300ms; }
     .nav .side-nav-title li.active a {
-      color: white; }
+      color: #999; }
     .nav .side-nav-title li:not(.active)::after {
       opacity: 0.2; }
+    .nav .side-nav-title li:not(.active):hover a {
+      color: #999; }
     .nav .side-nav-title li::after {
       content: '';
       position: absolute;
       width: 100%;
       height: .5rem;
-      background: black;
       left: 0;
       bottom: 0;
-      background-image: linear-gradient(to right, #f0dfc8, #ebbda3); }
+      background-color: #fff; }
 
 .steps-card {
   background-color: rgba(255, 255, 255, 0.6);
@@ -649,7 +672,7 @@ button.ghost {
 
 .navigation__link:hover, .navigation__link:active {
   background-position: 100%;
-  color: #f0c2a3;
+  color: #f1c9af;
   transform: translateX(1rem); }
 
 .navigation__checkbox:checked ~ .navigation__background {

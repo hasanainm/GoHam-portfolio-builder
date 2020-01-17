@@ -1,9 +1,8 @@
-
 .sidebar {
   position: fixed;
   width: 25vw;
   height: 95vh;
-  background: $color-primary-dark;
+  background: $color-primary;
   font-size: 0.65em;
 }
 
@@ -18,6 +17,8 @@
 
 .nav .side-nav-title {
   list-style: none;
+  padding-left: 5rem;
+  padding-bottom: 1rem;
   
   li {
     position: relative;
@@ -28,32 +29,32 @@
       text-transform: uppercase;
       text-decoration: none;
       letter-spacing: 0.4em;
-      color: rgba(#FFF, 0.35);
+      color: $color-white;
       display: block;
       transition: all ease-out 300ms;
     }
     
     &.active a {
-      color: white;
+      color: $color-grey-dark-2;
     }
     
     &:not(.active)::after {
       opacity: 0.2;
     }
     
-    // &:not(.active):hover a {
-    //   color: rgba(#FFF, 0.75);
-    // }
+    &:not(.active):hover a {
+      color: $color-grey-dark-2;
+    }
     
     &::after {
       content: '';
       position: absolute;
       width: 100%;
       height: .5rem;
-      background: black;
+      // background: black;
       left: 0;
       bottom: 0;
-      background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark)
+      background-color: $color-white;
     }
   }
 }
