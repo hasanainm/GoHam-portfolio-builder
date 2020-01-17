@@ -15,7 +15,7 @@ $(document).ready(function () {
       //hiding get started button after user has signed in.
       document.getElementById("buttongetstarted").style.display = "none";
       // click function on navigation "portfolio profile" link. Making it easier for the user to navigate. If the user wants to return to the home screen and decides to go back to the portfolio profile page they can do so.
-      document.getElementById("profileLink").addEventListener("click", function (event) {
+      document.getElementById("profileUser").addEventListener("click", function (event) {
         console.log("clicked");
         event.preventDefault();
         $.ajax("/api/useraccount", {
@@ -29,7 +29,7 @@ $(document).ready(function () {
         });
       })
     }
-    
+
     else {
       console.log("user logged out")
     }

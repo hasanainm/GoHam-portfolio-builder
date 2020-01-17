@@ -11,31 +11,12 @@ module.exports = function (app) {
   });
 
   app.get("/deep", function (req, res) {
-      res.render("deepdarkgalaxy", {
-        layout: "templates"
-      });
+    res.render("deepdarkgalaxy", {
+      layout: "templates"
+    });
   });
 
-  app.get("/cmsPage", function (req, res) {
-    res.render("sideNav");
-  });
-  
-  app.get("/userName", function (req, res) {
-    res.render("sideNav");
-  });
-  app.get("/userSkills", function (req, res) {
-    res.render("sideNav");
-  });
-  app.get("/userProjects", function (req, res) {
-    res.render("sideNav");
-  });
-  app.get("/userLinks", function (req, res) {
-    res.render("sideNav");
-  });
-  app.get("/userResume", function (req, res) {
-    res.render("sideNav");
-  });
-
+  // user's name and the page that gets loaded after user logins
   app.get("/cmsPage/:id", function (req, res) {
     db.User.findOne({
       include: [
@@ -50,9 +31,31 @@ module.exports = function (app) {
       ],
       where: { id: req.params.id }
     }).then(function (results) {
-      res.render("sideNav", { data: results });
+      res.render("profileName", { data: results });
       console.log(req.params.id);
     });
   });
+
+
+  // user's skills
+  app.get("/profileSkills/:id", function (req, res) {
+    db.User.findOne({
+      include: [
+        db.BackEndSkills,
+        db.Framework,
+        db.FrontEndSkills,
+        db.OtherSkills,
+        db.ProfileName,
+        db.Project,
+        db.Links,
+        db.Resume
+      ],
+      where: { id: req.params.id }
+    }).then(function (results) {
+      res.render("profileSkills", { data: results });
+      console.log(req.params.id);
+    });
+  });
+
 }
 

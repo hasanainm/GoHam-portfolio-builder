@@ -1,49 +1,114 @@
-document.getElementById("user-name-title").addEventListener("click", function (event) {
-    console.log("clicked");
-    event.preventDefault();
-    $.ajax("/api/useraccount", {
-      type: "GET"
-    }).then(function (data) {
-        window.location = "/userName/" + data[i].id
-    });
-  })
+$(document).ready(function () {
+    auth.onAuthStateChanged(function (user) {
 
-document.getElementById("user-skills").addEventListener("click", function (event) {
-    console.log("clicked");
-    event.preventDefault();
-    $.ajax("/api/useraccount", {
-      type: "GET"
-    }).then(function (data) {
-        window.location = "/userSkills/" + data[i].id
-    });
-  })
+        if (user) {
+            //creating a logout button dynamically only when user is logged in
+            console.log("user signed in as " + user.email)
+            var navbutton = $("<li>");
+            navbutton.addClass("navigation__item");
+            var link = $("<a>Logout</a>").attr("href", "/").addClass("navigation__link").attr("id", "logout");
+            link.appendTo(navbutton);
+            $(".navigation__list").append(navbutton)
 
-document.getElementById("user-projects").addEventListener("click", function (event) {
-    console.log("clicked");
-    event.preventDefault();
-    $.ajax("/api/useraccount", {
-      type: "GET"
-    }).then(function (data) {
-        window.location = "/userProjects/" + data[i].id
-    });
-  })
+            // click function on navigation "portfolio profile" link. Making it easier for the user to navigate. If the user wants to return to the home screen and decides to go back to the portfolio profile page they can do so.
+            document.getElementById("user-name-title").addEventListener("click", function (event) {
+                console.log("clicked");
+                event.preventDefault();
+                $.ajax("/api/useraccount", {
+                    type: "GET"
+                }).then(function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].userid == user.uid) {
+                            window.location = "/cmsPage/" + data[i].id
+                        }
+                    }
+                });
+            })
 
-document.getElementById("user-links").addEventListener("click", function (event) {
-    console.log("clicked");
-    event.preventDefault();
-    $.ajax("/api/useraccount", {
-      type: "GET"
-    }).then(function (data) {
-        window.location = "/userLinks/" + data[i].id
-    });
-  })
+            document.getElementById("user-skills").addEventListener("click", function (event) {
+                console.log("clicked");
+                event.preventDefault();
+                $.ajax("/api/useraccount", {
+                    type: "GET"
+                }).then(function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].userid == user.uid) {
+                            window.location = "/cmsPage/" + data[i].id
+                        }
+                    }
 
-document.getElementById("user-resume").addEventListener("click", function (event) {
-    console.log("clicked");
-    event.preventDefault();
-    $.ajax("/api/useraccount", {
-      type: "GET"
-    }).then(function (data) {
-        window.location = "/userResume/" + data[i].id
+                });
+            })
+
+            document.getElementById("user-skills").addEventListener("click", function (event) {
+                console.log("clicked");
+                event.preventDefault();
+                $.ajax("/api/useraccount", {
+                    type: "GET"
+                }).then(function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].userid == user.uid) {
+                            window.location = "/profileSkills/" + data[i].id
+                        }
+                    }
+                });
+            })
+
+            document.getElementById("user-projects").addEventListener("click", function (event) {
+                console.log("clicked");
+                event.preventDefault();
+                $.ajax("/api/useraccount", {
+                    type: "GET"
+                }).then(function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].userid == user.uid) {
+                            window.location = "/cmsPage/" + data[i].id
+                        }
+                    }
+                });
+            })
+
+            document.getElementById("user-links").addEventListener("click", function (event) {
+                console.log("clicked");
+                event.preventDefault();
+                $.ajax("/api/useraccount", {
+                    type: "GET"
+                }).then(function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].userid == user.uid) {
+                            window.location = "/cmsPage/" + data[i].id
+                        }
+                    }
+                });
+            })
+
+            document.getElementById("user-resume").addEventListener("click", function (event) {
+                console.log("clicked");
+                event.preventDefault();
+                $.ajax("/api/useraccount", {
+                    type: "GET"
+                }).then(function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].userid == user.uid) {
+                            window.location = "/cmsPage/" + data[i].id
+                        }
+                    }
+                });
+            })
+        }
+
+        else {
+            console.log("user logged out")
+        }
+
+        $("#logout").on("click", function (event) {
+            auth.signOut().then(function (action) {
+            }).catch(function (error) {
+                console.log(error)
+            });
+        })
     });
-  })
+})
+
+
+
