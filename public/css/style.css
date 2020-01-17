@@ -474,7 +474,7 @@ button.ghost {
 
 .sidebar {
   position: fixed;
-  width: 25%;
+  width: 25vw;
   height: 95vh;
   background: #ebbda3;
   font-size: 0.65em; }
@@ -487,12 +487,12 @@ button.ghost {
   transform: translateY(-50%);
   font-weight: bold; }
 
-.nav ul {
+.nav .side-nav-title {
   list-style: none; }
-  .nav ul li {
+  .nav .side-nav-title li {
     position: relative;
     margin: 3.2em 0; }
-    .nav ul li a {
+    .nav .side-nav-title li a {
       line-height: 5em;
       text-transform: uppercase;
       text-decoration: none;
@@ -500,21 +500,19 @@ button.ghost {
       color: rgba(255, 255, 255, 0.35);
       display: block;
       transition: all ease-out 300ms; }
-    .nav ul li.active a {
+    .nav .side-nav-title li.active a {
       color: white; }
-    .nav ul li:not(.active)::after {
+    .nav .side-nav-title li:not(.active)::after {
       opacity: 0.2; }
-    .nav ul li:not(.active):hover a {
-      color: rgba(255, 255, 255, 0.75); }
-    .nav ul li::after {
+    .nav .side-nav-title li::after {
       content: '';
       position: absolute;
       width: 100%;
-      height: 0.2em;
+      height: .5rem;
       background: black;
       left: 0;
       bottom: 0;
-      background-image: linear-gradient(to right, #5e42a6, #b74e91); }
+      background-image: linear-gradient(to right, #f0dfc8, #ebbda3); }
 
 .steps-card {
   background-color: rgba(255, 255, 255, 0.6);
@@ -713,20 +711,30 @@ button.ghost {
 
 #section-name-title {
   height: 95vh;
+  width: 75vw;
+  float: right;
   background-color: #f3eade; }
 
 #section-skills {
   height: 95vh;
+  width: 75vw;
+  float: right;
   background-color: #f3eade; }
 
 #section-projects {
   height: 95vh;
+  width: 75vw;
+  float: right;
   background-color: #f3eade; }
 
 #section-links {
   height: 95vh;
+  width: 75vw;
+  float: right;
   background-color: #f3eade; }
 
 #section-resume {
   height: 95vh;
+  width: 75vw;
+  float: right;
   background-color: #f3eade; }

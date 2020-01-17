@@ -10,6 +10,7 @@ module.exports = function (app) {
     })
   });
 
+  // deepDarkGalaxy template
   app.get("/deep", function (req, res) {
     res.render("deepdarkgalaxy", {
       layout: "templates"
