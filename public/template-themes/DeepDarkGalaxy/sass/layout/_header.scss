@@ -1,0 +1,15 @@
+.header {
+    text-transform: uppercase;
+    height: 100vh;
+    background-size: cover;
+    background-position: top;
+    position: relative;
+
+    &__text-area {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
