@@ -7,7 +7,7 @@ $(document).ready(function () {
       console.log("user signed in as " + user.email)
       var navbutton = $("<li>");
       navbutton.addClass("navigation__item");
-      var link = $("<a>Logout</a>").attr("href", " ").addClass("navigation__link").attr("id", "logout");
+      var link = $("<a>Logout</a>").attr("href", "/").addClass("navigation__link").attr("id", "logout");
       link.appendTo(navbutton);
       $(".navigation__list").append(navbutton)
 
