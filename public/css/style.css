@@ -187,6 +187,9 @@ body {
   /* 0% styles on @keyframes moveInButton will be applied before the animation starts */
   animation-fill-mode: backwards; }
 
+.submit {
+  margin: 0 auto; }
+
 .composition {
   position: relative; }
   .composition__photo {
@@ -760,6 +763,12 @@ button.ghost {
   background-color: #f3eade; }
 
 #section-resume {
+  height: 95vh;
+  width: 75vw;
+  float: right;
+  background-color: #f3eade; }
+
+#section-templates {
   height: 95vh;
   width: 75vw;
   float: right;

@@ -126,5 +126,27 @@ module.exports = function (app) {
     });
   });
 
+
+  // template choices
+  app.get("/templates/:id", function (req, res) {
+    db.User.findOne({
+      include: [
+        db.BackEndSkills,
+        db.Framework,
+        db.FrontEndSkills,
+        db.OtherSkills,
+        db.ProfileName,
+        db.Project,
+        db.Links,
+        db.Resume
+      ],
+      where: { id: req.params.id }
+    }).then(function (results) {
+      res.render("profileTemplates", { data: results });
+      console.log(req.params.id);
+    });
+  });
+
+
 }
 
