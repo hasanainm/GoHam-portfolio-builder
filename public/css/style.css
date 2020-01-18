@@ -135,7 +135,7 @@ body {
   margin-top: 4rem !important; }
 
 .u-margin-top-big {
-  margin-top: 8rem !important; }
+  margin-top: 7rem !important; }
 
 .u-margin-top-huge {
   margin-top: 10rem !important; }
@@ -736,19 +736,22 @@ button.ghost {
   height: 95vh;
   width: 75vw;
   float: right;
-  background-color: #f3eade; }
+  background-color: #f3eade;
+  overflow-y: scroll; }
 
 #section-skills {
   height: 95vh;
   width: 75vw;
   float: right;
-  background-color: #f3eade; }
+  background-color: #f3eade;
+  overflow-y: scroll; }
 
 #section-projects {
   height: 95vh;
   width: 75vw;
   float: right;
-  background-color: #f3eade; }
+  background-color: #f3eade;
+  overflow-y: scroll; }
 
 #section-links {
   height: 95vh;
