@@ -1,0 +1,26 @@
+.template-dark {
+    width: 30rem;
+    height: 15rem;
+    margin-left: 12rem;
+    cursor: pointer;
+    transition: transform .3s;
+
+    &:hover {
+        transform: translateY(-1.5rem) scale(1.03);
+    }
+}
+
+.template-minty {
+    width: 30rem;
+    height: 15rem;
+    margin-right: 12rem;
+    cursor: pointer;
+    transition: transform .3s;
+
+    &:hover {
+        transform: translateY(-1.5rem) scale(1.03);
+    }
+}
+
+
+

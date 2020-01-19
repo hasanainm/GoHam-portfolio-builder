@@ -9,16 +9,18 @@ module.exports = function (app) {
       // console.log(results[0].dataValues.id)
     })
   });
-  app.get("/minty", function (req, res) {
-    res.render("mintyblues", {
-      layout: "templateMinty"
+
+  // deepDarkGalaxy template
+  app.get("/dark/:id", function (req, res) {
+    res.render("deepdarkgalaxy", {
+      layout: "templateDark"
     });
   });
 
-  // deepDarkGalaxy template
-  app.get("/dark", function (req, res) {
-    res.render("deepdarkgalaxy", {
-      layout: "templateDark"
+  // mintyBlues template
+  app.get("/minty/:id", function (req, res) {
+    res.render("mintyblues", {
+      layout: "templateMinty"
     });
   });
 
@@ -146,6 +148,7 @@ module.exports = function (app) {
       console.log(req.params.id);
     });
   });
+
 
 
 }

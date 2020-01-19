@@ -187,9 +187,6 @@ body {
   /* 0% styles on @keyframes moveInButton will be applied before the animation starts */
   animation-fill-mode: backwards; }
 
-.submit {
-  margin: 0 auto; }
-
 .composition {
   position: relative; }
   .composition__photo {
@@ -557,6 +554,24 @@ button.ghost {
     -webkit-background-clip: text;
     color: transparent; }
   .steps-card:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
+
+.template-dark {
+  width: 30rem;
+  height: 15rem;
+  margin-left: 12rem;
+  cursor: pointer;
+  transition: transform .3s; }
+  .template-dark:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
+
+.template-minty {
+  width: 30rem;
+  height: 15rem;
+  margin-right: 12rem;
+  cursor: pointer;
+  transition: transform .3s; }
+  .template-minty:hover {
     transform: translateY(-1.5rem) scale(1.03); }
 
 .footer {
