@@ -10,19 +10,6 @@ module.exports = function (app) {
     })
   });
 
-  // deepDarkGalaxy template
-  app.get("/dark/:id", function (req, res) {
-    res.render("deepdarkgalaxy", {
-      layout: "templateDark"
-    });
-  });
-
-  // mintyBlues template
-  app.get("/minty/:id", function (req, res) {
-    res.render("mintyblues", {
-      layout: "templateMinty"
-    });
-  });
 
   // user's name and the page that gets loaded after user logins
   app.get("/cmsPage/:id", function (req, res) {
@@ -150,6 +137,64 @@ module.exports = function (app) {
   });
 
 
+  // app.get("/dark/:id", function (req, res) {
+  //   res.render("deepdarkgalaxy", {
+  //     layout: "templateDark"
+  //   });
+  // });
 
-}
+  // deepDarkGalaxy template
+  app.get("/dark/:id", function (req, res) {
+    db.User.findOne({
+      include: [
+        db.BackEndSkills,
+        db.Framework,
+        db.FrontEndSkills,
+        db.OtherSkills,
+        db.ProfileName,
+        db.Project,
+        db.Links,
+        db.Resume
+      ],
+      where: { id: req.params.id }
+    }).then(function (results) {
+      res.render("deepdarkgalaxy", {
+        layout: "templateDark",
+        data: results
+      });
+      console.log(req.params.id);
+    });
+  });
+
+
+  // app.get("/minty/:id", function (req, res) {
+  //   res.render("mintyblues", {
+  //     layout: "templateMinty"
+  //   });
+  // });
+
+  // mintyBlues template
+  app.get("/minty/:id", function (req, res) {
+    db.User.findOne({
+      include: [
+        db.BackEndSkills,
+        db.Framework,
+        db.FrontEndSkills,
+        db.OtherSkills,
+        db.ProfileName,
+        db.Project,
+        db.Links,
+        db.Resume
+      ],
+      where: { id: req.params.id }
+    }).then(function (results) {
+      res.render("mintyblues", {
+        layout: "templateMinty",
+        data: results
+      });
+      console.log(req.params.id);
+    });
+  });
+
+};
 
