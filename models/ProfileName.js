@@ -8,11 +8,14 @@ module.exports = function (sequelize, DataTypes) {
     },
     title: {
       type: DataTypes.STRING
+    },
+    bio: {
+      type: DataTypes.STRING
     }
   });
-  
+
   // ProfileName belongs to a User; the attribute ProfileName can only exist if a User exists. The foreign key in the User table will eventually pull and join data from the ProfileName table by referencing the primary key.
-  ProfileName.associate = function(models) {
+  ProfileName.associate = function (models) {
     ProfileName.belongsTo(models.User);
   };
 
