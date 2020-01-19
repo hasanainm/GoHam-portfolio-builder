@@ -135,7 +135,7 @@ body {
   margin-top: 4rem !important; }
 
 .u-margin-top-big {
-  margin-top: 8rem !important; }
+  margin-top: 7rem !important; }
 
 .u-margin-top-huge {
   margin-top: 10rem !important; }
@@ -556,6 +556,24 @@ button.ghost {
   .steps-card:hover {
     transform: translateY(-1.5rem) scale(1.03); }
 
+.template-dark {
+  width: 30rem;
+  height: 15rem;
+  margin-left: 12rem;
+  cursor: pointer;
+  transition: transform .3s; }
+  .template-dark:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
+
+.template-minty {
+  width: 30rem;
+  height: 15rem;
+  margin-right: 12rem;
+  cursor: pointer;
+  transition: transform .3s; }
+  .template-minty:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
+
 .footer {
   background-image: linear-gradient(to right, #f0dfc8, #ebbda3);
   font-size: 1.6rem;
@@ -736,19 +754,22 @@ button.ghost {
   height: 95vh;
   width: 75vw;
   float: right;
-  background-color: #f3eade; }
+  background-color: #f3eade;
+  overflow-y: scroll; }
 
 #section-skills {
   height: 95vh;
   width: 75vw;
   float: right;
-  background-color: #f3eade; }
+  background-color: #f3eade;
+  overflow-y: scroll; }
 
 #section-projects {
   height: 95vh;
   width: 75vw;
   float: right;
-  background-color: #f3eade; }
+  background-color: #f3eade;
+  overflow-y: scroll; }
 
 #section-links {
   height: 95vh;
@@ -757,6 +778,12 @@ button.ghost {
   background-color: #f3eade; }
 
 #section-resume {
+  height: 95vh;
+  width: 75vw;
+  float: right;
+  background-color: #f3eade; }
+
+#section-templates {
   height: 95vh;
   width: 75vw;
   float: right;

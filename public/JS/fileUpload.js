@@ -1,17 +1,17 @@
-const realFileBtn = document.getElementById("real-file");
-const customBtn = document.getElementById("custom-button");
-const customTxt = document.getElementById("custom-text");
+const userFile = document.getElementById("user-file");
+const uploadButton = document.getElementById("custom-button");
+const fileName = document.getElementById("custom-text");
 
-customBtn.addEventListener("click", function() {
-  realFileBtn.click();
+uploadButton.addEventListener("click", function() {
+  userFile.click();
 });
 
-realFileBtn.addEventListener("change", function() {
-  if (realFileBtn.value) {
-    customTxt.innerHTML = realFileBtn.value.match(
+userFile.addEventListener("change", function() {
+  if (userFile.value) {
+    fileName.innerHTML = userFile.value.match(
       /[\/\\]([\w\d\s\.\-\(\)]+)$/
     )[1];
   } else {
-    customTxt.innerHTML = "No file chosen, yet.";
+    fileName.innerHTML = "No file chosen, yet.";
   }
 });
