@@ -27,7 +27,29 @@ module.exports = function (app) {
         res.json(err)
       })
   })
-  //POST route for storing the skill text in the database
+
+  app.post("/api/frontendskills/:userid", function (req, res) {
+    var nameOfSkill = req.body.nameOfSkill;
+
+    db.FrontEndSkills.create({
+      nameOfSkill: nameOfSkill,
+      UserId: req.params.userid
+    }).then(function (result) {
+      res.json(result);
+    });
+  });
+
+  app.delete("/api/deletefrontendskills/:userid", function (req, res) {
+    db.FrontEndSkills.destroy({
+
+      where:{
+        id: req.params.userid
+      }
+    }).then(function (result) {
+      res.json(result);
+    });
+  });
+  
   app.post("/api/backendskills/:userid", function (req, res) {
     var nameOfSkill = req.body.nameOfSkill;
 
@@ -38,20 +60,7 @@ module.exports = function (app) {
       res.json(result);
     });
   });
-  // PUT route for updating the skill 
-  app.put("/api/updatebackendskills/:userid", function (req, res) {
-    db.BackEndSkills.update({
-      nameOfSkill: req.body.nameOfSkill
-    }, {
-      where: {
-        id: req.params.userid
-      }
-    }).then(function (result) {
-      res.json(result);
-    });
-  });
 
-  //Delete route for deleting the "skill"
   app.delete("/api/deletebackendskills/:userid", function (req, res) {
     db.BackEndSkills.destroy({
 
@@ -63,10 +72,6 @@ module.exports = function (app) {
     });
   });
 
-  // routes for BackEndSkills model ends here
-  //routes for framework begins here
-
-  //route for adding skill for framework DB
   app.post("/api/framework/:userid", function (req, res) {
     db.Framework.create({
       nameOfSkill: req.body.nameOfSkill,
@@ -76,20 +81,6 @@ module.exports = function (app) {
     });
   });
 
-  // PUT route for updating the skill for framework DB
-  app.put("/api/updateframework/:userid", function (req, res) {
-    db.Framework.update({
-      nameOfSkill: req.body.nameOfSkill
-    }, {
-      where: {
-        id: req.params.userid
-      }
-    }).then(function (result) {
-      res.json(result);
-    });
-  });
-
-  //Deleting record
   app.delete("/api/deleteframework/:userid", function(req, res) {
     db.Framework.destroy({
       where: {
@@ -100,18 +91,25 @@ module.exports = function (app) {
       res.json(result);
     });
   });
-  //routes for Framework model ends here
-  
-  //routes for links model begins here
-  app.post("/api/links/:userid", function (req, res) {
-    db.Links.create({
-      linkedin: req.body.linkedin,
-      github:req.body.github,
-      facebook: req.body.facebook,
-      twitter: req.body.twitter,
+
+  app.post("/api/otherskills/:userid", function (req, res) {
+    db.OtherSkills.create({
+      nameOfSkill: req.body.nameOfSkill,
       UserId: req.params.userid
     }).then(function (result) {
       res.json(result);
     });
   });
+
+  app.delete("/api/deleteotherskills/:userid", function(req, res) {
+    db.OtherSkills.destroy({
+      where: {
+        id: req.params.userid
+      }
+    })
+    .then(function(result) {
+      res.json(result);
+    });
+  });
+
 };

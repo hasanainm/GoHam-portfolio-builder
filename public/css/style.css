@@ -187,6 +187,9 @@ body {
   /* 0% styles on @keyframes moveInButton will be applied before the animation starts */
   animation-fill-mode: backwards; }
 
+.submit {
+  margin-left: 46rem; }
+
 .composition {
   position: relative; }
   .composition__photo {
