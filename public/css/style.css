@@ -327,6 +327,30 @@ body {
     transition: all .3s;
     text-align: center; }
 
+.img-upload {
+  width: 30rem;
+  height: 15rem; }
+
+#custom-button {
+  padding: 1rem;
+  color: #999;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 1.5rem;
+  letter-spacing: .5rem;
+  text-transform: uppercase;
+  border-radius: .5rem;
+  border: none;
+  cursor: pointer; }
+
+#custom-button:hover {
+  background-color: #999;
+  color: #fff; }
+
+#custom-text {
+  margin-left: 10px;
+  color: #999;
+  letter-spacing: .5rem; }
+
 * {
   /* setting it to border box so the padding stays within the box model and doesnt make the width bigger */
   box-sizing: border-box; }
