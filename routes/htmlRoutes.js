@@ -137,12 +137,6 @@ module.exports = function (app) {
   });
 
 
-  // app.get("/dark/:id", function (req, res) {
-  //   res.render("deepdarkgalaxy", {
-  //     layout: "templateDark"
-  //   });
-  // });
-
   // deepDarkGalaxy template
   app.get("/dark/:id", function (req, res) {
     db.User.findOne({
@@ -165,13 +159,7 @@ module.exports = function (app) {
       console.log(req.params.id);
     });
   });
-
-
-  // app.get("/minty/:id", function (req, res) {
-  //   res.render("mintyblues", {
-  //     layout: "templateMinty"
-  //   });
-  // });
+  
 
   // mintyBlues template
   app.get("/minty/:id", function (req, res) {
