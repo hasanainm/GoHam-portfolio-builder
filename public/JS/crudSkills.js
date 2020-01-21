@@ -11,19 +11,22 @@ $(document).ready(function () {
     event.preventDefault();
     var nameOfSkill = $("#back-end-value").val().trim();
     console.log(nameOfSkill)
-    $.ajax("/api/backendskills/" + userid, {
-      type: "POST",
-      data: {
-        nameOfSkill: nameOfSkill
-      }
-    }).then(function (data) {
-      $("#back-end-value").val("")
-      console.log(data)
-      location.reload();
-    });
+    if (nameOfSkill.length > 1) {
+
+      $.ajax("/api/backendskills/" + userid, {
+        type: "POST",
+        data: {
+          nameOfSkill: nameOfSkill
+        }
+      }).then(function (data) {
+        $("#back-end-value").val("")
+        console.log(data)
+        location.reload();
+      });
+    }
   });
 
-  $(".deletebtn").on("click", function (event) {
+  $(".backenddeletebtn").on("click", function (event) {
     console.log("clicked")
     event.preventDefault();
 
@@ -51,19 +54,22 @@ $(document).ready(function () {
     event.preventDefault();
     var nameOfSkill = $("#frameworks").val().trim();
     console.log(nameOfSkill)
-    $.ajax("/api/framework/" + userid, {
-      type: "POST",
-      data: {
-        nameOfSkill: nameOfSkill
-      }
-    }).then(function (data) {
-      $("#back-end-value").val("")
-      console.log(data)
-      location.reload();
-    });
+    if (nameOfSkill.length > 1) {
+
+      $.ajax("/api/framework/" + userid, {
+        type: "POST",
+        data: {
+          nameOfSkill: nameOfSkill
+        }
+      }).then(function (data) {
+        $("#back-end-value").val("")
+        console.log(data)
+        location.reload();
+      });
+    }
   });
 
-  $(".deletebtn").on("click", function (event) {
+  $(".frameworksdeletebtn").on("click", function (event) {
     console.log("clicked")
     event.preventDefault();
 
@@ -91,19 +97,22 @@ $(document).ready(function () {
     event.preventDefault();
     var nameOfSkill = $("#frontend").val().trim();
     console.log(nameOfSkill)
-    $.ajax("/api/frontendskills/" + userid, {
-      type: "POST",
-      data: {
-        nameOfSkill: nameOfSkill
-      }
-    }).then(function (data) {
-      $("#back-end-value").val("")
-      console.log(data)
-      location.reload();
-    });
+    if (nameOfSkill.length > 1) {
+
+      $.ajax("/api/frontendskills/" + userid, {
+        type: "POST",
+        data: {
+          nameOfSkill: nameOfSkill
+        }
+      }).then(function (data) {
+        $("#back-end-value").val("")
+        console.log(data)
+        location.reload();
+      });
+    }
   });
 
-  $(".deletebtn").on("click", function (event) {
+  $(".frontenddeletebtn").on("click", function (event) {
     console.log("clicked")
     event.preventDefault();
 
@@ -131,19 +140,22 @@ $(document).ready(function () {
     event.preventDefault();
     var nameOfSkill = $("#otherskills").val().trim();
     console.log(nameOfSkill)
-    $.ajax("/api/otherskills/" + userid, {
-      type: "POST",
-      data: {
-        nameOfSkill: nameOfSkill
-      }
-    }).then(function (data) {
-      $("#back-end-value").val("")
-      console.log(data)
-      location.reload();
-    });
+    if (nameOfSkill.length > 1) {
+      $.ajax("/api/otherskills/" + userid, {
+        type: "POST",
+        data: {
+          nameOfSkill: nameOfSkill
+        }
+      }).then(function (data) {
+        $("#back-end-value").val("")
+        console.log(data)
+        location.reload();
+      });
+
+    }
   });
 
-  $(".deletebtn").on("click", function (event) {
+  $(".otherskillsdeletebtn").on("click", function (event) {
     console.log("clicked")
     event.preventDefault();
 
