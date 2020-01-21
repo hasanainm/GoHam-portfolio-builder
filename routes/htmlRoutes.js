@@ -27,7 +27,7 @@ module.exports = function (app) {
       where: { id: req.params.id }
     }).then(function (results) {
       res.render("profileName", { data: results });
-      console.log(req.params.id);
+      // console.log(req.params.id);
     });
   });
 
@@ -48,7 +48,7 @@ module.exports = function (app) {
       where: { id: req.params.id }
     }).then(function (results) {
       res.render("profileSkills", { data: results });
-      console.log(req.params.id);
+      // console.log(req.params.id);
     });
   });
 
@@ -69,7 +69,7 @@ module.exports = function (app) {
       where: { id: req.params.id }
     }).then(function (results) {
       res.render("profileProjects", { data: results });
-      console.log(req.params.id);
+      // console.log(req.params.id);
     });
   });
 
@@ -90,7 +90,7 @@ module.exports = function (app) {
       where: { id: req.params.id }
     }).then(function (results) {
       res.render("profileLinks", { data: results });
-      console.log(req.params.id);
+      // console.log(req.params.id);
     });
   });
 
@@ -111,7 +111,7 @@ module.exports = function (app) {
       where: { id: req.params.id }
     }).then(function (results) {
       res.render("profileResume", { data: results });
-      console.log(req.params.id);
+      // console.log(req.params.id);
     });
   });
 
@@ -132,7 +132,7 @@ module.exports = function (app) {
       where: { id: req.params.id }
     }).then(function (results) {
       res.render("profileTemplates", { data: results });
-      console.log(req.params.id);
+      // console.log(req.params.id);
     });
   });
 
@@ -156,7 +156,7 @@ module.exports = function (app) {
         layout: "templateDark",
         data: results
       });
-      console.log(req.params.id);
+      // console.log(req.params.id);
     });
   });
   
@@ -180,7 +180,7 @@ module.exports = function (app) {
         layout: "templateMinty",
         data: results
       });
-      console.log(req.params.id);
+      console.log(results.dataValues.FrontEndSkills);
     });
   });
 
