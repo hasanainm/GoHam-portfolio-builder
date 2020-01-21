@@ -91,6 +91,7 @@ module.exports = function (app) {
     }).then(function (results) {
       res.render("profileLinks", { data: results });
       console.log(req.params.id);
+      console.log(results);
     });
   });
 

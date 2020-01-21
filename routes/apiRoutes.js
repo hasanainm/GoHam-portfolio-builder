@@ -112,4 +112,59 @@ module.exports = function (app) {
     });
   });
 
+
+  app.post("/api/links/:userid", function (req, res) {
+    var linkedin = req.body.linkedin;
+    var github = req.body.github;
+    var facebook = req.body.facebook;
+    var twitter = req.body.twitter;
+
+    db.Links.create({
+      linkedin: linkedin,
+      github: github,
+      facebook: facebook,
+      twitter: twitter,
+      UserId: req.params.userid
+
+    }).then(function (result) {
+      res.json(result);
+      console.log(result);
+    });
+  });
+
+  // app.delete("/api/deletelinks/:userid", function(req, res) {
+  //   db.Links.destroy({
+  //     where: {
+  //       id: req.params.userid
+  //     }
+  //   })
+  //   .then(function(result) {
+  //     res.json(result);
+  //   });
+  // });
+
+
+  // app.post("/api/github/:userid", function (req, res) {
+  //   var github = req.body.github;
+
+  //   db.Links.create({
+  //     github: github,
+  //     UserId: req.params.userid
+  //   }).then(function (result) {
+  //     res.json(result);
+  //     console.log(result);
+  //   });
+  // });
+
+  // app.delete("/api/deletegithub/:userid", function(req, res) {
+  //   db.Links.destroy({
+  //     where: {
+  //       id: req.params.userid
+  //     }
+  //   })
+  //   .then(function(result) {
+  //     res.json(result);
+  //   });
+  // });
+
 };
