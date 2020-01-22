@@ -48,7 +48,7 @@ module.exports = function (app) {
       where: { id: req.params.id }
     }).then(function (results) {
       res.render("profileSkills", { data: results });
-      // console.log(req.params.id);
+      console.log(results);
     });
   });
 
@@ -180,7 +180,7 @@ module.exports = function (app) {
         layout: "templateMinty",
         data: results
       });
-      console.log(results.dataValues.FrontEndSkills);
+      // console.log(results.dataValues.FrontEndSkills);
     });
   });
 
