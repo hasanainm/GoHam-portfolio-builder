@@ -2,8 +2,8 @@
 <header class="header">
   <div class="header__text-area">
     <h1 class="heading-primary">
-      <span class="heading-primary--main">Hi, everybody! My name is Hasanain Mohammed</span>
-      <span class="heading-primary--sub">I am a full-stack web developer</span>
+      <span class="heading-primary--main">Hi, everybody! My name is {{data.ProfileName.fname}} {{data.ProfileName.lname}}.</span>
+      <span class="heading-primary--sub">I am a {{data.ProfileName.title}}!</span>
     </h1>
     <a href="#section-about" class="btn btn--white btn--animated">check me out</a>
   </div>
@@ -11,12 +11,7 @@
 
 <section class="section-about" id="section-about">
   <div class="bio">
-    <p class="bio--text">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. At dolores dolor vero corporis ut in eaque quia facilis
-      ad incidunt! Totam quam numquam debitis tempore, fugiat adipisci rerum impedit! Numquam?Lorem ipsum, dolor sit
-      amet consectetur adipisicing elit. Accusamus laborum temporibus iusto aliquam corrupti recusandae nobis iure
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta iste, nemo molestiae dolorum
-    </p>
+    <p class="bio--text">{{data.ProfileName.bio}}</p>
   </div>
 </section>
 
