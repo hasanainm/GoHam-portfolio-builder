@@ -6,9 +6,9 @@
         <h3 class="heading-quad">
             What is your name?
             <div class="form__group u-center-text u-margin-top-small">
-                <input type="text" class="form__input u-margin-bottom-small" placeholder="First Name" id="name"
+                <input type="text" class="form__input u-margin-bottom-small" placeholder="First Name" id="first_name"
                     required>
-                <input type="text" class="form__input" placeholder="Last Name" id="name" required>
+                <input type="text" class="form__input" placeholder="Last Name" id="last_name" required>
             </div>
         </h3>
     </div>
@@ -17,19 +17,20 @@
         <h3 class="heading-quad">
             What is your profession/field of interest?
             <div class="form__group u-center-text u-margin-top-small">
-                <input type="text" class="form__input" placeholder="Title" id="name" required>
+                <input type="text" class="form__input" placeholder="Title" id="profession" required>
             </div>
         </h3>
     </div>
 
-    <div class="box3 u-center-text u-margin-top-big u-margin-bottom-small">
+    <div class="box3 u-center-text u-margin-top-big u-margin-bottom-small" id="data" data-submitid={{data.id}}>
         <h3 class="heading-quad">
             What is your story?
             <div class="form__group u-center-text u-margin-top-small">
-                <textarea type="textarea" maxlength="1000" class="form__input" placeholder="Bio" id="name"
-                    required></textarea>
+                <textarea type="textarea" maxlength="1000" class="form__input" placeholder="Bio" id="bio"
+                    required>{{data.ProfileName.[5].bio}}</textarea>
             </div>
         </h3>
     </div>
-
+    <button type="button" class="btn btn-light submit" id="submit">Light</button>
 </section>
+<script src="/js/crud-profileName.js"></script>

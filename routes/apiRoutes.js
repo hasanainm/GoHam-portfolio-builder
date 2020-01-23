@@ -111,5 +111,17 @@ module.exports = function (app) {
       res.json(result);
     });
   });
+  
+  app.post("/api/profileinfo/:userid", function(req,res){
+    db.ProfileName.create({
+    fname:req.body.fname,
+    lname:req.body.lname,
+    title:req.body.title,
+    bio:req.body.bio,
+    UserId:req.params.userid
+    }).then(function(result){
+      res.json(result);
+    })
+  })
 
 };
