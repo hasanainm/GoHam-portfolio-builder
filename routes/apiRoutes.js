@@ -42,14 +42,14 @@ module.exports = function (app) {
   app.delete("/api/deletefrontendskills/:userid", function (req, res) {
     db.FrontEndSkills.destroy({
 
-      where:{
+      where: {
         id: req.params.userid
       }
     }).then(function (result) {
       res.json(result);
     });
   });
-  
+
   app.post("/api/backendskills/:userid", function (req, res) {
     var nameOfSkill = req.body.nameOfSkill;
 
@@ -64,7 +64,7 @@ module.exports = function (app) {
   app.delete("/api/deletebackendskills/:userid", function (req, res) {
     db.BackEndSkills.destroy({
 
-      where:{
+      where: {
         id: req.params.userid
       }
     }).then(function (result) {
@@ -81,15 +81,15 @@ module.exports = function (app) {
     });
   });
 
-  app.delete("/api/deleteframework/:userid", function(req, res) {
+  app.delete("/api/deleteframework/:userid", function (req, res) {
     db.Framework.destroy({
       where: {
         id: req.params.userid
       }
     })
-    .then(function(result) {
-      res.json(result);
-    });
+      .then(function (result) {
+        res.json(result);
+      });
   });
 
   app.post("/api/otherskills/:userid", function (req, res) {
@@ -101,14 +101,80 @@ module.exports = function (app) {
     });
   });
 
-  app.delete("/api/deleteotherskills/:userid", function(req, res) {
+  app.delete("/api/deleteotherskills/:userid", function (req, res) {
     db.OtherSkills.destroy({
       where: {
         id: req.params.userid
       }
     })
-    .then(function(result) {
+      .then(function (result) {
+        res.json(result);
+      });
+  });
+
+
+  app.post("/api/links/:userid", function (req, res) {
+    var linkedin = req.body.linkedin;
+    var github = req.body.github;
+    var facebook = req.body.facebook;
+    var twitter = req.body.twitter;
+
+    db.Links.create({
+      linkedin: linkedin,
+      github: github,
+      facebook: facebook,
+      twitter: twitter,
+      UserId: req.params.userid
+
+    }).then(function (result) {
       res.json(result);
+      console.log(result);
+    });
+  });
+
+  app.delete("/api/deletelinks/:userid", function (req, res) {
+    db.Links.destroy({
+      where: {
+        id: req.params.userid
+      }
+    })
+      .then(function (result) {
+        res.json(result);
+      });
+  });
+
+
+  app.post("/api/resume/:userid", function (req, res) {
+    db.Resume.create({
+      PDF: req.body.PDF,
+      UserId: req.params.userid
+    }).then(function (result) {
+      res.json(result);
+    });
+  });
+
+  app.delete("/api/deleteresume/:userid", function (req, res) {
+    db.Resume.destroy({
+      where: {
+        id: req.params.userid
+      }
+    })
+      .then(function (result) {
+        res.json(result);
+      });
+  });
+
+
+  app.post("/api/profilename/:userid", function (req, res) {
+    db.ProfileName.create({
+      fname: req.body.fname,
+      lname: req.body.lname,
+      title: req.body.title,
+      bio: req.body.bio,
+      UserId: req.params.userid
+    }).then(function (result) {
+      res.json(result);
+      console.log(result);
     });
   });
 

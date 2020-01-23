@@ -1,0 +1,28 @@
+.img-upload {
+    width: 30rem;
+    height: 15rem;
+  }
+  
+  #custom-button {
+    padding: 1rem;
+    color: $color-grey-dark-2;
+    background-color: rgba($color-white, .5);
+    font-size: 1.5rem;
+    letter-spacing: .5rem;
+    text-transform: uppercase;
+    border-radius: .5rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #custom-button:hover {
+    background-color: $color-grey-dark-2;
+    color: $color-white;
+  }
+  
+  #custom-text {
+    margin-left: 10px;
+    color: $color-grey-dark-2;
+    letter-spacing: .5rem;
+  }
+  
