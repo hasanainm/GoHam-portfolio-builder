@@ -1,5 +1,6 @@
 //DOM must load completely
 $(document).ready(function () {
+  
   var id = $("#data").attr("data-id");
   console.log(id)
   var userid = parseInt(id)
@@ -42,6 +43,7 @@ $(document).ready(function () {
       }
     );
   });
+
   var id = $("#data").attr("data-id");
   console.log(id)
   var userid = parseInt(id)
@@ -84,6 +86,7 @@ $(document).ready(function () {
       }
     );
   });
+
   var id = $("#data").attr("data-id");
   console.log(id)
   var userid = parseInt(id)
@@ -126,6 +129,7 @@ $(document).ready(function () {
       }
     );
   });
+
   var id = $("#data").attr("data-id");
   console.log(id)
   var userid = parseInt(id)

@@ -1,4 +1,4 @@
-#section-name-title {
+.section-name-title {
     height: 95vh;
     width: 75vw;
     float: right;
@@ -27,6 +27,7 @@
     width: 75vw;
     float: right;
     background-color: $color-primary-light-2;
+    overflow-y: scroll;
 }
 
 #section-resume {
