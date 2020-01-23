@@ -35,59 +35,23 @@ $(document).ready(function () {
     });
   });
 
-  // $(".deletebtn").on("click", function (event) {
-  //   console.log("clicked")
-  //   event.preventDefault();
+  $(".deletebtn").on("click", function (event) {
+    console.log("clicked")
+    event.preventDefault();
 
-  //   var id = $(this).data("deleteid");
-  //   console.log(id);
-  //   console.log("clicked");
+    var id = $(this).data("deleteid");
+    console.log(id);
+    console.log("clicked");
 
-  //   $.ajax("/api/deletelinks/" + id, {
-  //     type: "DELETE"
-  //   }).then(
-  //     function () {
-  //       console.log("deleted id", id);
-  //       location.reload();
-  //     }
-  //   );
-  // });
+    $.ajax("/api/deletelinks/" + id, {
+      type: "DELETE"
+    }).then(
+      function () {
+        console.log("deleted id", id);
+        location.reload();
+      }
+    );
+  });
 
-
-   //sending post request 
-  //  $("#submit-links").on("click", function (event) {
-  //   console.log("hi")
-  //   event.preventDefault();
-  //   var github = $("#github-value").val().trim();
-  //   console.log(github)
-  //   $.ajax("/api/links/" + userid, {
-  //     type: "POST",
-  //     data: {
-  //       github: github
-  //     }
-  //   }).then(function (data) {
-  //     $("#github-value")
-  //     console.log(data)
-  //     location.reload();
-  //   });
-  // });
-
-  // $(".deletebtn").on("click", function (event) {
-  //   console.log("clicked")
-  //   event.preventDefault();
-
-  //   var id = $(this).data("deleteid");
-  //   console.log(id);
-  //   console.log("clicked");
-
-  //   $.ajax("/api/deletegithub/" + id, {
-  //     type: "DELETE"
-  //   }).then(
-  //     function () {
-  //       console.log("deleted id", id);
-  //       location.reload();
-  //     }
-  //   );
-  // });
 
 })

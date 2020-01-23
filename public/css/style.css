@@ -779,7 +779,7 @@ button.ghost {
   padding: 10rem;
   height: 90vh; }
 
-#section-name-title {
+.section-name-title {
   height: 95vh;
   width: 75vw;
   float: right;
@@ -804,7 +804,8 @@ button.ghost {
   height: 95vh;
   width: 75vw;
   float: right;
-  background-color: #f3eade; }
+  background-color: #f3eade;
+  overflow-y: scroll; }
 
 #section-resume {
   height: 95vh;

@@ -42,14 +42,14 @@ module.exports = function (app) {
   app.delete("/api/deletefrontendskills/:userid", function (req, res) {
     db.FrontEndSkills.destroy({
 
-      where:{
+      where: {
         id: req.params.userid
       }
     }).then(function (result) {
       res.json(result);
     });
   });
-  
+
   app.post("/api/backendskills/:userid", function (req, res) {
     var nameOfSkill = req.body.nameOfSkill;
 
@@ -64,7 +64,7 @@ module.exports = function (app) {
   app.delete("/api/deletebackendskills/:userid", function (req, res) {
     db.BackEndSkills.destroy({
 
-      where:{
+      where: {
         id: req.params.userid
       }
     }).then(function (result) {
@@ -81,15 +81,15 @@ module.exports = function (app) {
     });
   });
 
-  app.delete("/api/deleteframework/:userid", function(req, res) {
+  app.delete("/api/deleteframework/:userid", function (req, res) {
     db.Framework.destroy({
       where: {
         id: req.params.userid
       }
     })
-    .then(function(result) {
-      res.json(result);
-    });
+      .then(function (result) {
+        res.json(result);
+      });
   });
 
   app.post("/api/otherskills/:userid", function (req, res) {
@@ -101,15 +101,15 @@ module.exports = function (app) {
     });
   });
 
-  app.delete("/api/deleteotherskills/:userid", function(req, res) {
+  app.delete("/api/deleteotherskills/:userid", function (req, res) {
     db.OtherSkills.destroy({
       where: {
         id: req.params.userid
       }
     })
-    .then(function(result) {
-      res.json(result);
-    });
+      .then(function (result) {
+        res.json(result);
+      });
   });
 
 
@@ -132,39 +132,50 @@ module.exports = function (app) {
     });
   });
 
-  // app.delete("/api/deletelinks/:userid", function(req, res) {
-  //   db.Links.destroy({
-  //     where: {
-  //       id: req.params.userid
-  //     }
-  //   })
-  //   .then(function(result) {
-  //     res.json(result);
-  //   });
-  // });
+  app.delete("/api/deletelinks/:userid", function (req, res) {
+    db.Links.destroy({
+      where: {
+        id: req.params.userid
+      }
+    })
+      .then(function (result) {
+        res.json(result);
+      });
+  });
 
 
-  // app.post("/api/github/:userid", function (req, res) {
-  //   var github = req.body.github;
+  app.post("/api/resume/:userid", function (req, res) {
+    db.Resume.create({
+      PDF: req.body.PDF,
+      UserId: req.params.userid
+    }).then(function (result) {
+      res.json(result);
+    });
+  });
 
-  //   db.Links.create({
-  //     github: github,
-  //     UserId: req.params.userid
-  //   }).then(function (result) {
-  //     res.json(result);
-  //     console.log(result);
-  //   });
-  // });
+  app.delete("/api/deleteresume/:userid", function (req, res) {
+    db.Resume.destroy({
+      where: {
+        id: req.params.userid
+      }
+    })
+      .then(function (result) {
+        res.json(result);
+      });
+  });
 
-  // app.delete("/api/deletegithub/:userid", function(req, res) {
-  //   db.Links.destroy({
-  //     where: {
-  //       id: req.params.userid
-  //     }
-  //   })
-  //   .then(function(result) {
-  //     res.json(result);
-  //   });
-  // });
+
+  app.post("/api/profilename/:userid", function (req, res) {
+    db.ProfileName.create({
+      fname: req.body.fname,
+      lname: req.body.lname,
+      title: req.body.title,
+      bio: req.body.bio,
+      UserId: req.params.userid
+    }).then(function (result) {
+      res.json(result);
+      console.log(result);
+    });
+  });
 
 };
