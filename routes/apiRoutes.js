@@ -112,59 +112,6 @@ module.exports = function (app) {
       });
   });
 
-
-  app.post("/api/links/:userid", function (req, res) {
-    var linkedin = req.body.linkedin;
-    var github = req.body.github;
-    var facebook = req.body.facebook;
-    var twitter = req.body.twitter;
-
-    db.Links.create({
-      linkedin: linkedin,
-      github: github,
-      facebook: facebook,
-      twitter: twitter,
-      UserId: req.params.userid
-
-    }).then(function (result) {
-      res.json(result);
-      console.log(result);
-    });
-  });
-
-  app.delete("/api/deletelinks/:userid", function (req, res) {
-    db.Links.destroy({
-      where: {
-        id: req.params.userid
-      }
-    })
-      .then(function (result) {
-        res.json(result);
-      });
-  });
-
-
-  app.post("/api/resume/:userid", function (req, res) {
-    db.Resume.create({
-      PDF: req.body.PDF,
-      UserId: req.params.userid
-    }).then(function (result) {
-      res.json(result);
-    });
-  });
-
-  app.delete("/api/deleteresume/:userid", function (req, res) {
-    db.Resume.destroy({
-      where: {
-        id: req.params.userid
-      }
-    })
-      .then(function (result) {
-        res.json(result);
-      });
-  });
-
-
   app.post("/api/profilename/:userid", function (req, res) {
     db.ProfileName.create({
       fname: req.body.fname,
@@ -177,5 +124,6 @@ module.exports = function (app) {
       console.log(result);
     });
   });
+
 
 };
