@@ -45,9 +45,9 @@ $(document).ready(function () {
   });
 
   var id = $("#data").attr("data-id");
-  console.log(id)
+  // console.log(id)
   var userid = parseInt(id)
-  console.log(typeof userid);
+  // console.log(typeof userid);
   //sending post request 
   $("#submit").on("click", function (event) {
     console.log("hi")
@@ -88,9 +88,9 @@ $(document).ready(function () {
   });
 
   var id = $("#data").attr("data-id");
-  console.log(id)
+  // console.log(id)
   var userid = parseInt(id)
-  console.log(typeof userid);
+  // console.log(typeof userid);
   //sending post request 
   $("#submit").on("click", function (event) {
     console.log("hi")
@@ -131,9 +131,9 @@ $(document).ready(function () {
   });
 
   var id = $("#data").attr("data-id");
-  console.log(id)
+  // console.log(id)
   var userid = parseInt(id)
-  console.log(typeof userid);
+  // console.log(typeof userid);
   //sending post request 
   $("#submit").on("click", function (event) {
     console.log("hi")
@@ -156,7 +156,7 @@ $(document).ready(function () {
   });
 
   $(".otherskillsdeletebtn").on("click", function (event) {
-    console.log("clicked")
+    // console.log("clicked")
     event.preventDefault();
 
     var id = $(this).data("deleteid");
