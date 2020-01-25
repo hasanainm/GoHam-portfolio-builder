@@ -69,7 +69,7 @@ module.exports = function (app) {
       where: { id: req.params.id }
     }).then(function (results) {
       res.render("profileProjects", { data: results });
-      // console.log(req.params.id);
+      // console.log(results);
     });
   });
 
@@ -90,7 +90,7 @@ module.exports = function (app) {
       where: { id: req.params.id }
     }).then(function (results) {
       res.render("profileLinks", { data: results });
-      console.log(results);
+      // console.log(results);
     });
   });
 
@@ -111,7 +111,7 @@ module.exports = function (app) {
       where: { id: req.params.id }
     }).then(function (results) {
       res.render("profileResume", { data: results });
-      console.log(results);
+      // console.log(results);
     });
   });
 
@@ -180,7 +180,7 @@ module.exports = function (app) {
         layout: "templateMinty",
         data: results
       });
-      console.log(results.dataValues.FrontEndSkills);
+      console.log(results);
     });
   });
 

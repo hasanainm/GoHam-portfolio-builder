@@ -3,9 +3,6 @@ module.exports = function (sequelize, DataTypes) {
     title: {
         type: DataTypes.STRING,
     },
-    description: {
-        type: DataTypes.STRING,
-    },
     screenshot: {
         type: DataTypes.STRING,
     },

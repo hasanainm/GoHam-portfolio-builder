@@ -8,7 +8,7 @@ uploadButton.addEventListener("click", function () {
 });
 
 userFile.addEventListener("change", function () {
-  
+
   if (userFile.value) {
     fileName.innerHTML = userFile.value.match(
       /[\/\\]([\w\d\s\.\-\(\)]+)$/
@@ -18,3 +18,13 @@ userFile.addEventListener("change", function () {
     fileName.innerHTML = "No file chosen, yet.";
   }
 });
+
+// function PreviewImage() {
+//   pdffile = document.getElementsByClassName("upload-pdf").files[0];
+
+//   pdffile_url = URL.createObjectURL(pdffile);
+//   $('#viewer').attr('src', pdffile_url);
+// }
+
+
+

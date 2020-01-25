@@ -165,13 +165,15 @@ module.exports = function (app) {
   });
 
 
-  app.post("/api/profilename/:userid", function (req, res) {
-    db.ProfileName.create({
-      fname: req.body.fname,
-      lname: req.body.lname,
+  
+
+
+  app.post("/api/project/:userid", function (req, res) {
+    db.Project.create({
       title: req.body.title,
-      bio: req.body.bio,
-      UserId: req.params.userid
+      screenshot: req.body.screenshot,
+      githublink: req.body.githublink,
+      demolink: req.body.demolink
     }).then(function (result) {
       res.json(result);
       console.log(result);

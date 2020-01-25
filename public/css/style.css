@@ -290,6 +290,21 @@ body {
   color: #999;
   letter-spacing: .5rem; }
 
+.custom-button {
+  padding: 1rem;
+  color: #999;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 1.5rem;
+  letter-spacing: .5rem;
+  text-transform: uppercase;
+  border-radius: .5rem;
+  border: none;
+  cursor: pointer; }
+
+.custom-button:hover {
+  background-color: #999;
+  color: #fff; }
+
 .form {
   text-align: center; }
   .form__group:not(:last-child) {
