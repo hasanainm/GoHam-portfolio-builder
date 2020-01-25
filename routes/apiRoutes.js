@@ -121,7 +121,7 @@ module.exports = function (app) {
       UserId: req.params.userid
     }).then(function (result) {
       res.json(result);
-      console.log(result);
+      // console.log(result);
     });
   });
 
@@ -143,20 +143,20 @@ module.exports = function (app) {
   app.post("/api/profilelinks/:userid", function(req,res){
     db.Links.create({
       linkedin:req.body.linkedin,
-      github:req.body.github,
+      instagram:req.body.instagram,
       facebook:req.body.facebook,
       twitter:req.body.twitter,
       UserId: req.params.userid
     }).then(function(result){
       res.json(result)
-      console.log(result)
+      // console.log(result)
     })
   })
 
   app.put("/api/updatelinks/:userid", function(req,res){
     db.Links.update({
       linkedin:req.body.linkedin,
-      github:req.body.github,
+      instagram:req.body.instagram,
       facebook:req.body.facebook,
       twitter:req.body.twitter
     }, {

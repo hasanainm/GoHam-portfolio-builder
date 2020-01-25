@@ -37,7 +37,7 @@ $(document).ready(function () {
         window.alert("Please fill in the form and click on the update button if you want to change the information")
     });
     var updateprofileid = $("#update").attr("data-updateid");
-    console.log(updateprofileid)
+    // console.log(updateprofileid)
     $("#update").on("click", function (event) {
         event.preventDefault();
         var fname = $("#fname-value").val().trim();

@@ -11,48 +11,48 @@ $(document).ready(function () {
     event.preventDefault();
 
     var linkedin = $("#linkedin-value").val().trim();
-    
-    var github = $("#github-value").val().trim();
-    
+
+    var instagram = $("#instagram-value").val().trim();
+
     var facebook = $("#facebook-value").val().trim();
-    
+
     var twitter = $("#twitter-value").val().trim();
-  
+
     $.ajax("/api/profilelinks/" + userid, {
       type: "POST",
       data: {
         linkedin: linkedin,
-        github: github,
+        instagram: instagram,
         facebook: facebook,
         twitter: twitter
       }
-      
+
     }).then(function (data) {
       console.log(data)
       location.reload();
     });
   });
 
-  $("#update").on("click", function(event){
+  $("#update").on("click", function (event) {
     event.preventDefault();
-    
+
     var linkedin = $("#linkedin-value").val().trim();
-    
-    var github = $("#github-value").val().trim();
-    
+
+    var instagram = $("#instagram-value").val().trim();
+
     var facebook = $("#facebook-value").val().trim();
-    
+
     var twitter = $("#twitter-value").val().trim();
 
     $.ajax("/api/updatelinks/" + userid, {
       type: "PUT",
       data: {
         linkedin: linkedin,
-        github: github,
-        facebook:facebook,
-        twitter:twitter
+        instagram: instagram,
+        facebook: facebook,
+        twitter: twitter
       }
-    }).then(function(){
+    }).then(function () {
       location.reload();
     })
   })
