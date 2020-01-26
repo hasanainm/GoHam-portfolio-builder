@@ -42,14 +42,14 @@ module.exports = function (app) {
   app.delete("/api/deletefrontendskills/:userid", function (req, res) {
     db.FrontEndSkills.destroy({
 
-      where:{
+      where: {
         id: req.params.userid
       }
     }).then(function (result) {
       res.json(result);
     });
   });
-  
+
   app.post("/api/backendskills/:userid", function (req, res) {
     var nameOfSkill = req.body.nameOfSkill;
 
@@ -64,7 +64,7 @@ module.exports = function (app) {
   app.delete("/api/deletebackendskills/:userid", function (req, res) {
     db.BackEndSkills.destroy({
 
-      where:{
+      where: {
         id: req.params.userid
       }
     }).then(function (result) {
@@ -81,15 +81,15 @@ module.exports = function (app) {
     });
   });
 
-  app.delete("/api/deleteframework/:userid", function(req, res) {
+  app.delete("/api/deleteframework/:userid", function (req, res) {
     db.Framework.destroy({
       where: {
         id: req.params.userid
       }
     })
-    .then(function(result) {
-      res.json(result);
-    });
+      .then(function (result) {
+        res.json(result);
+      });
   });
 
   app.post("/api/otherskills/:userid", function (req, res) {
@@ -101,14 +101,27 @@ module.exports = function (app) {
     });
   });
 
-  app.delete("/api/deleteotherskills/:userid", function(req, res) {
+  app.delete("/api/deleteotherskills/:userid", function (req, res) {
     db.OtherSkills.destroy({
       where: {
         id: req.params.userid
       }
     })
-    .then(function(result) {
+      .then(function (result) {
+        res.json(result);
+      });
+  });
+
+  app.post("/api/profilename/:userid", function (req, res) {
+    db.ProfileName.create({
+      fname: req.body.fname,
+      lname: req.body.lname,
+      title: req.body.title,
+      bio: req.body.bio,
+      UserId: req.params.userid
+    }).then(function (result) {
       res.json(result);
+      // console.log(result);
     });
   });
   
@@ -121,6 +134,49 @@ module.exports = function (app) {
     UserId:req.params.userid
     }).then(function(result){
       res.json(result);
+    })
+  })
+
+  app.put("/api/updateprofile/:userid", function(req,res){
+    db.ProfileName.update({
+      fname: req.body.fname,
+      lname: req.body.lname,
+      title: req.body.title,
+      bio: req.body.bio
+    }, {
+      where: {
+        id:req.params.userid
+      }
+    }).then(function(result){
+      res.json(result)
+    })
+  })
+
+  app.post("/api/profilelinks/:userid", function(req,res){
+    db.Links.create({
+      linkedin:req.body.linkedin,
+      instagram:req.body.instagram,
+      facebook:req.body.facebook,
+      twitter:req.body.twitter,
+      UserId: req.params.userid
+    }).then(function(result){
+      res.json(result)
+      // console.log(result)
+    })
+  })
+
+  app.put("/api/updatelinks/:userid", function(req,res){
+    db.Links.update({
+      linkedin:req.body.linkedin,
+      instagram:req.body.instagram,
+      facebook:req.body.facebook,
+      twitter:req.body.twitter
+    }, {
+      where: {
+        id:req.params.userid
+      }
+    }).then(function(result){
+      res.json(result)
     })
   })
 

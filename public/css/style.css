@@ -327,6 +327,30 @@ body {
     transition: all .3s;
     text-align: center; }
 
+.img-upload {
+  width: 30rem;
+  height: 15rem; }
+
+#custom-button {
+  padding: 1rem;
+  color: #999;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 1.5rem;
+  letter-spacing: .5rem;
+  text-transform: uppercase;
+  border-radius: .5rem;
+  border: none;
+  cursor: pointer; }
+
+#custom-button:hover {
+  background-color: #999;
+  color: #fff; }
+
+#custom-text {
+  margin-left: 10px;
+  color: #999;
+  letter-spacing: .5rem; }
+
 * {
   /* setting it to border box so the padding stays within the box model and doesnt make the width bigger */
   box-sizing: border-box; }
@@ -563,6 +587,7 @@ button.ghost {
   width: 30rem;
   height: 15rem;
   margin-left: 12rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   transition: transform .3s; }
   .template-dark:hover {
@@ -572,6 +597,7 @@ button.ghost {
   width: 30rem;
   height: 15rem;
   margin-right: 12rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   transition: transform .3s; }
   .template-minty:hover {
@@ -753,7 +779,7 @@ button.ghost {
   padding: 10rem;
   height: 90vh; }
 
-#section-name-title {
+.section-name-title {
   height: 95vh;
   width: 75vw;
   float: right;
@@ -778,7 +804,8 @@ button.ghost {
   height: 95vh;
   width: 75vw;
   float: right;
-  background-color: #f3eade; }
+  background-color: #f3eade;
+  overflow-y: scroll; }
 
 #section-resume {
   height: 95vh;

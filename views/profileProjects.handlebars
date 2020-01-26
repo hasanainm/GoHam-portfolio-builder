@@ -5,12 +5,28 @@
         <h3 class="heading-quad">
             Projects
             <div class="form__group u-center-text u-margin-top-small">
-                <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Screenshot" id="name" required>
-                <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Title" id="name" required>
-                <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Github Link" id="name" required>
+                {{!-- <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Screenshot" id="name"
+                    required> --}}
+
+                {{!-- upload image screenshot --}}
+                <div class="image-upload u-center-text" id="name" required>
+                    <input type="file" accept="image/gif, image/jpeg, image/png" name="image" id="file"
+                        onchange="loadFile(event)" hidden="hidden">
+                    <button type="button" id="custom-button"><label for="file" style="cursor: pointer;">Upload Project
+                            Screenshot</label></button>
+                    <br>
+                    <img class="u-margin-top-small u-margin-bottom-small img-upload" id="output" />
+                </div>
+
+
+                <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Title" id="name"
+                    required>
+                <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Github Link" id="name"
+                    required>
                 <input type="text" class="form__input" placeholder="Project Demo Link" id="name" required>
             </div>
         </h3>
     </div>
 </section>
 
+<script src="/js/imageUpload.js"></script>

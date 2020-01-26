@@ -1,17 +1,127 @@
 {{>sideNav}}
 
 <section id="section-links">
-    <div class="box8 u-center-text u-margin-top-big">
+    <div class="box8 u-center-text u-margin-top-big" id="data" data-id={{data.id}}>
+        {{#unless data.dataValues.Link.dataValues}}
         <h3 class="heading-quad">
             Links
+
             <div class="form__group u-center-text u-margin-top-small">
-                <input type="text" class="form__input u-margin-bottom-small" placeholder="LinkedIn Link" id="name" required>
-                <input type="text" class="form__input u-margin-bottom-small" placeholder="GitHub Link" id="name" required>
-                <input type="text" class="form__input u-margin-bottom-small" placeholder="Facebook Link" id="name" required>
-                <input type="text" class="form__input" placeholder="Twitter Link" id="name" required>
+                <input type="text" class="form__input u-margin-bottom-small" placeholder="LinkedIn Link"
+                    id="linkedin-value" required>
+
+                {{!-- {{#each data.dataValues.Links}}
+                <div>
+                    <li class="delete">
+                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.linkedin}}</button>
+                    </li>
+                </div>
+                {{/each}} --}}
             </div>
+
+
+            <div class="form__group u-center-text u-margin-top-small">
+                <input type="text" class="form__input u-margin-bottom-small" placeholder="Instagram Link" id="instagram-value" required>
+
+                {{!-- {{#each data.dataValues.Links}}
+                <div>
+                    <li class="delete">
+                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.instagram}}</button>
+                    </li>
+                </div>
+                {{/each}} --}}
+            </div>
+
+            <div class="form__group u-center-text u-margin-top-small">
+                <input type="text" class="form__input u-margin-bottom-small" placeholder="Facebook Link"
+                    id="facebook-value" required>
+
+                {{!-- {{#each data.dataValues.Links}}
+                <div class="delfacebook">
+                    <li class="delete">
+                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.facebook}}</button>
+                    </li>
+                </div>
+                {{/each}} --}}
+            </div>
+
+            <div class="form__group u-center-text u-margin-top-small">
+                <input type="text" class="form__input" placeholder="Twitter Link" id="twitter-value" required>
+
+                {{!-- {{#each data.dataValues.Links}}
+                <div class="deltwitter">
+                    <li class="delete">
+                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.twitter}}</button>
+                    </li>
+                </div>
+                {{/each}} --}}
+            </div>
+
         </h3>
+        <button type="button" class="btn btn-light submit" id="submit-links">Submit</button>
+        {{else}}
+        <h3 class="heading-quad">
+            Links
+
+            <div class="form__group u-center-text u-margin-top-small">
+                <input type="text" class="form__input u-margin-bottom-small" placeholder="LinkedIn Link"
+                    id="linkedin-value" required>
+
+                {{!-- {{#each data.dataValues.Links}}
+                <div>
+                    <li class="delete">
+                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.linkedin}}</button>
+                    </li>
+                </div>
+                {{/each}} --}}
+            </div>
+
+
+            <div class="form__group u-center-text u-margin-top-small">
+                <input type="text" class="form__input u-margin-bottom-small" placeholder="instagram Link" id="instagram-value"
+                    required>
+
+                {{!-- {{#each data.dataValues.Links}}
+                <div>
+                    <li class="delete">
+                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.instagram}}</button>
+                    </li>
+                </div>
+                {{/each}} --}}
+            </div>
+
+            <div class="form__group u-center-text u-margin-top-small">
+                <input type="text" class="form__input u-margin-bottom-small" placeholder="Facebook Link"
+                    id="facebook-value" required>
+
+                {{!-- {{#each data.dataValues.Links}}
+                <div class="delfacebook">
+                    <li class="delete">
+                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.facebook}}</button>
+                    </li>
+                </div>
+                {{/each}} --}}
+            </div>
+
+            <div class="form__group u-center-text u-margin-top-small">
+                <input type="text" class="form__input" placeholder="Twitter Link" id="twitter-value" required>
+
+                {{!-- {{#each data.dataValues.Links}}
+                <div class="deltwitter">
+                    <li class="delete">
+                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.twitter}}</button>
+                    </li>
+                </div>
+                {{/each}} --}}
+            </div>
+
+        </h3>
+        <div class="submitupdate">
+            <a class="btn btn-light fas fa-edit submit" id="update" data-updateid="{{data.dataValues.Links.dataValues.id}}"></a>
+        </div>
+        {{/unless}}
     </div>
+
 </section>
 
-
+<script src="/js/crud-links.js"></script>
