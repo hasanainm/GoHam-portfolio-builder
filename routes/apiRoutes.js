@@ -112,59 +112,6 @@ module.exports = function (app) {
       });
   });
 
-
-  app.post("/api/links/:userid", function (req, res) {
-    var linkedin = req.body.linkedin;
-    var github = req.body.github;
-    var facebook = req.body.facebook;
-    var twitter = req.body.twitter;
-
-    db.Links.create({
-      linkedin: linkedin,
-      github: github,
-      facebook: facebook,
-      twitter: twitter,
-      UserId: req.params.userid
-
-    }).then(function (result) {
-      res.json(result);
-      console.log(result);
-    });
-  });
-
-  app.delete("/api/deletelinks/:userid", function (req, res) {
-    db.Links.destroy({
-      where: {
-        id: req.params.userid
-      }
-    })
-      .then(function (result) {
-        res.json(result);
-      });
-  });
-
-
-  app.post("/api/resume/:userid", function (req, res) {
-    db.Resume.create({
-      PDF: req.body.PDF,
-      UserId: req.params.userid
-    }).then(function (result) {
-      res.json(result);
-    });
-  });
-
-  app.delete("/api/deleteresume/:userid", function (req, res) {
-    db.Resume.destroy({
-      where: {
-        id: req.params.userid
-      }
-    })
-      .then(function (result) {
-        res.json(result);
-      });
-  });
-
-
   app.post("/api/profilename/:userid", function (req, res) {
     db.ProfileName.create({
       fname: req.body.fname,
@@ -174,8 +121,51 @@ module.exports = function (app) {
       UserId: req.params.userid
     }).then(function (result) {
       res.json(result);
-      console.log(result);
+      // console.log(result);
     });
   });
+
+  app.put("/api/updateprofile/:userid", function(req,res){
+    db.ProfileName.update({
+      fname: req.body.fname,
+      lname: req.body.lname,
+      title: req.body.title,
+      bio: req.body.bio
+    }, {
+      where: {
+        id:req.params.userid
+      }
+    }).then(function(result){
+      res.json(result)
+    })
+  })
+
+  app.post("/api/profilelinks/:userid", function(req,res){
+    db.Links.create({
+      linkedin:req.body.linkedin,
+      instagram:req.body.instagram,
+      facebook:req.body.facebook,
+      twitter:req.body.twitter,
+      UserId: req.params.userid
+    }).then(function(result){
+      res.json(result)
+      // console.log(result)
+    })
+  })
+
+  app.put("/api/updatelinks/:userid", function(req,res){
+    db.Links.update({
+      linkedin:req.body.linkedin,
+      instagram:req.body.instagram,
+      facebook:req.body.facebook,
+      twitter:req.body.twitter
+    }, {
+      where: {
+        id:req.params.userid
+      }
+    }).then(function(result){
+      res.json(result)
+    })
+  })
 
 };

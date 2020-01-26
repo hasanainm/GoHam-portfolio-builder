@@ -11,47 +11,49 @@ $(document).ready(function () {
     event.preventDefault();
 
     var linkedin = $("#linkedin-value").val().trim();
-    var github = $("#github-value").val().trim();
+
+    var instagram = $("#instagram-value").val().trim();
+
     var facebook = $("#facebook-value").val().trim();
+
     var twitter = $("#twitter-value").val().trim();
 
-    $.ajax("/api/links/" + userid, {
+    $.ajax("/api/profilelinks/" + userid, {
       type: "POST",
       data: {
         linkedin: linkedin,
-        github: github,
+        instagram: instagram,
         facebook: facebook,
         twitter: twitter
       }
-      
-    }).then(function (data) {
-      $("#linkedin-value")
-      $("#github-value")
-      $("#facebook-value")
-      $("#twitter-value")
 
+    }).then(function (data) {
       console.log(data)
       location.reload();
     });
   });
 
-  $(".deletebtn").on("click", function (event) {
-    console.log("clicked")
+  $("#update").on("click", function (event) {
     event.preventDefault();
 
-    var id = $(this).data("deleteid");
-    console.log(id);
-    console.log("clicked");
+    var linkedin = $("#linkedin-value").val().trim();
 
-    $.ajax("/api/deletelinks/" + id, {
-      type: "DELETE"
-    }).then(
-      function () {
-        console.log("deleted id", id);
-        location.reload();
+    var instagram = $("#instagram-value").val().trim();
+
+    var facebook = $("#facebook-value").val().trim();
+
+    var twitter = $("#twitter-value").val().trim();
+
+    $.ajax("/api/updatelinks/" + userid, {
+      type: "PUT",
+      data: {
+        linkedin: linkedin,
+        instagram: instagram,
+        facebook: facebook,
+        twitter: twitter
       }
-    );
-  });
-
-
+    }).then(function () {
+      location.reload();
+    })
+  })
 })

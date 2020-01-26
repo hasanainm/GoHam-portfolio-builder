@@ -2,6 +2,7 @@
 
 <section id="section-links">
     <div class="box8 u-center-text u-margin-top-big" id="data" data-id={{data.id}}>
+        {{#unless data.dataValues.Link.dataValues}}
         <h3 class="heading-quad">
             Links
 
@@ -20,13 +21,12 @@
 
 
             <div class="form__group u-center-text u-margin-top-small">
-                <input type="text" class="form__input u-margin-bottom-small" placeholder="GitHub Link" id="github-value"
-                    required>
+                <input type="text" class="form__input u-margin-bottom-small" placeholder="Instagram Link" id="instagram-value" required>
 
                 {{!-- {{#each data.dataValues.Links}}
                 <div>
                     <li class="delete">
-                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.github}}</button>
+                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.instagram}}</button>
                     </li>
                 </div>
                 {{/each}} --}}
@@ -59,34 +59,69 @@
 
         </h3>
         <button type="button" class="btn btn-light submit" id="submit-links">Submit</button>
+        {{else}}
+        <h3 class="heading-quad">
+            Links
+
+            <div class="form__group u-center-text u-margin-top-small">
+                <input type="text" class="form__input u-margin-bottom-small" placeholder="LinkedIn Link"
+                    id="linkedin-value" required>
+
+                {{!-- {{#each data.dataValues.Links}}
+                <div>
+                    <li class="delete">
+                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.linkedin}}</button>
+                    </li>
+                </div>
+                {{/each}} --}}
+            </div>
+
+
+            <div class="form__group u-center-text u-margin-top-small">
+                <input type="text" class="form__input u-margin-bottom-small" placeholder="instagram Link" id="instagram-value"
+                    required>
+
+                {{!-- {{#each data.dataValues.Links}}
+                <div>
+                    <li class="delete">
+                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.instagram}}</button>
+                    </li>
+                </div>
+                {{/each}} --}}
+            </div>
+
+            <div class="form__group u-center-text u-margin-top-small">
+                <input type="text" class="form__input u-margin-bottom-small" placeholder="Facebook Link"
+                    id="facebook-value" required>
+
+                {{!-- {{#each data.dataValues.Links}}
+                <div class="delfacebook">
+                    <li class="delete">
+                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.facebook}}</button>
+                    </li>
+                </div>
+                {{/each}} --}}
+            </div>
+
+            <div class="form__group u-center-text u-margin-top-small">
+                <input type="text" class="form__input" placeholder="Twitter Link" id="twitter-value" required>
+
+                {{!-- {{#each data.dataValues.Links}}
+                <div class="deltwitter">
+                    <li class="delete">
+                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.twitter}}</button>
+                    </li>
+                </div>
+                {{/each}} --}}
+            </div>
+
+        </h3>
+        <div class="submitupdate">
+            <a class="btn btn-light fas fa-edit submit" id="update" data-updateid="{{data.dataValues.Links.dataValues.id}}"></a>
+        </div>
+        {{/unless}}
     </div>
 
-    {{#if data.dataValues.Links}}
-    <table id="tableBody" class="responsive-table">
-        <tbody>
-            <tr class="incoming-data">
-                <td>LinkedIn</td>
-                <td>Github</td>
-                <td>Facebook</td>
-                <td>Twitter</td>
-            </tr>
-            {{#each data.dataValues.Links}}
-            <li class="delete">
-                <td>{{dataValues.linkedin}}</td>
-                <td>{{dataValues.github}}</td>
-                <td>{{dataValues.facebook}}</td>
-                <td>{{dataValues.twitter}}</td>
-                <td><button id="delete" data-deleteid="{{dataValues.id}}" class="deletebtn"></button></td>
-                {{!-- <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.linkedin}}</button>
-                <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.github}}</button>
-                <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.facebook}}</button>
-                <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.twitter}}</button> --}}
-            </li>
-            {{/each}}
-
-        </tbody>
-    </table>
-    {{/if}}
 </section>
 
 <script src="/js/crud-links.js"></script>
