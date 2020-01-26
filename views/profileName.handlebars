@@ -23,7 +23,7 @@
         </h3>
     </div>
 
-    <div class="box3 u-center-text u-margin-top-big u-margin-bottom-small" id="data" data-submitid={{data.id}}>
+    <div class="box3 u-center-text u-margin-top-big u-margin-bottom-small">
         <h3 class="heading-quad">
             What is your story?
             <div class="form__group u-center-text u-margin-top-small">
@@ -32,6 +32,12 @@
             </div>
         </h3>
     </div>
+    <div class="submitupdate">
+    <a class="btn btn-light fas fa-edit submit" id="update" data-updateid="{{data.dataValues.ProfileName.dataValues.id}}"></a>
+    </div>
+    {{/unless}}
+
+</section>
 
     <div class="submitupdate">
     <button type="button" class="btn btn-light submit" id="submit">Submit</button>
