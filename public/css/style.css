@@ -188,21 +188,7 @@ body {
   animation-fill-mode: backwards; }
 
 .submit {
-  margin-left: 45rem; }
-
-.delete {
-  list-style-type: none;
-  display: inline; }
-
-.frontenddeletebtn, .backenddeletebtn, .frameworksdeletebtn, .otherskillsdeletebtn {
-  border: none;
-  border-radius: .3rem;
-  padding: .5rem;
-  color: #777;
-  background-color: #f7f7f7;
-  font-weight: 200;
-  font-size: 1.6rem;
-  font-family: "Lato", sans-serif; }
+  margin-left: 46rem; }
 
 .composition {
   position: relative; }
@@ -304,21 +290,6 @@ body {
   color: #999;
   letter-spacing: .5rem; }
 
-.custom-button {
-  padding: 1rem;
-  color: #999;
-  background-color: rgba(255, 255, 255, 0.5);
-  font-size: 1.5rem;
-  letter-spacing: .5rem;
-  text-transform: uppercase;
-  border-radius: .5rem;
-  border: none;
-  cursor: pointer; }
-
-.custom-button:hover {
-  background-color: #999;
-  color: #fff; }
-
 .form {
   text-align: center; }
   .form__group:not(:last-child) {
@@ -355,10 +326,6 @@ body {
     display: block;
     transition: all .3s;
     text-align: center; }
-
-.form-control {
-  width: 50% !important;
-  margin-left: 22rem !important; }
 
 .img-upload {
   width: 30rem;

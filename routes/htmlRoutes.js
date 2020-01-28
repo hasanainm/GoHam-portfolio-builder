@@ -27,7 +27,7 @@ module.exports = function (app) {
       where: { id: req.params.id }
     }).then(function (results) {
       res.render("profileName", { data: results });
-      console.log(results);
+      // console.log(results);
     });
   });
 
@@ -48,7 +48,7 @@ module.exports = function (app) {
       where: { id: req.params.id }
     }).then(function (results) {
       res.render("profileSkills", { data: results });
-      // console.log(req.params.id);
+      // console.log(results);
     });
   });
 
@@ -69,7 +69,7 @@ module.exports = function (app) {
       where: { id: req.params.id }
     }).then(function (results) {
       res.render("profileProjects", { data: results });
-      // console.log(results);
+      // console.log(req.params.id);
     });
   });
 
