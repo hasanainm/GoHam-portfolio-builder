@@ -23,7 +23,7 @@ $(document).ready(function () {
         }).then(function (data) {
           for (var i = 0; i < data.length; i++) {
             if (data[i].userid == user.uid) {
-              window.location = "/cmsPage/" + data[i].id
+              window.location = "cmsPage/" + data[i].id
             }
           }
         });
@@ -84,7 +84,7 @@ $(document).ready(function () {
       }).then(function (data) {
         for (var i = 0; i < data.length; i++) {
           if (data[i].userid == cred.user.uid) {
-            window.location = "/cmsPage/" + data[i].id
+            window.location = "cmsPage/" + data[i].id
           }
         }
       });

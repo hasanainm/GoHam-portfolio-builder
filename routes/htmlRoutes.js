@@ -12,7 +12,7 @@ module.exports = function (app) {
 
 
   // user's name and the page that gets loaded after user logins
-  app.get("/cmsPage/:id", function (req, res) {
+  app.get("/main/:id", function (req, res) {
     db.User.findOne({
       include: [
         db.BackEndSkills,
