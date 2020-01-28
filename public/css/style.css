@@ -188,7 +188,21 @@ body {
   animation-fill-mode: backwards; }
 
 .submit {
-  margin-left: 46rem; }
+  margin-left: 45rem; }
+
+.delete {
+  list-style-type: none;
+  display: inline; }
+
+.frontenddeletebtn, .backenddeletebtn, .frameworksdeletebtn, .otherskillsdeletebtn {
+  border: none;
+  border-radius: .3rem;
+  padding: .5rem;
+  color: #777;
+  background-color: #f7f7f7;
+  font-weight: 200;
+  font-size: 1.6rem;
+  font-family: "Lato", sans-serif; }
 
 .composition {
   position: relative; }
@@ -341,6 +355,10 @@ body {
     display: block;
     transition: all .3s;
     text-align: center; }
+
+.form-control {
+  width: 50% !important;
+  margin-left: 22rem !important; }
 
 .img-upload {
   width: 30rem;

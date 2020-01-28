@@ -26,14 +26,39 @@ $(document).ready(function () {
                 bio: bio
             }
         }).then(function (data) {
-            $("#fname-value")
-            $("#lname-value")
-            $("#title-value")
-            $("#bio-value")
+            $("#fname-value").val("");
+            $("#lname-value").val("");
+            $("#title-value").val("");
+            $("#bio-value").val("");
             console.log(data)
-            // location.reload();
+            location.reload();
         });
-        // }
+        window.alert("Please fill in the form and click on the update button if you want to change the information")
     });
+
+    var updateprofileid = $("#update").attr("data-updateid");
+    // console.log(updateprofileid)
+    $("#update").on("click", function (event) {
+        event.preventDefault();
+        var fname = $("#fname-value").val().trim();
+     
+        var lname = $("#lname-value").val().trim();
+     
+        var title = $("#title-value").val().trim();
+       
+        var bio = $("#bio-value").val().trim();
+        $.ajax("/api/updateprofile/" + updateprofileid, {
+            type: "PUT",
+            data: {
+                fname: fname,
+                lname: lname,
+                title: title,
+                bio: bio
+            }
+        }).then(function (data) {
+            console.log(data)
+            location.reload();
+        });
+    })
 
 });

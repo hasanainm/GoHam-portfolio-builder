@@ -6,6 +6,7 @@ $(document).ready(function () {
     $("#submit-project").on("click", function (event) {
 
         event.preventDefault();
+
         var title = $("#project-title-value").val().trim();
         var screenshot = $("#file").val().trim();
         var githublink = $("#project-github").val().trim();
@@ -21,27 +22,41 @@ $(document).ready(function () {
                 demolink: demolink,
             }
         }).then(function () {
-            // location.reload();
+            location.reload();
         });
     });
 
-    // $("#update-project-title").on("submit", function (event) {
-    //     event.preventDefault();
-    //     var id = $("[name=id]").val().trim();
-    //     console.log(id);
 
-    //     var updateProjectTitle = {
-    //         title: $("#update-project-title [name=project-title]").val().trim()
-    //     };
-    //     $.ajax("/api/updateprojecttitle/" + id, {
-    //         type: "PUT",
-    //         data: updateProjectTitle
-    //     }).then(
-    //         function () {
-    //             console.log("updated id " + id);
-    //             location.reload();
-    //         }
-    //     )
-    // })
+    var select = document.getElementById("my-select");
+    console.log(select);
+    select.onchange = function () {
 
-});
+        var selectedString = select.options[select.selectedIndex].value;
+        console.log(selectedString)
+
+        $("#update-project").on("click", function (event) {
+            event.preventDefault();
+
+
+            var title = $("#project-title-value").val().trim();
+            var screenshot = $("#file").val().trim();
+            var githublink = $("#project-github").val().trim();
+            var demolink = $("#project-demo").val().trim();
+
+            $.ajax("/api/updateproject/" + selectedString, {
+                type: "PUT",
+                data: {
+                    title: title,
+                    screenshot: screenshot,
+                    githublink: githublink,
+                    demolink: demolink
+                }
+            }).then(function () {
+                location.reload();
+            })
+        });
+    };
+
+
+
+})

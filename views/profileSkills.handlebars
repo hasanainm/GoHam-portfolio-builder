@@ -10,7 +10,8 @@
             {{#each data.dataValues.FrontEndSkills}}
             <div class="delfrontendskill">
                 <li class="delete">
-                    <button data-deleteid="{{dataValues.id}}" class="frontenddeletebtn">{{dataValues.nameOfSkill}}</button>
+                    <button data-deleteid="{{dataValues.id}}"
+                        class="frontenddeletebtn">{{dataValues.nameOfSkill}}</button>
                 </li>
             </div>
             {{/each}}
@@ -26,7 +27,8 @@
             {{#each data.dataValues.BackEndSkills}}
             <div class="delbackendskill">
                 <li class="delete">
-                    <button data-deleteid="{{dataValues.id}}" class="backenddeletebtn">{{dataValues.nameOfSkill}}</button>
+                    <button data-deleteid="{{dataValues.id}}"
+                        class="backenddeletebtn">{{dataValues.nameOfSkill}}</button>
                 </li>
             </div>
             {{/each}}
@@ -42,7 +44,8 @@
             {{#each data.dataValues.Frameworks}}
             <div class="delframework">
                 <li class="delete">
-                    <button data-deleteid="{{dataValues.id}}" class="frameworksdeletebtn">{{dataValues.nameOfSkill}}</button>
+                    <button data-deleteid="{{dataValues.id}}"
+                        class="frameworksdeletebtn">{{dataValues.nameOfSkill}}</button>
                 </li>
             </div>
             {{/each}}
@@ -57,14 +60,17 @@
             </div>
             {{#each data.dataValues.OtherSkills}}
             <div class="delotherskill">
-                <li class="delete">
-                    <button data-deleteid="{{dataValues.id}}" class="otherskillsdeletebtn">{{dataValues.nameOfSkill}}</button>
-                </li>
+                <ul class="deletelist">
+                    <li class="delete">
+                        <button data-deleteid="{{dataValues.id}}"
+                            class="otherskillsdeletebtn">{{dataValues.nameOfSkill}}</i></button>
+                    </li>
+                </ul>
             </div>
             {{/each}}
         </h3>
     </div>
-    <button type="button" class="btn btn-light submit" id="submit">Submit</button>
+    <button type="button" class="btn btn-light submit u-margin-bottom-medium" id="submit">Submit</button>
 </section>
 
 <script src="/js/crudSkills.js"></script>

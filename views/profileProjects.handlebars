@@ -2,33 +2,40 @@
 
 <section id="section-projects">
     <div class="box7 u-center-text u-margin-top-big" id="data" data-id={{data.id}}>
-        <h3 class="heading-quad">
-            Projects {{data.id}}
-            <div class="form__group u-center-text u-margin-top-small">
-                {{!-- <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Screenshot" id="name"
-                    required> --}}
 
-                {{!-- upload image screenshot --}}
-                <div class="image-upload u-center-text" id="name" required>
-                    <input type="file" accept="image/gif, image/jpeg, image/png" name="image" id="file"
-                        onchange="loadFile(event)" hidden="hidden">
-                    <button type="button" id="custom-button"><label for="file" style="cursor: pointer;">Upload Project
-                            Screenshot</label></button>
-                    <br>
-                    <img class="u-margin-top-small u-margin-bottom-small img-upload" id="output" />
-                </div>
+        <select class="form-control" id="my-select">
+            {{#each data.dataValues.Projects}}
+            <option value={{dataValues.id}}>Project {{dataValues.id}}</option>
+            {{/each}}
+        </select>
+        {{!-- <h3 class="heading-quad">
+            Projects --}}
+        <div class="form__group u-center-text u-margin-top-small">
 
-
-                <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Title" id="project-title-value"
-                    required>
-                <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Github Link" id="project-github"
-                    required>
-                <input type="text" class="form__input" placeholder="Project Demo Link" id="project-demo" required>
+            {{!-- upload image screenshot --}}
+            <div class="image-upload u-center-text" id="name" required>
+                <input type="file" accept="image/gif, image/jpeg, image/png" name="image" id="file"
+                    onchange="loadFile(event)" hidden="hidden">
+                <button type="button" id="custom-button">
+                    <label for="file" style="cursor: pointer;">Upload Project Screenshot</label>
+                </button>
+                <br>
+                <img class="u-margin-top-small u-margin-bottom-small img-upload" id="output" />
             </div>
-        </h3>
+
+
+            <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Title"
+                id="project-title-value" required>
+            <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Github Link"
+                id="project-github" required>
+            <input type="text" class="form__input" placeholder="Project Demo Link" id="project-demo" required>
+        </div>
+        {{!-- </h3> --}}
     </div>
 
-    <button type="button" class="btn btn-light submit" id="submit-project">Submit</button>
+    <button type="button" class="btn btn-light submit u-margin-top-medium u-margin-bottom-small" id="submit-project">Submit</button>
+
+    <button type="button" class="btn btn-light submit u-margin-bottom-medium" id="update-project">Update</button>
 </section>
 
 <script src="/js/imageUpload.js"></script>

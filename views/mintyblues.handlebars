@@ -68,8 +68,8 @@
       <!-- creating 2 cards to display content on front and back -->
       <div class="card">
         <div class="card__side card__side--front">
-          <h3 class="card-title">{{data.Project.title}}</h3>
-          <img src={{data.Project.screenshot}} class="card-image"
+          <h3 class="card-title">Project 1</h3>
+          <img src="/template-themes/MintyBlues/img/andrew-neel-cckf4TsHAuw-unsplash.jpg" class="card-image"
             alt="project1">
         </div>
         <div class="card__side card__side--back">
@@ -113,10 +113,13 @@
       Get in touch with me!
     </h2>
     <div class="connect">
-      <i class="fa fa-facebook-official connect__icon u-icon u-padding" aria-hidden="true"></i>
-      <i class="fa fa-instagram connect__icon u-icon u-padding" aria-hidden="true"></i>
-      <i class="fa fa-linkedin connect__icon u-icon u-padding" aria-hidden="true"></i>
-      <i class="fa fa-twitter-square connect__icon u-icon u-padding" aria-hidden="true"></i>
+      <a href={{data.dataValues.Link.dataValues.facebook}} target="_blank"><i class="fa fa-facebook-official connect__icon u-icon u-padding" aria-hidden="true"></i></a>
+
+      <a href={{data.dataValues.Link.dataValues.instagram}} target="_blank"><i class="fa fa-instagram connect__icon u-icon u-padding" aria-hidden="true"></i></a>
+
+      <a href={{data.dataValues.Link.dataValues.linkedin}} target="_blank"><i class="fa fa-linkedin connect__icon u-icon u-padding" aria-hidden="true"></i></a>
+
+      <a href={{data.dataValues.Link.dataValues.twitter}} target="_blank"><i class="fa fa-twitter-square connect__icon u-icon u-padding" aria-hidden="true"></i></a>
     </div>
 
   </div>
@@ -129,85 +132,3 @@
       </p>
     </div>
   </footer>
-
-
-
-
-
-
-  <!-- creating a grid system using floats to build consistent interfaces(dividing available spaces) -->
-  <!-- <section class="grid-test">
-
-    2 columns
-    <div class="row">
-      <div class="col-1-of-2">
-        Col 1 of 2
-      </div>
-      <div class="col-1-of-2">
-        Col 1 of 2
-      </div>
-    </div>
-
-    3 columns
-    <div class="row">
-      <div class="col-1-of-3">
-        Col 1 of 3
-      </div>
-      <div class="col-1-of-3">
-        Col 1 of 3
-      </div>
-      <div class="col-1-of-3">
-        Col 1 of 3
-      </div>
-    </div>
-
-    2 columns
-    <div class="row">
-      <div class="col-1-of-3">
-        Col 1 of 3
-      </div>
-      <div class="col-2-of-3">
-        Col 2 of 3
-      </div>
-    </div>
-
-    4 columns
-    <div class="row">
-      <div class="col-1-of-4">
-        Col 1 of 4
-      </div>
-      <div class="col-1-of-4">
-        Col 1 of 4
-      </div>
-      <div class="col-1-of-4">
-        Col 1 of 4
-      </div>
-      <div class="col-1-of-4">
-        Col 1 of 4
-      </div>
-    </div>
-
-    3 columns
-    <div class="row">
-      <div class="col-1-of-4">
-        Col 1 of 4
-      </div>
-      <div class="col-1-of-4">
-        Col 1 of 4
-      </div>
-      <div class="col-2-of-4">
-        Col 2 of 4
-      </div>
-    </div>
-
-    2 columns
-    <div class="row">
-      <div class="col-1-of-4">
-        Col 1 of 4
-      </div>
-      <div class="col-3-of-4">
-        Col 3 of 4
-      </div>
-    </div>
-
-  </section> -->
