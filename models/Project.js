@@ -3,8 +3,8 @@ module.exports = function (sequelize, DataTypes) {
     title: {
         type: DataTypes.STRING,
     },
-    screenshot: {
-        type: DataTypes.BLOB,
+    description: {
+        type: DataTypes.STRING,
     },
     githublink: {
         type: DataTypes.STRING,
