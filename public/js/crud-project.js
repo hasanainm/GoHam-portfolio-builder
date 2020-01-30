@@ -23,7 +23,7 @@ $(document).ready(function () {
                 demolink: demolink
             }
         }).then(function (data) {
-            // location.reload();
+            location.reload();
         });
     });
 
