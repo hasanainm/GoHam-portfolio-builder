@@ -125,7 +125,7 @@ module.exports = function (app) {
     });
   });
 
-  app.put("/api/updateprofile/:userid", function(req,res){
+  app.put("/api/updateprofile/:userid", function (req, res) {
     db.ProfileName.update({
       fname: req.body.fname,
       lname: req.body.lname,
@@ -133,37 +133,37 @@ module.exports = function (app) {
       bio: req.body.bio
     }, {
       where: {
-        id:req.params.userid
+        id: req.params.userid
       }
-    }).then(function(result){
+    }).then(function (result) {
       res.json(result)
     })
   })
 
-  app.post("/api/profilelinks/:userid", function(req,res){
+  app.post("/api/profilelinks/:userid", function (req, res) {
     db.Links.create({
-      linkedin:req.body.linkedin,
-      instagram:req.body.instagram,
-      facebook:req.body.facebook,
-      twitter:req.body.twitter,
+      linkedin: req.body.linkedin,
+      instagram: req.body.instagram,
+      facebook: req.body.facebook,
+      twitter: req.body.twitter,
       UserId: req.params.userid
-    }).then(function(result){
+    }).then(function (result) {
       res.json(result)
       // console.log(result)
     })
   })
 
-  app.put("/api/updatelinks/:userid", function(req,res){
+  app.put("/api/updatelinks/:userid", function (req, res) {
     db.Links.update({
-      linkedin:req.body.linkedin,
-      instagram:req.body.instagram,
-      facebook:req.body.facebook,
-      twitter:req.body.twitter
+      linkedin: req.body.linkedin,
+      instagram: req.body.instagram,
+      facebook: req.body.facebook,
+      twitter: req.body.twitter
     }, {
       where: {
-        id:req.params.userid
+        id: req.params.userid
       }
-    }).then(function(result){
+    }).then(function (result) {
       res.json(result)
     })
   })
@@ -176,6 +176,19 @@ module.exports = function (app) {
     }).then(function (result) {
       res.json(result);
     });
+  });
+
+  app.put("/api/updateresume/:userid", function (req, res) {
+    db.Resume.update({
+      PDF: req.body.PDF
+    }, {
+      where: {
+        id: req.params.userid
+      }
+    })
+      .then(function (result) {
+        res.json(result);
+      });
   });
 
 

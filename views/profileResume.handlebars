@@ -2,6 +2,7 @@
 
 <section id="section-resume">
     <div class="box8 u-center-text u-margin-top-big" id="data" data-id={{data.id}}>
+        {{#unless data.dataValues.Resume.dataValues}}
         <h3 class="heading-quad">
             Resume
             <div class="form__group u-center-text u-margin-top-small">
@@ -10,16 +11,28 @@
                 <span id="custom-text">No file chosen, yet.</span>
                 {{!-- <input type="text" class="form__input" placeholder="Upload Resume PDF" id="name" required> --}}
             </div>
-            {{#each data.dataValues.Resume}}
-            <div class="delresume">
-                <li class="delete">
-                    <button data-deleteid="{{dataValues.id}}" class="resumedeletebtn">{{dataValues.PDF}}</button>
-                </li>
-            </div>
-            {{/each}}
+
         </h3>
+        <button type="button" class="btn btn-light submit u-margin-top-medium" id="submit">Submit</button>
+
+        {{else}}
+
+        <h3 class="heading-quad">
+            Resume
+            <div class="form__group u-center-text u-margin-top-small">
+                <input type="file" id="user-file" hidden="hidden" class="resume-value" />
+                <button type="button" id="custom-button">upload</button>
+                <span id="custom-text">No file chosen, yet.</span>
+                {{!-- <input type="text" class="form__input" placeholder="Upload Resume PDF" id="name" required> --}}
+            </div>
+
+        </h3>
+        <button type="button" class="btn btn-light submit u-margin-top-medium" id="update-resume">Update Resume</button>
+
+
+        {{/unless}}
     </div>
-    <button type="button" class="btn btn-light submit" id="submit">Submit</button>
+
 </section>
 
 
