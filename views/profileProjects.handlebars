@@ -1,7 +1,7 @@
 {{>sideNav}}
 
 <section id="section-projects">
-    <div class="box7 u-center-text u-margin-top-big">
+    <div class="box7 u-center-text u-margin-top-big" id="data" data-id={{data.id}}>
         <h3 class="heading-quad">
             Projects
             <div class="form__group u-center-text u-margin-top-small">
@@ -19,14 +19,20 @@
                 </div>
 
 
-                <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Title" id="name"
-                    required>
-                <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Github Link" id="name"
-                    required>
-                <input type="text" class="form__input" placeholder="Project Demo Link" id="name" required>
+                <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Title"
+                    id="project-title-value" required>
+                <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Github Link"
+                    id="project-github" required>
+                <input type="text" class="form__input" placeholder="Project Demo Link" id="project-demo" required>
             </div>
         </h3>
     </div>
+
+    <button type="button" class="btn btn-light submit u-margin-top-medium  u-margin-bottom-medium"
+        id="submit-project">Submit</button>
+
 </section>
 
 <script src="/js/imageUpload.js"></script>
+
+<script src="/js/crud-project.js"></script>

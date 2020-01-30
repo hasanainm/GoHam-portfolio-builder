@@ -1,7 +1,7 @@
 {{>sideNav}}
 
 <section id="section-skills">
-    <div class="box3 u-center-text u-margin-top-big u-margin-bottom-small">
+    <div class="box3 u-center-text u-margin-top-big u-margin-bottom-medium">
         <h3 class="heading-quad">
             Front-End Skills
             <div class="form__group u-center-text u-margin-top-small">
@@ -10,14 +10,15 @@
             {{#each data.dataValues.FrontEndSkills}}
             <div class="delfrontendskill">
                 <li class="delete">
-                    <button data-deleteid="{{dataValues.id}}" class="frontenddeletebtn">{{dataValues.nameOfSkill}}</button>
+                    <button data-deleteid="{{dataValues.id}}" class="frontenddeletebtn">{{dataValues.nameOfSkill}} <i
+                            class="fas fa-trash-alt"></i></button>
                 </li>
             </div>
             {{/each}}
         </h3>
     </div>
 
-    <div class="box4 u-center-text u-margin-bottom-small" id="data" data-id={{data.id}}>
+    <div class="box4 u-center-text u-margin-bottom-medium" id="data" data-id={{data.id}}>
         <h3 class="heading-quad">
             Back-End Skills
             <div class="form__group u-center-text u-margin-top-small">
@@ -26,14 +27,15 @@
             {{#each data.dataValues.BackEndSkills}}
             <div class="delbackendskill">
                 <li class="delete">
-                    <button data-deleteid="{{dataValues.id}}" class="backenddeletebtn">{{dataValues.nameOfSkill}}</button>
+                    <button data-deleteid="{{dataValues.id}}" class="backenddeletebtn">{{dataValues.nameOfSkill}} <i
+                            class="fas fa-trash-alt"></i></button>
                 </li>
             </div>
             {{/each}}
         </h3>
     </div>
 
-    <div class="box5 u-center-text u-margin-bottom-small">
+    <div class="box5 u-center-text u-margin-bottom-medium">
         <h3 class="heading-quad">
             Frameworks
             <div class="form__group u-center-text u-margin-top-small">
@@ -42,14 +44,15 @@
             {{#each data.dataValues.Frameworks}}
             <div class="delframework">
                 <li class="delete">
-                    <button data-deleteid="{{dataValues.id}}" class="frameworksdeletebtn">{{dataValues.nameOfSkill}}</button>
+                    <button data-deleteid="{{dataValues.id}}" class="frameworksdeletebtn">{{dataValues.nameOfSkill}} <i
+                            class="fas fa-trash-alt"></i></button>
                 </li>
             </div>
             {{/each}}
         </h3>
     </div>
 
-    <div class="box6 u-center-text u-margin-bottom-small">
+    <div class="box6 u-center-text u-margin-bottom-medium">
         <h3 class="heading-quad">
             Other Skills
             <div class="form__group u-center-text u-margin-top-small">
@@ -58,13 +61,15 @@
             {{#each data.dataValues.OtherSkills}}
             <div class="delotherskill">
                 <li class="delete">
-                    <button data-deleteid="{{dataValues.id}}" class="otherskillsdeletebtn">{{dataValues.nameOfSkill}}</button>
+                    <button data-deleteid="{{dataValues.id}}" class="otherskillsdeletebtn">{{dataValues.nameOfSkill}} <i
+                            class="fas fa-trash-alt"></i></button>
                 </li>
             </div>
             {{/each}}
         </h3>
     </div>
-    <button type="button" class="btn btn-light submit" id="submit">Submit</button>
+    <button type="button" class="btn btn-light submit u-margin-top-small u-margin-bottom-medium" id="submit">Submit</button>
 </section>
 
-<script src="/js/crudSkills.js"></script>
+<script src="/js/crud-skills.js"></script>
+{{!-- <script src="/js/editForms.js"></script> --}}

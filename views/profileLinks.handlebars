@@ -9,56 +9,25 @@
             <div class="form__group u-center-text u-margin-top-small">
                 <input type="text" class="form__input u-margin-bottom-small" placeholder="LinkedIn Link"
                     id="linkedin-value" required>
-
-                {{!-- {{#each data.dataValues.Links}}
-                <div>
-                    <li class="delete">
-                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.linkedin}}</button>
-                    </li>
-                </div>
-                {{/each}} --}}
             </div>
 
-
             <div class="form__group u-center-text u-margin-top-small">
-                <input type="text" class="form__input u-margin-bottom-small" placeholder="Instagram Link" id="instagram-value" required>
-
-                {{!-- {{#each data.dataValues.Links}}
-                <div>
-                    <li class="delete">
-                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.instagram}}</button>
-                    </li>
-                </div>
-                {{/each}} --}}
+                <input type="text" class="form__input u-margin-bottom-small" placeholder="Instagram Link"
+                    id="instagram-value" required>
             </div>
 
             <div class="form__group u-center-text u-margin-top-small">
                 <input type="text" class="form__input u-margin-bottom-small" placeholder="Facebook Link"
                     id="facebook-value" required>
-
-                {{!-- {{#each data.dataValues.Links}}
-                <div class="delfacebook">
-                    <li class="delete">
-                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.facebook}}</button>
-                    </li>
-                </div>
-                {{/each}} --}}
             </div>
 
             <div class="form__group u-center-text u-margin-top-small">
                 <input type="text" class="form__input" placeholder="Twitter Link" id="twitter-value" required>
-
-                {{!-- {{#each data.dataValues.Links}}
-                <div class="deltwitter">
-                    <li class="delete">
-                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.twitter}}</button>
-                    </li>
-                </div>
-                {{/each}} --}}
             </div>
 
         </h3>
-        <button type="button" class="btn btn-light submit" id="submit-links">Submit</button>
+        <button type="button" class="btn btn-light submit u-margin-top-medium" id="submit-links">Submit</button>
+
         {{else}}
         <h3 class="heading-quad">
             Links
@@ -66,59 +35,27 @@
             <div class="form__group u-center-text u-margin-top-small">
                 <input type="text" class="form__input u-margin-bottom-small" placeholder="LinkedIn Link"
                     id="linkedin-value" required>
-
-                {{!-- {{#each data.dataValues.Links}}
-                <div>
-                    <li class="delete">
-                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.linkedin}}</button>
-                    </li>
-                </div>
-                {{/each}} --}}
             </div>
 
-
             <div class="form__group u-center-text u-margin-top-small">
-                <input type="text" class="form__input u-margin-bottom-small" placeholder="instagram Link" id="instagram-value"
-                    required>
-
-                {{!-- {{#each data.dataValues.Links}}
-                <div>
-                    <li class="delete">
-                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.instagram}}</button>
-                    </li>
-                </div>
-                {{/each}} --}}
+                <input type="text" class="form__input u-margin-bottom-small" placeholder="instagram Link"
+                    id="instagram-value" required>
             </div>
 
             <div class="form__group u-center-text u-margin-top-small">
                 <input type="text" class="form__input u-margin-bottom-small" placeholder="Facebook Link"
                     id="facebook-value" required>
-
-                {{!-- {{#each data.dataValues.Links}}
-                <div class="delfacebook">
-                    <li class="delete">
-                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.facebook}}</button>
-                    </li>
-                </div>
-                {{/each}} --}}
             </div>
 
             <div class="form__group u-center-text u-margin-top-small">
                 <input type="text" class="form__input" placeholder="Twitter Link" id="twitter-value" required>
-
-                {{!-- {{#each data.dataValues.Links}}
-                <div class="deltwitter">
-                    <li class="delete">
-                        <button data-deleteid="{{dataValues.id}}" class="deletebtn">{{dataValues.twitter}}</button>
-                    </li>
-                </div>
-                {{/each}} --}}
             </div>
 
         </h3>
-        <div class="submitupdate">
-            <a class="btn btn-light fas fa-edit submit" id="update" data-updateid="{{data.dataValues.Links.dataValues.id}}"></a>
+        <div class="submitupdate u-margin-top-medium">
+            <a class="btn btn-light" id="update" data-updateid="{{data.dataValues.Links.dataValues.id}}">Edit Links</a>
         </div>
+        
         {{/unless}}
     </div>
 

@@ -10,7 +10,7 @@ $(document).ready(function () {
         console.log("sup");
         event.preventDefault();
         var PDF = $(".resume-value").val().trim();
-        
+
         console.log(PDF);
 
         $.ajax("/api/resume/" + userid, {
@@ -21,25 +21,26 @@ $(document).ready(function () {
         }).then(function (data) {
             $(".resume-value").val("")
             console.log(data);
-            // location.reload();
+            // location.reload();ß
         })
     });
 
 
-    $(".resumedeletebtn").on("click", function (event) {
+    $("#update-resume").on("click", function (event) {
         event.preventDefault();
 
-        var id = $(this).data("deleteid");
-        console.log(id);
-        console.log("clicked");
+        var PDF = $(".resume-value").val().trim();
 
+        $.ajax("/api/updateresume/" + userid, {
+            type: "PUT",
+            data: {
+                PDF: PDF
+            }
+        }).then(function (data) {
+            console.log(data);
+            // location.reload();
+        })
+    })
 
-        $.ajax("/api/deleteresume/" + id, {
-            type: "DELETE"
-        }).then(function () {
-            console.log("deleted id", id);
-            location.reload();
-        });
-    });
 
 });

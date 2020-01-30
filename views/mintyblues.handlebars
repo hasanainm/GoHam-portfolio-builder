@@ -68,39 +68,39 @@
       <!-- creating 2 cards to display content on front and back -->
       <div class="card">
         <div class="card__side card__side--front">
-          <h3 class="card-title">Project 1</h3>
+          <h3 class="card-title">{{data.Projects.[0].title}}</h3>
           <img src="/template-themes/MintyBlues/img/andrew-neel-cckf4TsHAuw-unsplash.jpg" class="card-image"
             alt="project1">
         </div>
         <div class="card__side card__side--back">
-          <a href="#" class="btn btn--white u-center-text u-margin-bottom-small">View App</a>
-          <a href="#" class="btn btn--white u-center-text">Github</a>
+          <a href={{data.Projects.[0].demolink}} target="_blank" class="btn btn--white u-center-text u-margin-bottom-small">View App</a>
+          <a href={{data.Projects.[0].githublink}} target="_blank" class="btn btn--white u-center-text">Github</a>
         </div>
       </div>
     </div>
     <div class="col-1-of-3">
       <div class="card">
         <div class="card__side card__side--front">
-          <h3 class="card-title">Project 2</h3>
+          <h3 class="card-title">{{data.Projects.[1].title}}</h3>
           <img src="/template-themes/MintyBlues/img/jeff-sheldon-JWiMShWiF14-unsplash.jpg" class="card-image"
             alt="project2">
         </div>
         <div class="card__side card__side--back">
-          <a href="#" class="btn btn--white u-center-text u-margin-bottom-small">View App</a>
-          <a href="#" class="btn btn--white u-center-text">GitHub</a>
+          <a href={{data.Projects.[1].demolink}} target="_blank" class="btn btn--white u-center-text u-margin-bottom-small">View App</a>
+          <a href={{data.Projects.[1].githublink}} target="_blank" class="btn btn--white u-center-text">GitHub</a>
         </div>
       </div>
     </div>
     <div class="col-1-of-3">
       <div class="card">
         <div class="card__side card__side--front">
-          <h3 class="card-title">Project 3</h3>
+          <h3 class="card-title">{{data.Projects.[2].title}}</h3>
           <img src="/template-themes/MintyBlues/img/stanley-dai-73OZYNjVoNI-unsplash.jpg" class="card-image"
             alt="project3">
         </div>
         <div class="card__side card__side--back">
-          <a href="#" class="btn btn--white u-center-text u-margin-bottom-small">ViewApp</a>
-          <a href="#" class="btn btn--white u-center-text">GitHub</a>
+          <a href={{data.Projects.[2].demolink}} target="_blank" class="btn btn--white u-center-text u-margin-bottom-small">ViewApp</a>
+          <a href={{data.Projects.[2].githublink}} target="_blank" class="btn btn--white u-center-text">GitHub</a>
         </div>
       </div>
     </div>
@@ -113,13 +113,13 @@
       Get in touch with me!
     </h2>
     <div class="connect">
-      <a href={{data.dataValues.Link.dataValues.facebook}}><i class="fa fa-facebook-official connect__icon u-icon u-padding" aria-hidden="true"></i></a>
+      <a href={{data.dataValues.Link.dataValues.facebook}} target="_blank" ><i class="fa fa-facebook-official connect__icon u-icon u-padding" aria-hidden="true"></i></a>
 
-      <a href={{data.dataValues.Link.dataValues.instagram}}><i class="fa fa-instagram connect__icon u-icon u-padding" aria-hidden="true"></i></a>
+      <a href={{data.dataValues.Link.dataValues.instagram}} target="_blank" ><i class="fa fa-instagram connect__icon u-icon u-padding" aria-hidden="true"></i></a>
 
-      <a href={{data.dataValues.Link.dataValues.linkedin}}><i class="fa fa-linkedin connect__icon u-icon u-padding" aria-hidden="true"></i></a>
+      <a href={{data.dataValues.Link.dataValues.linkedin}} target="_blank" ><i class="fa fa-linkedin connect__icon u-icon u-padding" aria-hidden="true"></i></a>
 
-      <a href={{data.dataValues.Link.dataValues.twitter}}><i class="fa fa-twitter-square connect__icon u-icon u-padding" aria-hidden="true"></i></a>
+      <a href={{data.dataValues.Link.dataValues.twitter}} target="_blank" ><i class="fa fa-twitter-square connect__icon u-icon u-padding" aria-hidden="true"></i></a>
     </div>
 
   </div>
