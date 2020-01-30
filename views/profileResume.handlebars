@@ -9,32 +9,49 @@
                 <input type="file" id="user-file" hidden="hidden" class="resume-value" />
                 <button type="button" id="custom-button">upload</button>
                 <span id="custom-text">No file chosen, yet.</span>
-                {{!-- <input type="text" class="form__input" placeholder="Upload Resume PDF" id="name" required> --}}
-            </div>
 
-        </h3>
-        <button type="button" class="btn btn-light submit u-margin-top-medium" id="submit">Submit</button>
+    </div>
 
-        {{else}}
 
-        <h3 class="heading-quad">
-            Resume
-            <div class="form__group u-center-text u-margin-top-small">
+    </h3>
+    {{!-- <input type="file" class="filepond" id="resume-value" name="filepond" multiple-data-max-file-size="3MB"
+        data-max-files="3" /> --}}
+
+    <button type="button" class="btn btn-light submit u-margin-top-medium" id="submit">Submit</button>
+
+    {{else}}
+
+    <h3 class="heading-quad">
+        Resume
+        <div class="form__group u-center-text u-margin-top-small">
                 <input type="file" id="user-file" hidden="hidden" class="resume-value" />
                 <button type="button" id="custom-button">upload</button>
                 <span id="custom-text">No file chosen, yet.</span>
-                {{!-- <input type="text" class="form__input" placeholder="Upload Resume PDF" id="name" required> --}}
-            </div>
+        </div>
 
-        </h3>
-        <button type="button" class="btn btn-light submit u-margin-top-medium" id="update-resume">Update Resume</button>
+    </h3>
+    {{!-- <input type="file" class="filepond" id="resume-value" name="filepond" multiple data-max-file-size="3MB"
+        data-max-files="3" /> --}}
+    <button type="button" class="btn btn-light submit u-margin-top-medium" id="update-resume">Update Resume</button>
 
 
-        {{/unless}}
+    {{/unless}}
     </div>
 
 </section>
 
 
+{{!-- <script>
+// Register the plugin
+FilePond.registerPlugin(FilePondPluginImagePreview);
+
+// ... FilePond initialisation code here
+</script> --}}
+
 <script src="/js/crud-resume.js"></script>
 <script src="/js/fileUpload.js"></script>
+
+<!-- Turn all file input elements into ponds -->
+<script>
+    FilePond.parse(document.body);
+</script>

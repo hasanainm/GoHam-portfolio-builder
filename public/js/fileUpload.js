@@ -8,7 +8,7 @@ uploadButton.addEventListener("click", function () {
 });
 
 userFile.addEventListener("change", function () {
-  
+
   if (userFile.value) {
     fileName.innerHTML = userFile.value.match(
       /[\/\\]([\w\d\s\.\-\(\)]+)$/
@@ -18,3 +18,14 @@ userFile.addEventListener("change", function () {
     fileName.innerHTML = "No file chosen, yet.";
   }
 });
+
+
+// // We want to preview images, so we need to register the Image Preview plugin
+// FilePond.registerPlugin(
+//   FilePondPluginImagePreview
+// );
+
+// // Select the file input and use create() to turn it into a pond
+// FilePond.create(
+//   document.querySelector('input')
+// );

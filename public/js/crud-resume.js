@@ -21,7 +21,7 @@ $(document).ready(function () {
         }).then(function (data) {
             $(".resume-value").val("")
             console.log(data);
-            location.reload();
+            // location.reload();ß
         })
     });
 
@@ -36,9 +36,9 @@ $(document).ready(function () {
             data: {
                 PDF: PDF
             }
-        }).then(function () {
-            console.log(data)
-            location.reload();
+        }).then(function (data) {
+            console.log(data);
+            // location.reload();
         })
     })
 

@@ -7,20 +7,23 @@ $(document).ready(function () {
 
         event.preventDefault();
         var title = $("#project-title-value").val().trim();
-        var PDF = $("#file").val().trim();
+
+        var imgs = $('img')[0].src;
+        // var PDF = $("#file").val().trim();
+
         var githublink = $("#project-github").val().trim();
         var demolink = $("#project-demo").val().trim();
-
+        console.log(imgs)
         $.ajax("/api/project/" + userid, {
             type: "POST",
             data: {
                 title: title,
-                PDF: PDF,
+                PDF: imgs,
                 githublink: githublink,
                 demolink: demolink
             }
-        }).then(function () {
-            location.reload();
+        }).then(function (data) {
+            // location.reload();
         });
     });
 
