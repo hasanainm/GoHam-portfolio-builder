@@ -188,7 +188,20 @@ body {
   animation-fill-mode: backwards; }
 
 .submit {
-  margin-left: 46rem; }
+  margin-left: 45rem; }
+
+.delete {
+  list-style-type: none;
+  display: inline-block; }
+
+.frontenddeletebtn, .backenddeletebtn, .frameworksdeletebtn, .otherskillsdeletebtn {
+  border-style: none;
+  border-radius: .5rem;
+  padding: 1rem;
+  float: left;
+  color: #777;
+  font-size: 1.6rem;
+  font-weight: 200; }
 
 .composition {
   position: relative; }

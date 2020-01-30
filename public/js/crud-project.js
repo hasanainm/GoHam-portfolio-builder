@@ -7,34 +7,22 @@ $(document).ready(function () {
 
         event.preventDefault();
         var title = $("#project-title-value").val().trim();
+        var PDF = $("#file").val().trim();
+        var githublink = $("#project-github").val().trim();
+        var demolink = $("#project-demo").val().trim();
 
         $.ajax("/api/project/" + userid, {
             type: "POST",
             data: {
-                title: title
+                title: title,
+                PDF: PDF,
+                githublink: githublink,
+                demolink: demolink
             }
         }).then(function () {
             location.reload();
         });
     });
 
-    $("#update-project-title").on("submit", function (event) {
-        event.preventDefault();
-        var id = $("[name=id]").val().trim();
-        console.log(id);
-
-        var updateProjectTitle = {
-            title: $("#update-project-title [name=project-title]").val().trim()
-        };
-        $.ajax("/api/updateprojecttitle/" + id, {
-            type: "PUT",
-            data: updateProjectTitle
-        }).then(
-            function () {
-                console.log("updated id " + id);
-                location.reload();
-            }
-        )
-    })
 
 });

@@ -168,4 +168,28 @@ module.exports = function (app) {
     })
   })
 
+
+  app.post("/api/resume/:userid", function (req, res) {
+    db.Resume.create({
+      PDF: req.body.PDF,
+      UserId: req.params.userid
+    }).then(function (result) {
+      res.json(result);
+    });
+  });
+
+
+  app.post("/api/project/:userid", function (req, res) {
+    db.Project.create({
+      title: req.body.title,
+      screenshot: req.body.screenshot,
+      githublink: req.body.githublink,
+      demolink: req.body.demolink,
+      UserId: req.params.userid
+    }).then(function (result) {
+      res.json(result);
+      console.log(result);
+    });
+  });
+
 };
