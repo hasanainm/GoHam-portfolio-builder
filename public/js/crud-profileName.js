@@ -34,12 +34,9 @@ $(document).ready(function () {
             $("#bio-value").val("")
             location.reload();
         });
-        $.toast({
-            text: 'Processing! Please wait..',
-            textAlign: 'center'
-        })
-        // window.alert("Please fill in the form and click on the update button if you want to change the information")
+        window.alert("To continue, fill out other information! If you would like to change the information, click the update button.")
     });
+
     var updateprofileid = $("#update").attr("data-updateid");
     // console.log(updateprofileid)
     $("#update").on("click", function (event) {
@@ -63,6 +60,8 @@ $(document).ready(function () {
             console.log(data)
             location.reload();
         });
+
+        window.alert("Your information has been updated.")
     })
 
 });
