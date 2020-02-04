@@ -30,7 +30,7 @@ Choose a template of your liking and share the link with your peers!
 * [Heroku](https://devcenter.heroku.com/start) 
 
 
-## GoHAM Developers
+## GoHAMDev Developers
 
 * [**Hasanain Mohammed**](https://github.com/hasanainm)
 * [**Anam Mohammad** ](https://github.com/AnamAM)
