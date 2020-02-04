@@ -1,5 +1,6 @@
 require("dotenv").config();
 
+const fileupload = require('express-fileupload');
 var express = require("express");
 var exphbs = require("express-handlebars");
 var sassMiddleware = require('node-sass-middleware');
@@ -9,6 +10,7 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 
 // middleware
+app.use(fileupload());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));

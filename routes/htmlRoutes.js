@@ -175,12 +175,12 @@ module.exports = function (app) {
         db.Resume
       ],
       where: { id: req.params.id }
-    }).then(function (results) {
+    }).then(function(results) {
       res.render("mintyblues", {
         layout: "templateMinty",
         data: results
       });
-      console.log(results);
+      // console.log(results);
     });
   });
 
