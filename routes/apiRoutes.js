@@ -206,7 +206,7 @@ module.exports = function (app) {
   app.post("/api/project/:userid", function (req, res) {
     db.Project.create({
       title: req.body.title,
-      screenshot: req.body.screenshot,
+      description: req.body.description,
       githublink: req.body.githublink,
       demolink: req.body.demolink,
       UserId: req.params.userid

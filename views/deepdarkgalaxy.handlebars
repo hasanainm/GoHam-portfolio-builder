@@ -24,56 +24,49 @@
         <div class="col-1-of-4">
             <div class="skills-box u-center-text">
                 <h5 class="heading-secondary">Front-End <i class="fa fa-code icon" aria-hidden="true"></i></h5>
+                {{#each data.dataValues.FrontEndSkills}}
                 <div class="skill-box--text">
                     <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>jQuery</li>
-                        <li>RESTful APIs</li>
+                        <li>{{dataValues.nameOfSkill}}</li>
                     </ul>
                 </div>
+                {{/each}}
             </div>
         </div>
         <div class="col-1-of-4">
             <div class="skills-box u-center-text">
                 <h5 class="heading-secondary">Back-End <i class="fa fa-code-fork icon" aria-hidden="true"></i></h5>
+                {{#each data.dataValues.BackEndSkills}}
                 <div class="skill-box--text">
                     <ul>
-                        <li>MySQL</li>
-                        <li>MongoDB</li>
-                        <li>Java</li>
-                        <li>Ruby</li>
-                        <li>Node</li>
-                        <li>Express</li>
-                        <li>Unit Testing</li>
+                        <li>{{dataValues.nameOfSkill}}</li>
                     </ul>
                 </div>
+                {{/each}}
             </div>
         </div>
         <div class="col-1-of-4">
             <div class="skills-box u-center-text">
                 <h5 class="heading-secondary">Framework <i class="fa fa-pencil icon" aria-hidden="true"></i></h5>
+                {{#each data.dataValues.Frameworks}}
                 <div class="skill-box--text">
                     <ul>
-                        <li>React</li>
-                        <li>Bootstrap</li>
-                        <li>Handlebars</li>
-                        <li>Materialize</li>
+                        <li>{{dataValues.nameOfSkill}}</li>
                     </ul>
                 </div>
+                {{/each}}
             </div>
         </div>
         <div class="col-1-of-4">
             <div class="skills-box u-center-text">
                 <h5 class="heading-secondary">Other <i class="fa fa-desktop icon" aria-hidden="true"></i></h5>
+                {{#each data.dataValues.OtherSkills}}
                 <div class="skill-box--text">
                     <ul>
-                        <li>SCRUM / Agile</li>
-                        <li>GIT</li>
-                        <li>Version Control Software</li>
+                        <li>{{dataValues.nameOfSkill}}</li>
                     </ul>
                 </div>
+                {{/each}}
             </div>
         </div>
     </div>
@@ -98,10 +91,10 @@
                 </div>
                 <div class="face face2">
                     <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste
-                            veritatis provident at.</p>
-                        <a href={{data.Projects.[0].demolink}}  target="_blank">View App</a>
-                        <a href={{data.Projects.[0].githublink}} target="_blank">View on GitHub</a>
+                        <p>{{data.Projects.[0].description}}</p>
+                        <a href={{data.Projects.[0].demolink}} target="_blank" style="margin-top: 8rem;">View App</a>
+                        <a href={{data.Projects.[0].githublink}} target="_blank" style="margin-top: 8rem;">View on
+                            GitHub</a>
                     </div>
                 </div>
             </div>
@@ -115,10 +108,10 @@
                 </div>
                 <div class="face face2">
                     <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste
-                            veritatis provident at.</p>
-                        <a href={{data.Projects.[1].demolink}}  target="_blank">View App</a>
-                        <a href={{data.Projects.[1].githublink}} target="_blank">View on GitHub</a>
+                        <p>{{data.Projects.[1].description}}</p>
+                        <a href={{data.Projects.[1].demolink}} target="_blank" style="margin-top: 8rem;">View App</a>
+                        <a href={{data.Projects.[1].githublink}} target="_blank" style="margin-top: 8rem;">View on
+                            GitHub</a>
                     </div>
                 </div>
             </div>
@@ -132,10 +125,10 @@
                 </div>
                 <div class="face face2">
                     <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste
-                            veritatis provident at.</p>
-                        <a href={{data.Projects.[2].demolink}}  target="_blank">View App</a>
-                        <a href={{data.Projects.[2].githublink}} target="_blank">View on GitHub</a>
+                        <p>{{data.Projects.[2].description}}</p>
+                        <a href={{data.Projects.[2].demolink}} target="_blank" style="margin-top: 8rem;">View App</a>
+                        <a href={{data.Projects.[2].githublink}} target="_blank" style="margin-top: 8rem;">View on
+                            GitHub</a>
                     </div>
                 </div>
             </div>
@@ -150,11 +143,25 @@
             Get in touch with me!
         </h2>
         <div class="contact">
-            <a href={{data.dataValues.Link.dataValues.instagram}} target="_blank"><i class="fa fa-instagram contact__icon u-padding-left" aria-hidden="true"></i></a>
-            <a href={{data.dataValues.Link.dataValues.linkedin}} target="_blank"><i class="fa fa-linkedin-square contact__icon u-padding-left" aria-hidden="true"></i></a>
-            <a href={{data.dataValues.Link.dataValues.facebook}} target="_blank"><i class="fa fa-facebook-official contact__icon u-padding-left" aria-hidden="true"></i></a>
-            <a href={{data.dataValues.Link.dataValues.twitter}} target="_blank"><i class="fa fa-twitter-square contact__icon u-padding-left" aria-hidden="true"></i></a>
+            <a href={{data.dataValues.Link.dataValues.instagram}} target="_blank"><i
+                    class="fa fa-instagram contact__icon u-padding-left" aria-hidden="true"></i></a>
+            <a href={{data.dataValues.Link.dataValues.linkedin}} target="_blank"><i
+                    class="fa fa-linkedin-square contact__icon u-padding-left" aria-hidden="true"></i></a>
+            <a href={{data.dataValues.Link.dataValues.facebook}} target="_blank"><i
+                    class="fa fa-facebook-official contact__icon u-padding-left" aria-hidden="true"></i></a>
+            <a href={{data.dataValues.Link.dataValues.twitter}} target="_blank"><i
+                    class="fa fa-twitter-square contact__icon u-padding-left" aria-hidden="true"></i></a>
+        
         </div>
+    </div>
+</section>
+
+
+<section class="section-resume">
+    <div class="u-center-text">
+        <h2 class="heading-tertiary">
+            <a href="#" target="_blank">Click here</a> to see my resume!
+        </h2>
     </div>
 </section>
 

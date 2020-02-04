@@ -61,7 +61,7 @@ $(document).ready(function () {
         }
       }).then(function (data) {
         console.log(data)
-        window.alert("Thanks for signing up " + name + " please sign in and navigate as you wish!")
+        window.alert("Thanks for signing up, " + name + "! Please sign in and navigate as you wish!")
         $("#user-name").val("")
         $("#user-email").val("")
         $("#user-pass").val("")

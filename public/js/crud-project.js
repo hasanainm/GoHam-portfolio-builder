@@ -7,18 +7,15 @@ $(document).ready(function () {
 
         event.preventDefault();
         var title = $("#project-title-value").val().trim();
-
-        var imgs = $('img')[0].src;
-        // var PDF = $("#file").val().trim();
-
+        var description = $("#project-description-value").val().trim();
         var githublink = $("#project-github").val().trim();
         var demolink = $("#project-demo").val().trim();
-        console.log(imgs)
+        // console.log(imgs)
         $.ajax("/api/project/" + userid, {
             type: "POST",
             data: {
                 title: title,
-                PDF: imgs,
+                description: description,
                 githublink: githublink,
                 demolink: demolink
             }

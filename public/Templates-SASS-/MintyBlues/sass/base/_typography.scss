@@ -46,26 +46,6 @@ body{
   }
   }
 
-.heading-secondary {
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  // with this inline block, the element is placed as an inline element on the same line as the adjacent content
-  display: inline-block;
-  // background-color: #ecf1f3;
-  // this property allows the background to get clipped exactly where the text is
-  // -webkit-background-clip: text;
-  // if you don't make it transparent, you will see the text which sits on top of the clipped background and so you want to make the text invisible/transparent
-  // color: transparent;
-  letter-spacing: .2rem;
-  transition: all .2s;
-  
-  &:hover {
-  transform: skewY(2deg) skewX(15deg) scale(1.1);
-  text-shadow: .5rem 1rem 2rem rgba(black, .2);
-  }
-  }
-
 // .project-heading-text{
 //   color: white;
 // }

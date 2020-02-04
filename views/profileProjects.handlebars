@@ -5,89 +5,33 @@
         <h3 class="heading-quad">
             Project 1
             <div class="form__group u-center-text u-margin-top-small">
-                {{!-- <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Screenshot" id="name"
-                    required> --}}
 
-                {{!-- upload image screenshot --}}
-                <div class="image-upload u-center-text" id="name" required>
+                {{!-- <div class="image-upload u-center-text" id="name" required>
                     <input type="file" accept="image/gif, image/jpeg, image/png" name="image" id="file"
                         onchange="loadFile(event)" hidden="hidden">
                     <button type="button" id="custom-button"><label for="file" style="cursor: pointer;">Upload Project
                             Screenshot</label></button>
                     <br>
                     <img class="u-margin-top-small u-margin-bottom-small img-upload" id="output" />
-                </div>
+                </div> --}}
 
 
                 <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Title"
                     id="project-title-value" required>
+
+                <textarea type="textarea" maxlength="150" class="form__input u-margin-bottom-small" placeholder="Project Description" id="project-description-value"
+                    required></textarea>
+
                 <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Github Link"
                     id="project-github" required>
+
                 <input type="text" class="form__input" placeholder="Project Demo Link" id="project-demo" required>
             </div>
              <button type="button" class="btn btn-light submit u-margin-top-medium  u-margin-bottom-medium"
-        id="submit-project1">Submit</button>
+        id="submit-project">Submit</button>
         </h3>
 
-
-        <h3 class="heading-quad">
-            Project 2
-            <div class="form__group u-center-text u-margin-top-small">
-                {{!-- <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Screenshot" id="name"
-                    required> --}}
-
-                {{!-- upload image screenshot --}}
-                <div class="image-upload u-center-text" id="name" required>
-                    <input type="file" accept="image/gif, image/jpeg, image/png" name="image" id="file"
-                        onchange="loadFile(event)" hidden="hidden">
-                    <button type="button" id="custom-button"><label for="file" style="cursor: pointer;">Upload Project
-                            Screenshot</label></button>
-                    <br>
-                    <img class="u-margin-top-small u-margin-bottom-small img-upload" id="output" />
-                </div>
-
-
-                <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Title"
-                    id="project-title-value" required>
-                <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Github Link"
-                    id="project-github" required>
-                <input type="text" class="form__input" placeholder="Project Demo Link" id="project-demo" required>
-            </div>
-            <button type="button" class="btn btn-light submit u-margin-top-medium  u-margin-bottom-medium"
-        id="submit-project2">Submit</button>
-        </h3>
-
-
-        <h3 class="heading-quad">
-            Project 3
-            <div class="form__group u-center-text u-margin-top-small">
-                {{!-- <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Screenshot" id="name"
-                    required> --}}
-
-                {{!-- upload image screenshot --}}
-                <div class="image-upload u-center-text" id="name" required>
-                    <input type="file" accept="image/gif, image/jpeg, image/png" name="image" id="file"
-                        onchange="loadFile(event)" hidden="hidden">
-                    <button type="button" id="custom-button"><label for="file" style="cursor: pointer;">Upload Project
-                            Screenshot</label></button>
-                    <br>
-                    <img class="u-margin-top-small u-margin-bottom-small img-upload" id="output" />
-                </div>
-
-
-                <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Title"
-                    id="project-title-value" required>
-                <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Github Link"
-                    id="project-github" required>
-                <input type="text" class="form__input" placeholder="Project Demo Link" id="project-demo" required>
-            </div>
-            <button type="button" class="btn btn-light submit u-margin-top-medium  u-margin-bottom-medium"
-        id="submit-project3">Submit</button>
-        </h3>
     </div>
-
-   
-
 </section>
 
 <script src="/js/imageUpload.js"></script>
