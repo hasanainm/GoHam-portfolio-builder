@@ -1,0 +1,51 @@
+.btn{
+  &:link,
+  &:visited{
+    font-family: 'Ubuntu', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 6rem;
+    /* inline-block allows to set a width and height on the element */
+    display: inline-block;
+    border-radius: 1rem; 
+    transition: all .3s;
+    position: relative;
+  }
+  &:hover{
+    transform: translateY(-3px);
+      /* after pseudo element when we have the button on the hover state */
+  &::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+    }
+  }
+  &:active{
+    transform: translateY(-1px);
+  }
+  &--white{
+    background-color:#05386B;
+    color: $color-white;
+    &::after {
+    background-color:#05386B;
+    }
+  }
+  /* the after pseudo element will be essential for creating a powerful effect after clicking the button*/
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* for it to see what is behind the button */
+    z-index: -1;
+    transition: all .4s;
+  }
+  &--animated{
+    animation: slideInFromBottom .5s ease-out .75s;
+    /* it will automatically apply the styles up to zero percent before the animation starts. The styles in the slideInFromBottom will apply before the animation starts*/
+    animation-fill-mode: backwards;
+  }
+}

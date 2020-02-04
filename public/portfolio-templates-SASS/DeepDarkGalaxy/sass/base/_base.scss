@@ -1,0 +1,30 @@
+/* universal selector */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* box-sizing changes the box model so borders and paddings aren't added */
+  box-sizing: inherit; 
+}
+
+/* If you don't want your default font size to be 16px, you can change that by dividing what you want. In this case, I want 10px as my default, so I will simply do 16/10 tp get .625 and multiply that by 100 to get 62.5% */
+html {
+    font-size: 62.5%;
+}
+
+body {
+  background: black;
+  height: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+#canvas {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}

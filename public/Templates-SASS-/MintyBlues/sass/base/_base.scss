@@ -1,0 +1,33 @@
+/* Universal Selector */
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing:inherit;
+}
+
+/* font-size: 10px; - "bad practice", should not be pixels because by doing so you will override the browser font size setting that the user can manually change in the settings, for example when the user can not see so good. The user will be able to change the default font size however our root font size will remain unaffected.  */
+
+/* change to percentage will translate to a percentage of the font size given by the browser. By default the page will set to 16px. So if we put 100% this would mean that the root font size would be 16 pixel if the user doesnt change anything and if the user does change the default font size, lets say to 18px then the root font size will be 18 px. If you dont want it to be 16px by default all you have to do is divide what you want by 16px...so 10/16 = .625. 62.5%. 62.5 * 16 = 10px  With this you allow the user to actually zoom in on the page automatically, not only to change the font size but to also zoom in on the page */
+
+html {
+  font-size: 62.5%;
+  }
+
+body{
+  height: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+
+#canvas {
+  background:#5CDB95;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}

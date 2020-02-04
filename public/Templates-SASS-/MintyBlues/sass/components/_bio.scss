@@ -1,0 +1,13 @@
+.bio{
+background-color:#05386B;
+padding: 5rem;
+text-align: justify;
+text-align-last:center;
+
+  &--text{
+    color: white;
+    // text-align: center;
+    padding-left: 22rem;
+    padding-right: 22rem;
+  }
+}
