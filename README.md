@@ -30,10 +30,10 @@ Choose a template of your liking and share the link with your peers!
 * [Heroku](https://devcenter.heroku.com/start) 
 
 
-## Authors
+## GoHAM Developers
 
-* **Hasanain Mohammed** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-* **Anam Mohammad** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* [**Hasanain Mohammed**](https://github.com/hasanainm)
+* [**Anam Mohammad** ](https://github.com/AnamAM)
 
 
 ## License
