@@ -17,19 +17,19 @@ Choose a template of your liking and share the link with your peers!
 
 ## Built With
 
-### Front-End 
+#### Front-End 
 * [Handlebars](https://handlebarsjs.com/)
 * [Bootstrap](https://getbootstrap.com/)
 * [jQuery](https://jquery.com/)
 * [Firebase Authentication](https://firebase.google.com/)
 
-### Back-End 
+#### Back-End 
 * [Node.js](https://nodejs.org/en/)
 * [Express](https://expressjs.com/)
 * [Sequelize ORM](https://sequelize.org/)
 * [JAWSDB](https://devcenter.heroku.com/articles/jawsdb)
 
-### Deployment 
+#### Deployment 
 * [Heroku](https://devcenter.heroku.com/start) 
 
 
