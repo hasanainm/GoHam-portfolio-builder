@@ -59,7 +59,8 @@
         </div>
         <div class="col-1-of-4">
             <div class="skills-box u-center-text">
-                <h5 class="heading-secondary">Other <i class="fa fa-desktop icon" aria-hidden="true"></i></h5>{{#each data.dataValues.OtherSkills}}
+                <h5 class="heading-secondary">Other <i class="fa fa-desktop icon" aria-hidden="true"></i></h5>
+                {{#each data.dataValues.OtherSkills}}
                 <div class="skill-box--text">
                     <ul>
                         <li>{{dataValues.nameOfSkill}}</li>
@@ -91,8 +92,9 @@
                 <div class="face face2">
                     <div class="content">
                         <p>{{data.Projects.[0].description}}</p>
-                        <a href={{data.Projects.[0].demolink}} target="_blank">View App</a>
-                        <a href={{data.Projects.[0].githublink}} target="_blank">View on GitHub</a>
+                        <a href={{data.Projects.[0].demolink}} target="_blank" style="margin-top: 8rem;">View App</a>
+                        <a href={{data.Projects.[0].githublink}} target="_blank" style="margin-top: 8rem;">View on
+                            GitHub</a>
                     </div>
                 </div>
             </div>
@@ -107,8 +109,9 @@
                 <div class="face face2">
                     <div class="content">
                         <p>{{data.Projects.[1].description}}</p>
-                        <a href={{data.Projects.[1].demolink}} target="_blank">View App</a>
-                        <a href={{data.Projects.[1].githublink}} target="_blank">View on GitHub</a>
+                        <a href={{data.Projects.[1].demolink}} target="_blank" style="margin-top: 8rem;">View App</a>
+                        <a href={{data.Projects.[1].githublink}} target="_blank" style="margin-top: 8rem;">View on
+                            GitHub</a>
                     </div>
                 </div>
             </div>
@@ -123,8 +126,9 @@
                 <div class="face face2">
                     <div class="content">
                         <p>{{data.Projects.[2].description}}</p>
-                        <a href={{data.Projects.[2].demolink}} target="_blank">View App</a>
-                        <a href={{data.Projects.[2].githublink}} target="_blank">View on GitHub</a>
+                        <a href={{data.Projects.[2].demolink}} target="_blank" style="margin-top: 8rem;">View App</a>
+                        <a href={{data.Projects.[2].githublink}} target="_blank" style="margin-top: 8rem;">View on
+                            GitHub</a>
                     </div>
                 </div>
             </div>
@@ -147,7 +151,17 @@
                     class="fa fa-facebook-official contact__icon u-padding-left" aria-hidden="true"></i></a>
             <a href={{data.dataValues.Link.dataValues.twitter}} target="_blank"><i
                     class="fa fa-twitter-square contact__icon u-padding-left" aria-hidden="true"></i></a>
+        
         </div>
+    </div>
+</section>
+
+
+<section class="section-resume">
+    <div class="u-center-text">
+        <h2 class="heading-tertiary">
+            <a href="#" target="_blank">Click here</a> to see my resume!
+        </h2>
     </div>
 </section>
 
