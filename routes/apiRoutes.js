@@ -36,6 +36,7 @@ module.exports = function (app) {
       UserId: req.params.userid
     }).then(function (result) {
       res.json(result);
+      
     });
   });
 
@@ -167,21 +168,31 @@ module.exports = function (app) {
       res.json(result)
     })
   })
+  // This route is responsible for uploading a file inside the upload folder. Once file picked and submitted, the result will be saved in the database and profileResume handlebars template will recieve the relative id for submissions.
+  app.post("/api/profileResume/:userid", function (req, res) {
+    if (req.files) {
+      console.log(req.files)
+      var file = req.files.file;
 
+      var filename = file.name;
+      // console.log(filename)
+      file.mv('public/img/uploads/' + filename, function (err) {
 
-  app.post("/api/resume/:userid", function (req, res) {
+      })
+    }
     db.Resume.create({
-      PDF: req.body.PDF,
+      PDF: filename,
       UserId: req.params.userid
     }).then(function (result) {
-      res.json(result);
-    });
-  });
+      res.render("profileResume", { data: result })
+      console.log(result)
+    })
+  })
 
-  app.put("/api/updateresume/:userid", function (req, res) {
-    db.Resume.update({
-      PDF: req.body.PDF
-    }, {
+
+
+  app.delete("/api/deleteresume/:userid", function (req, res) {
+    db.Resume.destroy({
       where: {
         id: req.params.userid
       }
@@ -201,7 +212,7 @@ module.exports = function (app) {
       UserId: req.params.userid
     }).then(function (result) {
       res.json(result);
-      console.log(result);
+      // console.log(result);
     });
   });
 

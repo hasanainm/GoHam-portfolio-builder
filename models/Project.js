@@ -4,7 +4,7 @@ module.exports = function (sequelize, DataTypes) {
         type: DataTypes.STRING,
     },
     screenshot: {
-        type: DataTypes.BLOB,
+        type: DataTypes.STRING,
     },
     githublink: {
         type: DataTypes.STRING,

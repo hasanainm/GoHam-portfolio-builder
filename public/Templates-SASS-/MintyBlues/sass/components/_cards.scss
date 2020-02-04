@@ -1,0 +1,51 @@
+.card{
+
+  &-image{
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    backface-visibility: hidden;
+    opacity: .6;
+    position: relative;
+  }
+  &-title{
+    position: absolute;
+    z-index: 1;
+  }
+  // perspective property is used to give a 3D-positioned element some perspective.
+  perspective: 150rem;
+  // normally clearfix would resolve the automatic height collapse but due to postion absolute clear fix does not exist. So setting the height equivalent to the card side height is the best thing to do in this matter.
+  height: 30rem;
+  // now compatible on mozilla as well
+  -moz-perspective: 150rem;
+  position: relative;
+  &__side{
+    color: black;
+    height: 30rem;
+    transition: all .8s ease;
+    //will fit to its with after setting parent to postion relative. Also since we set it to 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // backface hidden will hide the back part of an element. Now when the front card will appear and on the hover the back of the card will show.
+    backface-visibility: hidden;
+    border-radius: 4px;
+    &--front{
+      background-color: $color-grey-light;
+    }
+    &--back{
+      background-color:$color-green-light;
+      // presetting back card to show whats on the back
+      transform: rotateY(180deg);
+      padding: 7rem;
+    }
+  }
+  &:hover &__side--front{
+    transform: rotateY(-180deg);
+  }
+  &:hover &__side--back{
+    // returning to its intial state
+    transform: rotateY(0);
+  }
+}
