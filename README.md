@@ -1,4 +1,4 @@
-# GoHam-portfolio-builder
+# Portfolio Builder
 
 Feeling indolent because you don't want to spend several hours and days to build yourself a portfolio? You've come to the right place! This application allows you to build your own personal portfolio in the most efficient way! 
 
@@ -33,12 +33,10 @@ Choose a template of your liking and share the link with your peers!
 * [Heroku](https://devcenter.heroku.com/start) 
 
 
-## GoHAMDev Developers
+## Developers
 
 * [**Hasanain Mohammed**](https://github.com/hasanainm)
 * [**Anam Mohammad** ](https://github.com/AnamAM)
 
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+#### &copy; GoHAMDev 2020
