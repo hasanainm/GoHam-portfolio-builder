@@ -69,7 +69,7 @@ module.exports = function (app) {
       where: { id: req.params.id }
     }).then(function (results) {
       res.render("profileProjects", { data: results });
-      // console.log(req.params.id);
+      console.log(results);
     });
   });
 

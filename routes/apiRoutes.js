@@ -36,7 +36,7 @@ module.exports = function (app) {
       UserId: req.params.userid
     }).then(function (result) {
       res.json(result);
-      
+
     });
   });
 
@@ -215,5 +215,20 @@ module.exports = function (app) {
       // console.log(result);
     });
   });
+
+  app.put("/api/updateproject/:userid", function (req, res) {
+    db.Project.update({
+      title: req.body.title,
+      description: req.body.description,
+      githublink: req.body.githublink,
+      demolink: req.body.demolink
+    }, {
+      where: {
+        id: req.params.userid
+      }
+    }).then(function (result) {
+      res.json(result)
+    })
+  })
 
 };

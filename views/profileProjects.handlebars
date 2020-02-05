@@ -2,38 +2,76 @@
 
 <section id="section-projects">
     <div class="box7 u-center-text u-margin-top-big" id="data" data-id={{data.id}}>
+        {{#unless data.dataValues.Projects.[0].dataValues}}
         <h3 class="heading-quad">
-            Project 
+            Project
             <div class="form__group u-center-text u-margin-top-small">
-
-                {{!-- <div class="image-upload u-center-text" id="name" required>
-                    <input type="file" accept="image/gif, image/jpeg, image/png" name="image" id="file"
-                        onchange="loadFile(event)" hidden="hidden">
-                    <button type="button" id="custom-button"><label for="file" style="cursor: pointer;">Upload Project
-                            Screenshot</label></button>
-                    <br>
-                    <img class="u-margin-top-small u-margin-bottom-small img-upload" id="output" />
-                </div> --}}
-
 
                 <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Title"
                     id="project-title-value" required>
 
-                <textarea type="textarea" maxlength="150" class="form__input u-margin-bottom-small" placeholder="Project Description" id="project-description-value"
-                    required></textarea>
+                <textarea type="textarea" maxlength="150" class="form__input u-margin-bottom-small"
+                    placeholder="Project Description" id="project-description-value" required></textarea>
 
                 <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Github Link"
                     id="project-github" required>
 
                 <input type="text" class="form__input" placeholder="Project Demo Link" id="project-demo" required>
             </div>
-             <button type="button" class="btn btn-light submit u-margin-top-medium  u-margin-bottom-medium"
-        id="submit-project">Submit</button>
+            <button type="button" class="btn btn-light submit u-margin-top-medium  u-margin-bottom-medium"
+                id="submit-project">Submit</button>
         </h3>
 
+
+        {{else}}
+        <h3 class="heading-quad">
+            Project
+            <div class="form__group u-center-text u-margin-top-small">
+
+                <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Title"
+                    id="project-title-value" required>
+
+                <textarea type="textarea" maxlength="150" class="form__input u-margin-bottom-small"
+                    placeholder="Project Description" id="project-description-value" required></textarea>
+
+                <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Github Link"
+                    id="project-github" required>
+
+                <input type="text" class="form__input" placeholder="Project Demo Link" id="project-demo" required>
+            </div>
+            <button type="button" class="btn btn-light submit u-margin-top-small  u-margin-bottom-medium"
+                id="submit-project">Submit</button>
+        </h3>
+
+
+        <h2 class="heading-quad">Update Your Project</h2>
+        <form id="updateproject" class="button-size">
+
+            <div class="selectdiv">
+                <select name="id" class="u-margin-bottom-small u-margin-top-small select-menu">
+                    {{#each data.dataValues.Projects}} 
+                    <option value="{{this.id}}">Project {{this.id}}: {{this.title}} </option>
+                    {{/each}}
+                </select>
+                </div>
+
+            <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Title"
+                id="project-title-update" required>
+
+            <textarea type="textarea" maxlength="150" class="form__input u-margin-bottom-small"
+                placeholder="Project Description" id="project-description-update" required></textarea>
+
+            <input type="text" class="form__input u-margin-bottom-small" placeholder="Project Github Link"
+                id="project-github-update" required>
+
+            <input type="text" class="form__input" placeholder="Project Demo Link" id="project-demo-update" required>
+            <button type="submit" id="update"
+                class="btn btn-light submit u-margin-top-medium u-margin-bottom-medium">Update</button>
+        </form>
+        {{/unless}}
     </div>
 </section>
 
-<script src="/js/imageUpload.js"></script>
+
 
 <script src="/js/crud-project.js"></script>
