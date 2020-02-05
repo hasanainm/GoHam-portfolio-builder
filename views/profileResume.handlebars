@@ -3,10 +3,13 @@
 <section id="section-resume">
     <div class="box8 u-center-text u-margin-top-big" id="data" data-id={{data.id}}>
         <h3 class="heading-quad">
-            Resume {{data.dataValues.id}}
+            Resume
             <form method="POST" action="/api/profileResume/{{data.id}}" enctype="multipart/form-data">
-                <input type="file" name="file"/>
-                <button type="submit" class="btn btn-light submit u-margin-top-small u-margin-bototm-medium" id="submit">Submit</button>
+                <div class="upload-button">
+                    <input type="file" name="file" />
+                </div>
+                <button type="submit" class="btn btn-light submit u-margin-top-small u-margin-bottom-medium"
+                    id="submit">Submit</button>
             </form>
 
         </h3>
@@ -16,12 +19,4 @@
 </section>
 
 
-{{!-- <script>
-    // Register the plugin
-    FilePond.registerPlugin(FilePondPluginImagePreview);
-
-// ... FilePond initialisation code here
-</script> --}}
-
 <script src="/js/crud-resume.js"></script>
-{{!-- <script src="/js/fileUpload.js"></script> --}}
