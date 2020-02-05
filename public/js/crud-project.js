@@ -25,4 +25,36 @@ $(document).ready(function () {
     });
 
 
+    $("#updateproject").on("submit", function (event) {
+        // Make sure to preventDefault on a submit event.
+        event.preventDefault();
+
+        // Get the ID by finding an element with a "name" attribute equal to the string "id"
+        var id = $("[name=id]").val().trim();
+        console.log(id);
+
+        var title = $("#project-title-update").val().trim();
+        var description = $("#project-description-update").val().trim();
+        var githublink = $("#project-github-update").val().trim();
+        var demolink = $("#project-demo-update").val().trim();
+
+        // Send the PUT request.
+        $.ajax("/api/updateproject/" + id, {
+            type: "PUT",
+            data: {
+                title: title,
+                description: description,
+                githublink: githublink,
+                demolink: demolink
+            }
+        }).then(
+            function () {
+                console.log("updated id ", id);
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
+
+
 });
